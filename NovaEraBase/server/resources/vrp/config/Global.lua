@@ -88,6 +88,13 @@ SalarySeconds = 1800                           						-- Intervalo do salário em
 SalaryVIPTextNotification = "Você recebeu R${salary} do seu VIP {work}."		-- Texto do salário de VIP
 SalaryWorkTextNotification = "Você recebeu R${salary} do seu serviço {work}." 	-- Texto do salário de organização
 -----------------------------------------------------------------------------------------------------------------------------------------
+-- PROPAGANDA
+-----------------------------------------------------------------------------------------------------------------------------------------
+ClothesAdEnabled = true																-- Notificação periódica de roupas personalizadas
+ClothesAdSeconds = 1800																-- Intervalo em segundos (1800 = 30 minutos)
+ClothesAdMessage = "Queres fazer a tua roupa? Abre um ticket e nos ajudamos!"
+ClothesAdTitle = "Roupas Personalizadas"
+-----------------------------------------------------------------------------------------------------------------------------------------
 -- BLACKOUTTIME
 -----------------------------------------------------------------------------------------------------------------------------------------
 BlackoutTime = 600000                                               -- Tempo para o blackout acabar (600000 = 10 Minutos)
