@@ -880,7 +880,7 @@ CreateThread(function()
 				Reloaded = GetGameTimer() + 100
 			end
 
-			if Ammo <= 0 or (Weapon == "WEAPON_PETROLCAN" and Ammo <= 135 and IsPedShooting(Ped)) or IsPedSwimming(Ped) then
+			if (not InfiniteAmmoClip and Ammo <= 0) or (Weapon == "WEAPON_PETROLCAN" and Ammo <= 135 and IsPedShooting(Ped)) or IsPedSwimming(Ped) then
 				if Types ~= "" then
 					vSERVER.removeThrowing(Types)
 				else

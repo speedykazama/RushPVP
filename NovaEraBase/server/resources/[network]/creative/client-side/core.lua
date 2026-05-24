@@ -427,7 +427,15 @@ CreateThread(function()
 
 		SetPauseMenuActive(false)
 		DisablePlayerVehicleRewards(Pid)
-		SetPedInfiniteAmmoClip(Ped,false)
+
+		if InfiniteAmmoClip then
+			SetPedInfiniteAmmoClip(Ped, true)
+			SetPedInfiniteAmmo(Ped, true)
+		else
+			SetPedInfiniteAmmoClip(Ped, false)
+			SetPedInfiniteAmmo(Ped, false)
+		end
+
 		SetCreateRandomCopsOnScenarios(false)
 		SetCreateRandomCopsNotOnScenarios(false)
 

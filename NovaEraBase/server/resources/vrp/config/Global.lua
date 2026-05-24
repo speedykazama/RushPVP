@@ -139,6 +139,7 @@ MapTextName = "Nova Era RolePlay"              						-- Texto que vai aparecer a
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- WEAPONDAMAGE
 -----------------------------------------------------------------------------------------------------------------------------------------
+InfiniteAmmoClip = true												-- Balas infinitas sem precisar recarregar
 AiWeaponDamageModifier = 0.75  										-- NPCs causam 75% do dano normal
 
 WeaponDamageModifier = {											-- Quanto dano cada arma do jogador causa
