@@ -1,2 +1,2 @@
 @echo off
-"C:\NovaEraBase\build\FXServer.exe" +exec server.cfg
+"C:\RushPVP\NovaEraBase\build\FXServer.exe" +exec server.cfg
