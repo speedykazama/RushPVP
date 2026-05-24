@@ -100,6 +100,10 @@ end
 -- CHECKDAMAGED
 -----------------------------------------------------------------------------------------------------------------------------------------
 function vRP.CheckDamaged(Item)
+    if not ItemDurabilityEnabled then
+        return false
+    end
+
     if itemDurability(Item) and splitString(Item, "-")[2] and parseInt((86400 * itemDurability(Item) - parseInt(os.time() - splitString(Item, "-")[2])) / (86400 * itemDurability(Item)) * 100) <= 1 then
         return true
     end
@@ -239,6 +243,10 @@ function vRP.GenerateItem(Passport,Item,Amount,Notify,Slot)
 			end
 		elseif itemCharges(Item) then
 			Item = Item.."-"..itemCharges(Item)
+		elseif itemType(Item) == "Armamento" and Identity and Identity["serial"] then
+			Item = tostring(Item.."-"..os.time().."-"..Identity["serial"])
+		elseif itemMode(Item) == "Chest" then
+			Item = Item.."-"..os.time().."-"..(math.random(1000,5000) + Passport)
 		end
         
         if not Slot then

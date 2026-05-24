@@ -405,15 +405,21 @@ const Backpack = () => {
 
 			if (data["inventario"][slot] !== undefined){
 				var v = data["inventario"][slot];
-				var maxDurability = 86400 * v["days"];
-				var newDurability = (maxDurability - v["durability"]) / maxDurability;
-				var actualPercent = newDurability * 100;
+				var durabilityBar = "";
 
-				if (v["charges"] !== undefined)
-					actualPercent = v["charges"];
+				if (v["charges"] !== undefined || (v["days"] !== undefined && v["days"] > 1)) {
+					var maxDurability = 86400 * v["days"];
+					var newDurability = (maxDurability - v["durability"]) / maxDurability;
+					var actualPercent = newDurability * 100;
 
-				if (actualPercent <= 1)
-					actualPercent = 1;
+					if (v["charges"] !== undefined)
+						actualPercent = v["charges"];
+
+					if (actualPercent <= 1)
+						actualPercent = 1;
+
+					durabilityBar = `<div class="durability" style="width: ${actualPercent == 1 ? "100":actualPercent}%; background: ${actualPercent == 1 ? "#fc5858":colorPicker(actualPercent)};"></div>`;
+				}
 
 				const item = `<div class="item populated" title="" data-max="${v["max"]}" data-economy="${v["economy"]}" data-description="${v["desc"]}" style="background-image: url('nui://vrp/config/inventory/${v["index"]}.png'); background-position: center; background-repeat: no-repeat;" data-amount="${v["amount"]}" data-peso="${v["peso"]}" data-item-key="${v["key"]}" data-name-key="${v["name"]}" data-slot="${slot}" data-Name="${v["Name"]}" data-Blood="${v["Blood"]}" data-Premium="${v["Premium"]}" data-Premiumprata="${v["PremiumPrata"]}" data-Premiumouro="${v["PremiumOuro"]}" data-Vality="${v["Vality"]}" data-Rolepass="${v["Rolepass"]}" data-Gemstone="${v["Gemstone"]}" data-Suitcase="${v["Suitcase"]}" data-Vehkey="${v["Vehkey"]}" data-Passport="${v["Passport"]}">
 					<div class="top">
@@ -421,7 +427,7 @@ const Backpack = () => {
 						<div class="itemAmount">${formatarNumero(v["amount"])}x</div>
 					</div>
 
-					<div class="durability" style="width: ${actualPercent == 1 ? "100":actualPercent}%; background: ${actualPercent == 1 ? "#fc5858":colorPicker(actualPercent)};"></div>
+					${durabilityBar}
 					<div class="nameItem">${v["name"]}</div>
 				</div>`;
 
@@ -438,15 +444,21 @@ const Backpack = () => {
 
 			if (nameList2[x - 1] !== undefined){
 				var v = nameList2[x - 1];
-				var maxDurability = 86400 * v["days"];
-				var newDurability = (maxDurability - v["durability"]) / maxDurability;
-				var actualPercent = newDurability * 100;
+				var durabilityBar = "";
 
-				if (v["charges"] !== undefined)
-					actualPercent = v["charges"];
+				if (v["charges"] !== undefined || (v["days"] !== undefined && v["days"] > 1)) {
+					var maxDurability = 86400 * v["days"];
+					var newDurability = (maxDurability - v["durability"]) / maxDurability;
+					var actualPercent = newDurability * 100;
 
-				if (actualPercent <= 1)
-					actualPercent = 1;
+					if (v["charges"] !== undefined)
+						actualPercent = v["charges"];
+
+					if (actualPercent <= 1)
+						actualPercent = 1;
+
+					durabilityBar = `<div class="durability" style="width: ${actualPercent == 1 ? "100":actualPercent}%; background: ${actualPercent == 1 ? "#fc5858":colorPicker(actualPercent)};"></div>`;
+				}
 
 				const item = `<div class="item populated" style="background-image: url('nui://vrp/config/inventory/${v["index"]}.png'); background-position: center; background-repeat: no-repeat;" data-item-key="${v["key"]}" data-id="${v["id"]}" data-amount="${v["amount"]}" data-peso="${v["peso"]}" data-slot="${slot}">
 					<div class="top">
@@ -454,7 +466,7 @@ const Backpack = () => {
 						<div class="itemAmount">${formatarNumero(v["amount"])}x</div>
 					</div>
 
-					<div class="durability" style="width: ${actualPercent == 1 ? "100":actualPercent}%; background: ${actualPercent == 1 ? "#fc5858":colorPicker(actualPercent)};"></div>
+					${durabilityBar}
 					<div class="nameItem">${v["name"]}</div>
 				</div>`;
 

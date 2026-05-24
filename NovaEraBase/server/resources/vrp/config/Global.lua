@@ -74,6 +74,7 @@ MaxPropertysPremiumPlatina = 5                               -- Quantidade que u
 -----------------------------------------------------------------------------------------------------------------------------------------
 CleanDeathInventory = true											-- Limpar inventário ao morrer
 BackpackWeightDefaultNormal = 30          							-- Peso padrão do inventário
+ItemDurabilityEnabled = false										-- Itens não expiram (sem durabilidade/validade)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- WHITELIST
 -----------------------------------------------------------------------------------------------------------------------------------------

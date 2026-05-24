@@ -206,7 +206,7 @@ function SHK.buyProduct(offerid, amount)
 							if vRP.TakeItem(user_id,"dollars",fullprice, true) or vRP.PaymentBank(user_id,fullprice,true) then
 							-- if vRP.tryFullPayment(user_id, fullprice) then
 								local Split = split(idname, "-")
-								if #Split >= 2 then
+								if itemDurability(Split[1]) and #Split >= 2 then
 									local durability = parseInt(os.time() - 200000)
 									idname = Split[1].."-"..durability
 								end
@@ -315,7 +315,7 @@ function SHK.newOffer(itemkey, amount, price)
             end        
 
             local Split = split(itemname, "-")
-            if #Split >= 2 then
+            if itemDurability(Split[1]) and #Split >= 2 then
                 if parseInt(Split[2]) <= parseInt(os.time() - 200000) then
                     return "no_itemdurability"
                 end

@@ -4536,6 +4536,10 @@ end
 -- ITEMDURABILITY
 -----------------------------------------------------------------------------------------------------------------------------------------
 function itemDurability(Item)
+	if not ItemDurabilityEnabled then
+		return false
+	end
+
 	local Split = splitString(Item,"-")
 	local Item = Split[1]
 
