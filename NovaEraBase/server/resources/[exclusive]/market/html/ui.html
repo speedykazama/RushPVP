@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sweetalert2.css">
+    <link rel="stylesheet" href="css/sweetalert2-dark.css">
+</head>
+
+<body>
+    <main id="ui">
+        <div class="title">
+            <h1>Mercado</h1>
+            <small>Compre e venda produtos!</small>
+        </div>
+        <header>
+            <div class="search">
+                <i class="far fa-search"></i>  |
+                <input id="search" placeholder="Pesquisar">
+            </div>
+            <div class="filter">
+                <div class="item" id="btn_home">Inicio</div>
+                <select id="filter">
+                    <option class="item" data-category="all">Todos os itens <div class="arrow"><i class="far fa-arrow-right"></i></div>
+                    </option>
+                    <!-- <option class="item" data-category="item_food">Alimentos <div class="arrow"><i class="far fa-arrow-right"></i></div>
+                    </option> -->
+                    <!-- <option class="item" data-category="item_weapon">Armas <div class="arrow"><i class="far fa-arrow-right"></i></div></option> -->
+                    <!-- <option class="item" data-category="item_weapon-ammo">Munições <div class="arrow"><i class="far fa-arrow-right"></i></div></option> -->
+                    <!-- <option class="item" data-category="item_acessory">Acessórios <div class="arrow"><i class="far fa-arrow-right"></i></div>
+                    </option>
+                    <option class="item" data-category="item_drugs">Remédios <div class="arrow"><i class="far fa-arrow-right"></i></div>
+                    </option>
+                    <option class="item" data-category="item_tool">Ferramentas <div class="arrow"><i class="far fa-arrow-right"></i></div>
+                    </option>
+                    <option class="item" data-category="item_resource">Recursos <div class="arrow"><i class="far fa-arrow-right"></i></div>
+                    </option>
+                    <option class="item" data-category="item_mission">Farms <div class="arrow"><i class="far fa-arrow-right"></i></div>
+                    </option> -->
+
+                </select>
+            </div>
+        </header>
+
+        <section>
+            <div class="nui-shop">
+                <div class="offers">
+                    <button id="btn_new_offer">fazer oferta <div class="arrow"><i class="fal fa-plus"></i></div></button>
+                    <button id="btn_my_offers">minhas ofertas <div class="arrow"><i class="fas fa-user"></i></div></button>
+                    <button id="btn_my_solds">minhas vendas <div class="arrow"><i class="fas fa-user"></i></div></button>
+                </div>
+                <div class="content" id="category-list">
+
+                </div>
+                <div class="newOffer" style="display: none;">
+                    <div class="form-offer" id="form-offer">
+                        <!-- <label>item</label>
+                            <input placeholder="ak-47">
+                            <label>quantity</label>
+                            <input placeholder="0">
+                            <label>price</label>
+                            <input placeholder="0">
+                            <button>Criar</button> -->
+                    </div>
+                    <div class="inventory-offer" id="inventory-user">
+                        <!-- <div class="item"></div> -->
+
+                    </div>
+                </div>
+                <div class="content userOffer" id="offers-user" style="display: none;">
+
+                </div>
+                <div class="content players-offers" id="solds-user">
+
+                </div>
+            </div>
+            <div class="players-offers" id="offers-list" style="display: none;"></div>
+        </section>
+    </main>
+
+    <modal style="display:none">
+        <div class="modal-title">Quantidade<br><small>para comprar</small></div>
+        <div class="text">
+            <span>Tem certeza que sei la oq do sei que la</span>
+        </div>
+        <div class="buttons">
+            <button>confirmar</button>
+            <button>cancelar</button>
+        </div>
+    </modal>
+
+    <script src="js/plugins/jquery.js"></script>
+    <script src="js/plugins/jquery-ui.js"></script>
+    <script src="js/plugins/font.js"></script>
+    <script src="js/plugins/sweetalert2.all.min.js"></script>
+    <script src="js/Main.js" type="module"></script>
+</body>
+
+</html>

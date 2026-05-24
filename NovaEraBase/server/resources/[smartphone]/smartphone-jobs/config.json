@@ -1,0 +1,769 @@
+{
+  "locale": "pt-BR",
+  "currency": "BRL",
+  "uber": {
+    "pricing": {
+      "base": 8,
+      "per_km": 1237
+    },
+    "common_places": [
+      { "name": "Praça", "location": [156.9, -1012.25, 29.4] }
+    ],
+    "cancelable": 1
+  },
+  "food": {
+    "categories": [
+      { "id": 1, "name": "Restaurantes" }
+    ],
+    "stores": [
+      {
+        "id": 1,
+        "name": "Cat Café",
+        "icon": "nui://smartphone-jobs/web-side/static/media/catcafe.png",
+        "category_id": 1,
+        "price": 1,
+        "fee": 150,
+        "location": [-582.5,-1070.75,22.33],
+        "products": [
+          {
+            "id": 1,
+            "name": "Combo 1",
+            "description": "Combo 1.",
+            "price": 3000,
+            "section": "Combos",
+            "image": "nui://vrp/config/inventory/combo1.png",
+            "items": {
+              "combo1": 1
+            }
+          },
+          {
+            "id": 2,
+            "name": "Combo 2",
+            "description": "Combo 2.",
+            "price": 5000,
+            "section": "Combos",
+            "image": "nui://vrp/config/inventory/combo2.png",
+            "items": {
+              "combo2": 1
+            }
+          },
+          {
+            "id": 3,
+            "name": "Combo 3",
+            "description": "Combo 3.",
+            "price": 7000,
+            "section": "Combos",
+            "image": "nui://vrp/config/inventory/combo3.png",
+            "items": {
+              "combo3": 1
+            }
+          },
+          {
+            "id": 4,
+            "name": "Hamburger",
+            "description": "Hamburger.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/hamburger.png",
+            "items": {
+              "hamburger": 1
+            }
+          },
+          {
+            "id": 5,
+            "name": "Hambúrguer Artesanal",
+            "description": "Hambúrguer Artesanal.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/hamburger2.png",
+            "items": {
+              "hamburger2": 1
+            }
+          },
+          {
+            "id": 6,
+            "name": "X-Salada",
+            "description": "X-Salada.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/hamburger3.png",
+            "items": {
+              "hamburger3": 1
+            }
+          },
+          {
+            "id": 7,
+            "name": "X-Bacon",
+            "description": "X-Bacon.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/hamburger4.png",
+            "items": {
+              "hamburger4": 1
+            }
+          },
+          {
+            "id": 8,
+            "name": "X-Picanha",
+            "description": "X-Picanha.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/hamburger5.png",
+            "items": {
+              "hamburger5": 1
+            }
+          },
+          {
+            "id": 9,
+            "name": "Anéis de Cebola",
+            "description": "Anéis de Cebola.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/onionrings.png",
+            "items": {
+              "onionrings": 1
+            }
+          },
+          {
+            "id": 10,
+            "name": "Frango Frito",
+            "description": "Frango Frito.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/chickenfries.png",
+            "items": {
+              "chickenfries": 1
+            }
+          },
+          {
+            "id": 11,
+            "name": "Pizza de Muçarela",
+            "description": "Pizza de Muçarela.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/pizzamozzarella.png",
+            "items": {
+              "pizzamozzarella": 1
+            }
+          },
+          {
+            "id": 12,
+            "name": "Pizza de Banana",
+            "description": "Pizza de Banana.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/pizzabanana.png",
+            "items": {
+              "pizzabanana": 1
+            }
+          },
+          {
+            "id": 13,
+            "name": "Sanduiche",
+            "description": "Sanduiche.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/sandwich.png",
+            "items": {
+              "sandwich": 1
+            }
+          },
+          {
+            "id": 14,
+            "name": "Calzone",
+            "description": "Calzone.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/calzone.png",
+            "items": {
+              "calzone": 1
+            }
+          },
+          {
+            "id": 15,
+            "name": "Cookies",
+            "description": "Cookies.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/cookies.png",
+            "items": {
+              "cookies": 1
+            }
+          },
+          {
+            "id": 16,
+            "name": "Fritas com Bacon",
+            "description": "Fritas com Bacon.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/friesbacon.png",
+            "items": {
+              "friesbacon": 1
+            }
+          },
+          {
+            "id": 17,
+            "name": "Maça do Amor",
+            "description": "Maça do Amor.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/applelove.png",
+            "items": {
+              "applelove": 1
+            }
+          },
+          {
+            "id": 18,
+            "name": "Cupcake",
+            "description": "Cupcake.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/cupcake.png",
+            "items": {
+              "cupcake": 1
+            }
+          },
+          {
+            "id": 19,
+            "name": "Sushi",
+            "description": "Sushi.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/sushi.png",
+            "items": {
+              "sushi": 1
+            }
+          },
+          {
+            "id": 20,
+            "name": "Nigirizushi",
+            "description": "Nigirizushi.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/nigirizushi.png",
+            "items": {
+              "nigirizushi": 1
+            }
+          },
+          {
+            "id": 21,
+            "name": "Suco de Banana",
+            "description": "Suco de Banana.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/bananajuice.png",
+            "items": {
+              "bananajuice": 1
+            }
+          },
+          {
+            "id": 22,
+            "name": "Suco de Acerola",
+            "description": "Suco de Acerola.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/acerolajuice.png",
+            "items": {
+              "acerolajuice": 1
+            }
+          },
+          {
+            "id": 23,
+            "name": "Suco de Maracujá",
+            "description": "Suco de Maracujá.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/passionjuice.png",
+            "items": {
+              "passionjuice": 1
+            }
+          },
+          {
+            "id": 24,
+            "name": "Suco de Uva",
+            "description": "Suco de Uva.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/grapejuice.png",
+            "items": {
+              "grapejuice": 1
+            }
+          },
+          {
+            "id": 25,
+            "name": "Suco de Tangerina",
+            "description": "Suco de Tangerina.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/tangejuice.png",
+            "items": {
+              "tangejuice": 1
+            }
+          },
+          {
+            "id": 26,
+            "name": "Suco de Laranja",
+            "description": "Suco de Laranja.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/orangejuice.png",
+            "items": {
+              "orangejuice": 1
+            }
+          },
+          {
+            "id": 27,
+            "name": "Suco de Morango",
+            "description": "Suco de Morango.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/strawberryjuice.png",
+            "items": {
+              "strawberryjuice": 1
+            }
+          },
+          {
+            "id": 28,
+            "name": "Milk-shake de Paçoca",
+            "description": "Milk-shake de Paçoca.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/milkshakepeanut.png",
+            "items": {
+              "milkshakepeanut": 1
+            }
+          },
+          {
+            "id": 29,
+            "name": "Milk-shake",
+            "description": "Milk-shake.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/milkshake.png",
+            "items": {
+              "milkshake": 1
+            }
+          },
+          {
+            "id": 30,
+            "name": "Água",
+            "description": "Água.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/water.png",
+            "items": {
+              "water": 1
+            }
+          },
+          {
+            "id": 31,
+            "name": "Energético",
+            "description": "Energético.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/energetic.png",
+            "items": {
+              "energetic": 1
+            }
+          },
+          {
+            "id": 32,
+            "name": "Copo de Café",
+            "description": "Copo de Café.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/coffee.png",
+            "items": {
+              "coffee": 1
+            }
+          },
+          {
+            "id": 33,
+            "name": "Cappuccino",
+            "description": "Cappuccino.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/cappuccino.png",
+            "items": {
+              "cappuccino": 1
+            }
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Japanese",
+        "icon": "nui://smartphone-jobs/web-side/static/media/japanese.png",
+        "category_id": 1,
+        "price": 1,
+        "fee": 150,
+        "location": [-165.86,284.92,93.75],
+        "products": [
+          {
+            "id": 1,
+            "name": "Combo 1",
+            "description": "Combo 1.",
+            "price": 3000,
+            "section": "Combos",
+            "image": "nui://vrp/config/inventory/combo1.png",
+            "items": {
+              "combo1": 1
+            }
+          },
+          {
+            "id": 2,
+            "name": "Combo 2",
+            "description": "Combo 2.",
+            "price": 5000,
+            "section": "Combos",
+            "image": "nui://vrp/config/inventory/combo2.png",
+            "items": {
+              "combo2": 1
+            }
+          },
+          {
+            "id": 3,
+            "name": "Combo 3",
+            "description": "Combo 3.",
+            "price": 7000,
+            "section": "Combos",
+            "image": "nui://vrp/config/inventory/combo3.png",
+            "items": {
+              "combo3": 1
+            }
+          },
+          {
+            "id": 4,
+            "name": "Hamburger",
+            "description": "Hamburger.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/hamburger.png",
+            "items": {
+              "hamburger": 1
+            }
+          },
+          {
+            "id": 5,
+            "name": "Hambúrguer Artesanal",
+            "description": "Hambúrguer Artesanal.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/hamburger2.png",
+            "items": {
+              "hamburger2": 1
+            }
+          },
+          {
+            "id": 6,
+            "name": "X-Salada",
+            "description": "X-Salada.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/hamburger3.png",
+            "items": {
+              "hamburger3": 1
+            }
+          },
+          {
+            "id": 7,
+            "name": "X-Bacon",
+            "description": "X-Bacon.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/hamburger4.png",
+            "items": {
+              "hamburger4": 1
+            }
+          },
+          {
+            "id": 8,
+            "name": "X-Picanha",
+            "description": "X-Picanha.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/hamburger5.png",
+            "items": {
+              "hamburger5": 1
+            }
+          },
+          {
+            "id": 9,
+            "name": "Anéis de Cebola",
+            "description": "Anéis de Cebola.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/onionrings.png",
+            "items": {
+              "onionrings": 1
+            }
+          },
+          {
+            "id": 10,
+            "name": "Frango Frito",
+            "description": "Frango Frito.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/chickenfries.png",
+            "items": {
+              "chickenfries": 1
+            }
+          },
+          {
+            "id": 11,
+            "name": "Pizza de Muçarela",
+            "description": "Pizza de Muçarela.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/pizzamozzarella.png",
+            "items": {
+              "pizzamozzarella": 1
+            }
+          },
+          {
+            "id": 12,
+            "name": "Pizza de Banana",
+            "description": "Pizza de Banana.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/pizzabanana.png",
+            "items": {
+              "pizzabanana": 1
+            }
+          },
+          {
+            "id": 13,
+            "name": "Sanduiche",
+            "description": "Sanduiche.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/sandwich.png",
+            "items": {
+              "sandwich": 1
+            }
+          },
+          {
+            "id": 14,
+            "name": "Calzone",
+            "description": "Calzone.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/calzone.png",
+            "items": {
+              "calzone": 1
+            }
+          },
+          {
+            "id": 15,
+            "name": "Cookies",
+            "description": "Cookies.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/cookies.png",
+            "items": {
+              "cookies": 1
+            }
+          },
+          {
+            "id": 16,
+            "name": "Fritas com Bacon",
+            "description": "Fritas com Bacon.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/friesbacon.png",
+            "items": {
+              "friesbacon": 1
+            }
+          },
+          {
+            "id": 17,
+            "name": "Maça do Amor",
+            "description": "Maça do Amor.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/applelove.png",
+            "items": {
+              "applelove": 1
+            }
+          },
+          {
+            "id": 18,
+            "name": "Cupcake",
+            "description": "Cupcake.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/cupcake.png",
+            "items": {
+              "cupcake": 1
+            }
+          },
+          {
+            "id": 19,
+            "name": "Sushi",
+            "description": "Sushi.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/sushi.png",
+            "items": {
+              "sushi": 1
+            }
+          },
+          {
+            "id": 20,
+            "name": "Nigirizushi",
+            "description": "Nigirizushi.",
+            "price": 600,
+            "section": "Comidas",
+            "image": "nui://vrp/config/inventory/nigirizushi.png",
+            "items": {
+              "nigirizushi": 1
+            }
+          },
+          {
+            "id": 21,
+            "name": "Suco de Banana",
+            "description": "Suco de Banana.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/bananajuice.png",
+            "items": {
+              "bananajuice": 1
+            }
+          },
+          {
+            "id": 22,
+            "name": "Suco de Acerola",
+            "description": "Suco de Acerola.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/acerolajuice.png",
+            "items": {
+              "acerolajuice": 1
+            }
+          },
+          {
+            "id": 23,
+            "name": "Suco de Maracujá",
+            "description": "Suco de Maracujá.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/passionjuice.png",
+            "items": {
+              "passionjuice": 1
+            }
+          },
+          {
+            "id": 24,
+            "name": "Suco de Uva",
+            "description": "Suco de Uva.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/grapejuice.png",
+            "items": {
+              "grapejuice": 1
+            }
+          },
+          {
+            "id": 25,
+            "name": "Suco de Tangerina",
+            "description": "Suco de Tangerina.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/tangejuice.png",
+            "items": {
+              "tangejuice": 1
+            }
+          },
+          {
+            "id": 26,
+            "name": "Suco de Laranja",
+            "description": "Suco de Laranja.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/orangejuice.png",
+            "items": {
+              "orangejuice": 1
+            }
+          },
+          {
+            "id": 27,
+            "name": "Suco de Morango",
+            "description": "Suco de Morango.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/strawberryjuice.png",
+            "items": {
+              "strawberryjuice": 1
+            }
+          },
+          {
+            "id": 28,
+            "name": "Milk-shake de Paçoca",
+            "description": "Milk-shake de Paçoca.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/milkshakepeanut.png",
+            "items": {
+              "milkshakepeanut": 1
+            }
+          },
+          {
+            "id": 29,
+            "name": "Milk-shake",
+            "description": "Milk-shake.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/milkshake.png",
+            "items": {
+              "milkshake": 1
+            }
+          },
+          {
+            "id": 30,
+            "name": "Água",
+            "description": "Água.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/water.png",
+            "items": {
+              "water": 1
+            }
+          },
+          {
+            "id": 31,
+            "name": "Energético",
+            "description": "Energético.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/energetic.png",
+            "items": {
+              "energetic": 1
+            }
+          },
+          {
+            "id": 32,
+            "name": "Copo de Café",
+            "description": "Copo de Café.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/coffee.png",
+            "items": {
+              "coffee": 1
+            }
+          },
+          {
+            "id": 33,
+            "name": "Cappuccino",
+            "description": "Cappuccino.",
+            "price": 600,
+            "section": "Bebidas",
+            "image": "nui://vrp/config/inventory/cappuccino.png",
+            "items": {
+              "cappuccino": 1
+            }
+          }
+        ] 
+      }
+    ]
+  }
+}

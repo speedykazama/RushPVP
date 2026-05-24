@@ -1,0 +1,563 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;    
+    background-color: transparent;
+}
+ 
+* {
+    outline: none;
+    user-select: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+ 
+.title {
+    position: absolute;
+    top: -10%;
+    color: #fff;
+    line-height: 5px;
+    margin-bottom: 10px;
+    transform: translate(0,-50%);
+    text-transform: uppercase;
+}
+
+.title h1 {
+    font-size: 50px;
+}
+
+.title small {
+    opacity: .5;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+main {
+    position: absolute;
+    top: 40%;
+    left: 30px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    transform: translate(0%,-50%);
+}
+
+main header {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+}
+
+main header .search {
+    display: flex;
+    color: #fff;
+    width: 258px;
+    padding: 10px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.600);
+}
+
+main header input {
+    border: 0;
+    width: 300px;
+    color: #fff;
+    font-size: 10px;
+    margin-left: 4px;
+    border-radius: 3px;
+    
+    background-color: transparent;
+}
+
+main header input::placeholder {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+main header .filter {
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+}
+
+main header .filter select {
+    border: 0;
+    color: #ccc;
+    display: flex;
+    width: 190px;
+    height: 30px;
+    font-size: 10px;
+    padding: 5px 10px;
+    margin-right: 8px;
+    letter-spacing: 1px;
+    align-items: center;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.600);
+}
+
+main header .filter select option {
+    color: #fff;
+    font-size:20px;
+    margin-top: 5px;
+    background-color: rgba(0, 0, 0, 0.829);
+}
+
+main section .offers {
+    position: absolute;
+    top: -22px;
+    left: 269px;
+    display: flex;
+}
+
+main section .offers button {
+    border: 0;
+    height: 30px;
+    color: #ccc;
+    display: flex;
+    font-size: 10px;
+    padding: 5px 10px;
+    white-space: nowrap;
+    margin-right: 8px;
+    letter-spacing: 1px;
+    align-items: center;
+    transition: all .5s;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.600);
+}
+
+main section .offers button:hover {
+    color: #fff;
+    background-color: #ff84004d;
+    border: 1px solid #ff8400;
+}
+
+main section .offers button .arrow {
+    width: 20px;
+    height: 20px;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    padding: 0 10px;
+    margin-left: 10px;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.700);
+}
+
+main header .filter .item {
+    height: 30px;
+    color: #ccc;
+    display: flex;
+    font-size: 10px;
+    padding: 5px 10px;
+    margin-right: 8px;
+    letter-spacing: 1px;
+    align-items: center;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.600);
+}
+
+main header .filter .item .arrow {
+    width: 20px;
+    height: 20px;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    padding: 0 10px;
+    margin-left: 10px;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.700);
+}
+
+main section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+main .content,.newOffer {
+    position: relative;
+    width: 750px;
+    display: flex;
+    overflow: auto;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    max-height: 500px;
+}
+
+main .nui-shop .inventory-offer {
+    width: 520px;
+    max-height: 370px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    margin-left: 10px;
+}
+
+main .nui-shop .inventory-offer .item {
+    display: flex;
+    width: 123px;
+    height: 123px;
+    color: #bbb;
+    padding: 20px 0;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    transition: all .5s;
+    align-items: center;
+    border-radius: .2rem;
+    flex-direction: column;
+    justify-content:space-between;
+    background-color: rgba(0, 0, 0, 0.600);
+    font-size: 0.6em;
+}
+
+main .nui-shop .inventory-offer .item:last-child {
+    margin: 0;
+}
+
+main .nui-shop .inventory-offer .item:hover {
+    background-color: #ff84004d;
+    border: 1px solid #ff8400;
+}
+
+main .nui-shop .inventory-offer .selected-user {
+    background-color: #ff84004d;
+    border: 1px solid #ff8400;
+}
+
+main .nui-shop .form-offer {
+    width: 200px;
+    height: 370px;
+    color: #fff;
+    display: flex;
+    padding: 20px 0px;
+    font-weight: bold;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    align-items: center;
+    flex-direction: column;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.600);
+}
+
+main .nui-shop .form-offer p{
+    color: #ff8400;
+    font-size: 0.5em;
+    text-align: center;
+}
+main .nui-shop .form-offer input {
+    border: 0;
+    height: 30px;
+    outline: none;
+    margin: 10px 0px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.600);
+    color:#ccc;
+}
+
+main .nui-shop .form-offer button {
+    border: 0;
+    width: 50%;
+    color: #fff;
+    padding: 10px;
+    outline: none;
+    transition: all .3s;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.600);
+}
+
+main .nui-shop .form-offer button:hover {
+    background-color: #ff84004d;
+    border: 1px solid #ff8400;
+}
+
+main .players-offers {
+    position: relative;
+    width: 34vw;
+    height: 93%;
+    padding: 5px;
+    /* margin-top: 15px; */
+    /* margin-right: 20px; */
+    background-color: rgba(0, 0, 0, 0.600);
+   
+}
+
+#offers-list {
+    margin-top: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+table {
+    text-align: center;
+}
+
+.tableMax {
+    width: 100%;
+    overflow: auto;
+    position: relative;
+    top: -20px;
+    max-height: 400px;
+}
+
+main .players-offers h1 {
+    position: relative;
+    top: -50px;
+    margin: 0;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+main .players-offers span {
+    margin-right: 20px;
+}
+
+main .players-offers table{
+    width:100% !important;
+}
+
+main .players-offers table th {
+    background-color: #ff84004d;
+    color: #ccc;
+    height: 30px;
+    text-align: left;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+main .players-offers table td {
+    padding: 6px;
+    margin: 4px 0;
+    color: #ccc;
+    font-size: 0.7em;
+    text-align: center;
+}
+
+main .players-offers table tr:hover{
+    background-color: #ff84004d;
+    border: 1px solid #ff8400;
+}
+
+main .players-offers .player-item {
+    position: relative;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    font-size: 10px;
+    margin-top: 5px;
+    padding: 10px 20px;
+    align-items: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.700);
+}
+
+main .content .item {
+    display: flex;
+    width: 180px;
+    height: 180px;
+    color: #bbb;
+    padding: 20px 0;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    transition: all .5s;
+    align-items: center;
+    border-radius: .2rem;
+    flex-direction: column;
+    justify-content:space-between;
+    background-color: rgba(0, 0, 0, 0.600);
+}
+
+main .content .item:hover {
+    border: 1px solid #ff8400;
+    background-color: #ff84004d;
+}
+
+.btn-alter {
+    width: 80%;
+    height: 25px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+main .content .item span {
+    font-size: 10px;
+    text-align: center;
+}
+
+main .content .item span small {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+main .content .item button {
+    border: 0;
+    height: 30px;
+    color: #fff;
+    display: flex;
+    font-size: 12px;
+    margin-top: 10px;
+    align-items: center;
+    padding: 0 0 0 10px;
+    text-transform: uppercase;
+    background-color: #ff84004d;
+    border: 1px solid #ff8400;
+    justify-content: space-between;
+}
+
+#btn_home:hover {
+    background-color: #ff84004d;
+    border: 1px solid #ff8400;
+}
+
+main .content .item button .arrow {
+    width:30px;
+    height: 100%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    margin-left: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.700);
+}
+
+main .content .item img {
+    max-width: 80%;
+    margin-bottom: 10px;
+}
+
+modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 220px;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, 0.800);
+}
+
+modal .buttons {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    position: relative;
+}
+
+modal .modal-title {
+    color: #fff;
+    padding: 5px;
+    width: 100%;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.349);
+}
+
+modal .text {
+    width: 100%;
+    display: flex;
+    opacity: .7;
+    color: #fff;
+    font-size: 12px;
+    padding: 0 20px;
+    margin-top: 20px;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+modal .input input {
+    border: 0;
+    width: 50px;
+    outline: none;
+    color: #fff;
+    text-align: center;
+    background-color: transparent;
+}
+
+modal .crement {
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(204, 204, 204, 0.349);
+}
+
+modal button {
+    border: 0;
+    width: 50%;
+    padding: 5px;
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 1px;
+    transition: all .5s;
+    text-transform: uppercase;
+    border: 1px solid #ff8400;
+    background-color: #ff84004d;
+}
+
+modal button:hover {
+    background-color: #ff84004d;
+    border: 1px solid #ff8400;
+}
+
+modal button:active {
+    transform: scale(1.1);
+    background-color: #ff84004d;
+}
+
+modal button:first-child {
+    margin-right: 4px;
+}
+
+modal small {
+    font-size: 8px;
+    font-weight: 400;
+    text-transform: none;
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    background: #ff8400; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff8400; 
+}

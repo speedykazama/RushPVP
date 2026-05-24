@@ -1,0 +1,1333 @@
+@import"https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap";
+
+*,
+:before,
+:after {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: currentColor
+}
+
+:before,
+:after {
+    --tw-content: ""
+}
+
+html {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+    font-feature-settings: normal;
+    font-variation-settings: normal
+}
+
+body {
+    margin: 0;
+    line-height: inherit
+}
+
+hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px
+}
+
+abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit
+}
+
+b,
+strong {
+    font-weight: bolder
+}
+
+code,
+kbd,
+samp,
+pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    font-size: 1em
+}
+
+small {
+    font-size: 80%
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sub {
+    bottom: -.25em
+}
+
+sup {
+    top: -.5em
+}
+
+table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    font-size: 100%;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0
+}
+
+button,
+select {
+    text-transform: none
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+    -webkit-appearance: button;
+    background-color: transparent;
+    background-image: none
+}
+
+:-moz-focusring {
+    outline: auto
+}
+
+:-moz-ui-invalid {
+    box-shadow: none
+}
+
+progress {
+    vertical-align: baseline
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+    height: auto
+}
+
+[type=search] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px
+}
+
+::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit
+}
+
+summary {
+    display: list-item
+}
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+    margin: 0
+}
+
+fieldset {
+    margin: 0;
+    padding: 0
+}
+
+legend {
+    padding: 0
+}
+
+ol,
+ul,
+menu {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+dialog {
+    padding: 0
+}
+
+textarea {
+    resize: vertical
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    opacity: 1;
+    color: #9ca3af
+}
+
+input::placeholder,
+textarea::placeholder {
+    opacity: 1;
+    color: #9ca3af
+}
+
+button,
+[role=button] {
+    cursor: pointer
+}
+
+:disabled {
+    cursor: default
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+    display: block;
+    vertical-align: middle
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto
+}
+
+[hidden] {
+    display: none
+}
+
+*,
+:before,
+:after {
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x: ;
+    --tw-pan-y: ;
+    --tw-pinch-zoom: ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-gradient-from-position: ;
+    --tw-gradient-via-position: ;
+    --tw-gradient-to-position: ;
+    --tw-ordinal: ;
+    --tw-slashed-zero: ;
+    --tw-numeric-figure: ;
+    --tw-numeric-spacing: ;
+    --tw-numeric-fraction: ;
+    --tw-ring-inset: ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgb(59 130 246 / .5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur: ;
+    --tw-brightness: ;
+    --tw-contrast: ;
+    --tw-grayscale: ;
+    --tw-hue-rotate: ;
+    --tw-invert: ;
+    --tw-saturate: ;
+    --tw-sepia: ;
+    --tw-drop-shadow: ;
+    --tw-backdrop-blur: ;
+    --tw-backdrop-brightness: ;
+    --tw-backdrop-contrast: ;
+    --tw-backdrop-grayscale: ;
+    --tw-backdrop-hue-rotate: ;
+    --tw-backdrop-invert: ;
+    --tw-backdrop-opacity: ;
+    --tw-backdrop-saturate: ;
+    --tw-backdrop-sepia:
+}
+
+::backdrop {
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x: ;
+    --tw-pan-y: ;
+    --tw-pinch-zoom: ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-gradient-from-position: ;
+    --tw-gradient-via-position: ;
+    --tw-gradient-to-position: ;
+    --tw-ordinal: ;
+    --tw-slashed-zero: ;
+    --tw-numeric-figure: ;
+    --tw-numeric-spacing: ;
+    --tw-numeric-fraction: ;
+    --tw-ring-inset: ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgb(59 130 246 / .5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur: ;
+    --tw-brightness: ;
+    --tw-contrast: ;
+    --tw-grayscale: ;
+    --tw-hue-rotate: ;
+    --tw-invert: ;
+    --tw-saturate: ;
+    --tw-sepia: ;
+    --tw-drop-shadow: ;
+    --tw-backdrop-blur: ;
+    --tw-backdrop-brightness: ;
+    --tw-backdrop-contrast: ;
+    --tw-backdrop-grayscale: ;
+    --tw-backdrop-hue-rotate: ;
+    --tw-backdrop-invert: ;
+    --tw-backdrop-opacity: ;
+    --tw-backdrop-saturate: ;
+    --tw-backdrop-sepia:
+}
+
+.absolute {
+    position: absolute
+}
+
+.relative {
+    position: relative
+}
+
+.left-1\/2 {
+    left: 50%
+}
+
+.left-5 {
+    left: 1.25rem
+}
+
+.left-\[2\.6rem\] {
+    left: 2.6rem
+}
+
+.top-1\/2 {
+    top: 50%
+}
+
+.top-\[\.4rem\] {
+    top: .4rem
+}
+
+.mb-1 {
+    margin-bottom: .25rem
+}
+
+.mb-4 {
+    margin-bottom: 1rem
+}
+
+.ml-2 {
+    margin-left: .5rem
+}
+
+.flex {
+    display: flex
+}
+
+.grid {
+    display: grid
+}
+
+.h-1 {
+    height: .25rem
+}
+
+.h-12 {
+    height: 3rem
+}
+
+.h-6 {
+    height: 1.5rem
+}
+
+.h-\[1\.375rem\] {
+    height: 1.375rem
+}
+
+.h-\[1\.5rem\] {
+    height: 1.5rem
+}
+
+.h-\[10rem\] {
+    height: 10rem
+}
+
+.h-\[2\.1875rem\] {
+    height: 2.1875rem
+}
+
+.h-\[2\.188rem\] {
+    height: 2.188rem
+}
+
+.h-\[2\.625rem\] {
+    height: 2.625rem
+}
+
+.h-\[22rem\] {
+    height: 22rem
+}
+
+.h-\[2rem\] {
+    height: 2rem
+}
+
+.h-\[37\.375rem\] {
+    height: 37.375rem
+}
+
+.h-\[7\.188rem\] {
+    height: 7.188rem
+}
+
+.h-\[9\.9375rem\] {
+    height: 9.9375rem
+}
+
+.h-auto {
+    height: auto
+}
+
+.h-px {
+    height: 1px
+}
+
+.w-1 {
+    width: .25rem
+}
+
+.w-14 {
+    width: 3.5rem
+}
+
+.w-\[1\.375rem\] {
+    width: 1.375rem
+}
+
+.w-\[10\.875rem\] {
+    width: 10.875rem
+}
+
+.w-\[14\.8125rem\] {
+    width: 14.8125rem
+}
+
+.w-\[15\.6875rem\] {
+    width: 15.6875rem
+}
+
+.w-\[15\.75rem\] {
+    width: 15.75rem
+}
+
+.w-\[16\.6875rem\] {
+    width: 16.6875rem
+}
+
+.w-\[16\.75rem\] {
+    width: 16.75rem
+}
+
+.w-\[16\.8125rem\] {
+    width: 16.8125rem
+}
+
+.w-\[17\.5rem\] {
+    width: 17.5rem
+}
+
+.w-\[19\.5625rem\] {
+    width: 19.5625rem
+}
+
+.w-\[2\.875rem\] {
+    width: 2.875rem
+}
+
+.w-\[21\.625rem\] {
+    width: 21.625rem
+}
+
+.w-\[25\%\] {
+    width: 25%
+}
+
+.w-\[42\.125rem\] {
+    width: 42.125rem
+}
+
+.w-\[60\.625rem\] {
+    width: 60.625rem
+}
+
+.w-\[62\.188rem\] {
+    width: 62.188rem
+}
+
+.w-\[64\.375rem\] {
+    width: 64.375rem
+}
+
+.w-full {
+    width: 100%
+}
+
+.flex-none {
+    flex: none
+}
+
+.-translate-x-1\/2 {
+    --tw-translate-x: -50%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+
+.transform {
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+
+.animate-\[fadeIn_1s\] {
+    animation: fadeIn 1s
+}
+
+.animate-\[scaleIn_500ms\] {
+    animation: scaleIn .5s
+}
+
+.animate-\[slideIn_1s\] {
+    animation: slideIn 1s
+}
+
+@keyframes pulse {
+    50% {
+        opacity: .5
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(.4, 0, .6, 1) infinite
+}
+
+.flex-col {
+    flex-direction: column
+}
+
+.place-items-center {
+    place-items: center
+}
+
+.items-center {
+    align-items: center
+}
+
+.justify-end {
+    justify-content: flex-end
+}
+
+.justify-center {
+    justify-content: center
+}
+
+.justify-between {
+    justify-content: space-between
+}
+
+.gap-2 {
+    gap: .5rem
+}
+
+.gap-2\.5 {
+    gap: .625rem
+}
+
+.gap-3 {
+    gap: .75rem
+}
+
+.gap-4 {
+    gap: 1rem
+}
+
+.gap-\[0\.188rem\] {
+    gap: .188rem
+}
+
+.gap-\[0\.375rem\] {
+    gap: .375rem
+}
+
+.gap-\[1\.25rem\] {
+    gap: 1.25rem
+}
+
+.overflow-y-auto {
+    overflow-y: auto
+}
+
+.rounded {
+    border-radius: .25rem
+}
+
+.rounded-\[0\.188rem\] {
+    border-radius: .188rem
+}
+
+.rounded-\[0\.313rem\] {
+    border-radius: .313rem
+}
+
+.rounded-full {
+    border-radius: 9999px
+}
+
+.rounded-lg {
+    border-radius: .5rem
+}
+
+.rounded-sm {
+    border-radius: .125rem
+}
+
+.border {
+    border-width: 1px
+}
+
+.border-white {
+    --tw-border-opacity: 1;
+    border-color: rgb(255 255 255 / var(--tw-border-opacity))
+}
+
+.border-opacity-\[0\.15\] {
+    --tw-border-opacity: .15
+}
+
+.bg-\[\#131313bb\] {
+    background-color: #3498eb
+}
+
+.bg-demote {
+    --tw-bg-opacity: 1;
+    background-color: rgb(235 219 75 / var(--tw-bg-opacity))
+}
+
+.bg-dismiss {
+    --tw-bg-opacity: 1;
+    background-color: rgb(212 56 56 / var(--tw-bg-opacity))
+}
+
+.bg-promote {
+    --tw-bg-opacity: 1;
+    background-color: rgb(162 217 118 / var(--tw-bg-opacity))
+}
+
+.bg-white {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+}
+
+.bg-white\/10 {
+    background-color: #ffffff1a
+}
+
+.bg-white\/20 {
+    background-color: #fff3
+}
+
+.bg-white\/5 {
+    background-color: #ffffff0d
+}
+
+.bg-opacity-10 {
+    --tw-bg-opacity: .1
+}
+
+.bg-opacity-20 {
+    --tw-bg-opacity: .2
+}
+
+.bg-opacity-5 {
+    --tw-bg-opacity: .05
+}
+
+.bg-none {
+    background-image: none
+}
+
+.px-2 {
+    padding-left: .5rem;
+    padding-right: .5rem
+}
+
+.px-2\.5 {
+    padding-left: .625rem;
+    padding-right: .625rem
+}
+
+.px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem
+}
+
+.px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem
+}
+
+.px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem
+}
+
+.px-\[1rem\] {
+    padding-left: 1rem;
+    padding-right: 1rem
+}
+
+.pl-\[0\.813rem\] {
+    padding-left: .813rem
+}
+
+.pl-\[1\.875rem\] {
+    padding-left: 1.875rem
+}
+
+.pt-\[1\.875rem\] {
+    padding-top: 1.875rem
+}
+
+.text-center {
+    text-align: center
+}
+
+.text-right {
+    text-align: right
+}
+
+.text-\[\.625rem\],
+.text-\[0\.625rem\] {
+    font-size: .625rem
+}
+
+.text-\[0\.75rem\] {
+    font-size: .75rem
+}
+
+.text-\[1\.125rem\] {
+    font-size: 1.125rem
+}
+
+.text-\[1\.25rem\] {
+    font-size: 1.25rem
+}
+
+.text-\[1rem\] {
+    font-size: 1rem
+}
+
+.text-\[2rem\] {
+    font-size: 2rem
+}
+
+.text-sm {
+    font-size: .875rem;
+    line-height: 1.25rem
+}
+
+.text-xs {
+    font-size: .75rem;
+    line-height: 1rem
+}
+
+.font-bold {
+    font-weight: 700
+}
+
+.font-extrabold {
+    font-weight: 800
+}
+
+.font-medium {
+    font-weight: 500
+}
+
+.font-semibold {
+    font-weight: 600
+}
+
+.uppercase {
+    text-transform: uppercase
+}
+
+.leading-\[1\] {
+    line-height: 1
+}
+
+.text-white {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+
+.text-on {
+    --tw-text-opacity: 1;
+    color: rgb(0 249 181 / var(--tw-text-opacity))
+}
+
+.text-white\/50 {
+    color: #ffffff80
+}
+
+.text-white\/60 {
+    color: #fff9
+}
+
+.text-opacity-60 {
+    --tw-text-opacity: .6
+}
+
+.text-opacity-75 {
+    --tw-text-opacity: .75
+}
+
+.text-opacity-90 {
+    --tw-text-opacity: .9
+}
+
+.\!opacity-100 {
+    opacity: 1 !important
+}
+
+.opacity-50 {
+    opacity: .5
+}
+
+.filter {
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    box-sizing: border-box;
+    border: none;
+    font-family: Inter, sans-serif;
+    transition: all ease .25s
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none
+}
+
+::-webkit-scrollbar {
+    width: .313rem;
+    border-radius: .125rem;
+    background: rgba(255, 255, 255, .03)
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: .125rem;
+    background: rgba(255, 255, 255, .08)
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        opacity: 0;
+        scale: .7
+    }
+
+    to {
+        opacity: 1;
+        scale: 1
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@media (max-width: 1920px) {
+    body {
+        zoom: 1
+    }
+}
+
+@media (max-width: 1600px) {
+    body {
+        zoom: .97
+    }
+}
+
+@media (max-width: 1400px) {
+    body {
+        zoom: .96
+    }
+}
+
+@media (max-width: 1300px) {
+    body {
+        zoom: .92
+    }
+}
+
+@media (max-width: 1280px) {
+    body {
+        zoom: .9
+    }
+}
+
+@media (max-width: 1100px) {
+    body {
+        zoom: .78
+    }
+}
+
+@media (max-width: 800px) {
+    body {
+        zoom: .65
+    }
+}
+
+.placeholder\:text-white\/50::-moz-placeholder {
+    color: #ffffff80
+}
+
+.placeholder\:text-white\/50::placeholder {
+    color: #ffffff80
+}
+
+.hover\:bg-opacity-\[0\.18\]:hover {
+    --tw-bg-opacity: .18
+}
+
+.hover\:opacity-60:hover {
+    opacity: .6
+}
+
+.focus\:ring-\[0\.063rem\]:focus {
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(.063rem + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
+}
+
+.focus\:ring-\[\#ffffff38\]:focus {
+    --tw-ring-color: #ffffff38
+}
+
+/* ==========================================================================
+   TEMA: RED PROTOCOL (Desmanche/Ilegal)
+   DESIGN: Cyberpunk Dark, Neon Glow, Glassmorphism
+   ========================================================================== */
+
+/* 1. IMPORTAÇÃO DE FONTE FUTURISTA */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap');
+
+/* 2. VARIÁVEIS DO TEMA */
+:root {
+    --primary-red: #ff1a1a;       /* Vermelho Sangue Neon */
+    --dark-bg: #050505;           /* Preto Quase Absoluto */
+    --panel-bg: rgba(12, 12, 12, 0.95);
+    --glass-border: rgba(255, 26, 26, 0.4);
+    --hover-bg: rgba(255, 26, 26, 0.15);
+}
+
+/* 3. RESET & BASE */
+html, body {
+    background-color: transparent !important;
+    font-family: 'Rajdhani', sans-serif !important;
+    letter-spacing: 0.5px;
+    overflow: hidden; /* Remove barras de rolagem da janela */
+}
+
+/* ==========================================================================
+   PAINEL PRINCIPAL (CONTAINER)
+   ========================================================================== */
+/* Substitui a classe .bg-[#131313bb] do React */
+.bg-\[\#131313bb\] {
+    background: radial-gradient(circle at center, #1a0505 0%, #000000 120%) !important;
+    border: 1px solid var(--glass-border) !important;
+    /* Sombra tipo "LED" no fundo */
+    box-shadow: 
+        0 0 30px rgba(255, 26, 26, 0.15), 
+        inset 0 0 100px rgba(0, 0, 0, 0.9) !important;
+    border-radius: 4px !important; /* Cantos mais retos para visual agressivo */
+    backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden !important;
+}
+
+/* Efeito de Scanline (Linha passando no fundo) */
+.bg-\[\#131313bb\]::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.3) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.3;
+}
+
+/* ==========================================================================
+   CABEÇALHO & TIPOGRAFIA
+   ========================================================================== */
+/* Título PAINEL */
+h1.text-white {
+    font-family: 'Rajdhani', sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 1.5rem !important;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px var(--primary-red);
+    letter-spacing: 2px;
+}
+
+/* Nome da Facção (ex: CHERNOBYL) */
+h2.text-white, h2.uppercase {
+    color: var(--primary-red) !important;
+    opacity: 1 !important;
+    font-weight: 700 !important;
+    text-shadow: 0 0 5px rgba(255, 26, 26, 0.5);
+}
+
+/* Barra Separadora */
+#bar, .h-px {
+    background: linear-gradient(90deg, transparent, var(--primary-red), transparent) !important;
+    height: 1px !important;
+    opacity: 1 !important;
+    box-shadow: 0 0 10px var(--primary-red);
+}
+
+/* ==========================================================================
+   BOTÕES DE NAVEGAÇÃO (INÍCIO / BANCO)
+   ========================================================================== */
+button.bg-white\/20 {
+    background: rgba(0, 0, 0, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff !important;
+    font-family: 'Rajdhani', sans-serif !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    border-radius: 2px !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Clip-path para deixar o botão com cantos cortados (estilo Cyberpunk) */
+    clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%);
+}
+
+/* Estado Ativo ou Hover */
+button.bg-white\/20:hover, button.\!opacity-100 {
+    background: var(--primary-red) !important;
+    color: #000 !important;
+    border-color: var(--primary-red) !important;
+    box-shadow: 0 0 20px var(--primary-red);
+    opacity: 1 !important;
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   INPUTS & PESQUISA
+   ========================================================================== */
+input {
+    background: rgba(0, 0, 0, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    font-family: 'Rajdhani', sans-serif !important;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+input:focus {
+    border-color: var(--primary-red) !important;
+    background: rgba(20, 0, 0, 0.6) !important;
+    box-shadow: 0 0 15px rgba(255, 26, 26, 0.3);
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Container do Input de Pesquisa */
+.bg-white\/10 {
+    background-color: rgba(0,0,0,0.3) !important;
+}
+
+/* ==========================================================================
+   LISTA DE MEMBROS
+   ========================================================================== */
+/* Header da Tabela (Nome, Cargo, etc) */
+.bg-white.bg-opacity-5 {
+    background: linear-gradient(90deg, rgba(255,26,26,0.1) 0%, transparent 100%) !important;
+    border-left: 3px solid var(--primary-red);
+    border-radius: 2px !important;
+}
+
+/* Linhas dos Membros */
+.bg-white.bg-opacity-10 {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
+}
+
+.bg-white.bg-opacity-10:hover {
+    background: var(--hover-bg) !important;
+    border-left: 4px solid var(--primary-red);
+    transform: translateX(5px);
+    box-shadow: -10px 0 20px rgba(0,0,0,0.5);
+}
+
+/* Texto das Linhas */
+.text-white.text-opacity-90 {
+    font-size: 0.9rem !important;
+    letter-spacing: 0.5px;
+}
+
+/* Bolinha de Status (Online/Offline) */
+.animate-pulse {
+    box-shadow: 0 0 8px currentColor;
+}
+.bg-promote { background-color: #00ff41 !important; box-shadow: 0 0 10px #00ff41; } /* Verde Hacker */
+.bg-dismiss { background-color: #555 !important; } /* Cinza para Offline */
+
+/* ==========================================================================
+   AÇÕES (Promover, Demitir, Convidar)
+   ========================================================================== */
+/* Ícones SVG dentro dos botões de ação */
+button svg path {
+    stroke-width: 2 !important;
+}
+
+/* Hover nos botões de ação */
+.bg-promote.bg-opacity-20:hover { background-color: #00ff41 !important; box-shadow: 0 0 15px #00ff41; }
+.bg-demote.bg-opacity-20:hover { background-color: #ffe600 !important; box-shadow: 0 0 15px #ffe600; }
+.bg-dismiss.bg-opacity-20:hover { background-color: #ff1a1a !important; box-shadow: 0 0 15px #ff1a1a; }
+
+/* Botão de Convidar (+) */
+.group.bg-white.bg-opacity-10:hover {
+    background-color: var(--primary-red) !important;
+    box-shadow: 0 0 15px var(--primary-red);
+}
+
+/* ==========================================================================
+   SCROLLBAR (Barra de Rolagem)
+   ========================================================================== */
+::-webkit-scrollbar {
+    width: 4px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-red);
+    border-radius: 0;
+}
+
+/* ==========================================================================
+   ANIMAÇÕES EXTRAS
+   ========================================================================== */
+@keyframes fadeInScale {
+    from { 
+        opacity: 0; 
+        transform: scale(0.95); 
+    }
+    to { 
+        opacity: 1; 
+        transform: scale(1); 
+    }
+}
+
+/* Força animação em todos os elementos principais */
+.animate-\[fadeIn_1s\], .animate-\[scaleIn_500ms\] {
+    animation: fadeInScale 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+/* Texto "ONLINE" no topo */
+.text-on {
+    color: var(--primary-red) !important;
+    font-weight: bold;
+    text-shadow: 0 0 10px var(--primary-red);
+}
+
+/* ==========================================================================
+   LOADING SCREEN (TELA DE CARREGAMENTO)
+   ========================================================================== */
+
+#loader-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.85); /* Fundo escuro semi-transparente */
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Quando ativo */
+#loader-overlay.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Container da Roda */
+.loader-circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+/* SVG do Progresso */
+.loader-circle svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg); /* Começar do topo */
+}
+
+.loader-circle circle {
+    fill: none;
+    stroke-width: 8;
+    stroke-linecap: round;
+}
+
+/* Fundo da barra (cinza escuro) */
+.circle-bg {
+    stroke: rgba(255, 255, 255, 0.1);
+}
+
+/* A barra de progresso (Vermelho Neon) */
+.circle-progress {
+    stroke: var(--primary-red);
+    stroke-dasharray: 440; /* Circunferência aproximada */
+    stroke-dashoffset: 440; /* Começa vazio */
+    transition: stroke-dashoffset 0.1s linear;
+    filter: drop-shadow(0 0 5px var(--primary-red));
+}
+
+/* Texto de Percentagem no meio */
+.loader-text {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 0 10px var(--primary-red);
+}
+
+/* Texto "A CARREGAR SISTEMA..." */
+.loader-label {
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    animation: blinkText 1.5s infinite;
+}
+
+@keyframes blinkText {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; text-shadow: 0 0 8px white; }
+}

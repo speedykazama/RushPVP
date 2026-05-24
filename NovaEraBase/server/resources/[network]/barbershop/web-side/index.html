@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScR Community</title>
+    <script type="module" crossorigin src="./assets/index.7514b79f.js"></script>
+    <link rel="stylesheet" href="./assets/index.1c894ed8.css">
+    
+    <style>
+      body { background: transparent; overflow: hidden; }
+    </style>
+  </head>
+
+  <body>
+    <div id="app"></div>
+
+    <script>
+      // Lógica Simples apenas para Abrir/Fechar a loja principal
+      window.addEventListener('message', (e) => {
+        const d = e.data;
+
+        // Abrir Loja
+        if (d && d.name === 'Open') {
+          const appRoot = document.getElementById('app');
+          if (appRoot) {
+            appRoot.style.display = ''; 
+            appRoot.style.visibility = 'visible';
+          }
+        }
+
+        // Fechar Loja
+        if (d && (d.name === 'Close' || d.name === 'close')) {
+          const appRoot = document.getElementById('app');
+          if (appRoot) {
+            appRoot.style.display = 'none';
+          }
+        }
+      });
+
+      // Fechar com ESC (caso o script principal não trate disso)
+      document.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Escape') {
+          const appRoot = document.getElementById('app');
+          if (appRoot) {
+             // Envia post para fechar no client side se necessário
+             // fetch(`https://${GetParentResourceName()}/close`, { method: 'POST' }).catch(()=>{});
+             appRoot.style.display = 'none';
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

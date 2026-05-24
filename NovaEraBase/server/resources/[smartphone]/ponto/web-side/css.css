@@ -1,0 +1,75 @@
+/* Remova a barra de rolagem do navegador */
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 0;
+  margin: 5px;
+  background: linear-gradient(270deg, #151515, #151515);  
+  user-select: none;
+}
+
+#header {
+  color: #fff;
+  padding-top: 30px;
+  text-align: center;
+}
+
+#header h1 {
+  font-size: 30px;
+  margin-top: 0;
+}
+
+#content {
+  border-radius: 10px;
+  background: linear-gradient(45deg, #151515, #151515);
+  margin: 20px;
+}
+
+#content .post {
+  margin-top: 20px;
+  padding: 40px;
+  background: linear-gradient(45deg, #151515, #151515);
+  border-radius: 5px;
+  text-align: center;
+  position: relative; /* Adiciona um contexto para o posicionamento dos filhos */
+}
+
+#content .post img {
+  max-width: 300px;
+  display: block;
+  margin-bottom: 20px; /* Adiciona um espaço abaixo da imagem */
+}
+
+#content .post p {
+  font-size: 20px;
+  color: #fff;
+}
+
+button {
+  width: 100%;
+  background: linear-gradient(45deg, #151515, #151515);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-image: url("images/pontoroxo.png");
+}
+
+.custom-button {
+  background-image: url("images/pontobranco.png");
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px; /* Adiciona espaço acima do botão */
+}

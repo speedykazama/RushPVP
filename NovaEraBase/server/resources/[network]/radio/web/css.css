@@ -1,0 +1,216 @@
+body,
+td,
+th {
+    font-size: 12px;
+    font-family: arial;
+    color: #000;
+    cursor: default;
+    vertical-align: baseline;
+    outline: 0;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+}
+
+a,
+a:link,
+a:visited,
+a:active,
+a:hover {
+    font-family: arial;
+    font-size: 12px;
+    color: #000;
+    text-decoration: none;
+}
+
+div,
+span,
+applet,
+object,
+iframe,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr {
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+:focus {
+    outline: 0;
+}
+
+img {
+    border: none;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+::selection {
+    background: transparent;
+}
+
+::-moz-selection {
+    background: transparent;
+}
+
+@font-face {
+    font-family: 'DSEG7Classic';
+    src: url('dseg7.ttf');
+}
+
+#actionmenu {
+    bottom: 0;
+    right: 50px;
+    width: 253px;
+    height: 534px;
+    display: none;
+    overflow: auto;
+    position: fixed;
+    background: url("background.png") no-repeat center center;
+    background-size: cover;
+    padding-top: 0;
+    box-sizing: border-box;
+}
+
+.ativar {
+    background: transparent;
+    width: 53px;
+    height: 50px;
+    float: left;
+    margin: 204px 0 0 87px;
+    cursor: pointer;
+}
+
+.desativar {
+    background: transparent;
+    width: 53px;
+    height: 50px;
+    float: left;
+    margin: 470px 0 0 46px;
+    cursor: pointer;
+}
+
+.qtd {
+    border: 0;
+    font-family: 'DSEG7Classic';
+    background: transparent;
+    width: 113px;
+    height: 95px;
+    float: left;
+    margin: -164px 62px 0;
+    text-align: center;
+    font-size: 35px;
+    color: #8ab7ff;
+    font-weight: bold;
+}
+
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+input::placeholder {
+    font-weight: bold;
+    opacity: 1;
+    color: #8ab7ff;
+}
+
+#colorSelector {
+    width: 100px;
+    height: 30px;
+    margin: 20px auto;
+    display: block;
+    font-family: 'Arial';
+    font-size: 14px;
+    background-color: #f0f0f000;
+    border: 1px solid #cccccc00;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.colorSelector-top {
+    top: 100px;
+}
+
+.colorSelector-bottom {
+    bottom: 205px;
+}
+
+.notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 1000;
+    display: none;
+}
+
+.notification.show {
+    display: block;
+}

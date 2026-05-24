@@ -1,0 +1,35 @@
+/* Tokens no estilo shadcn/ui (dark, zinc) — valores HSL sem "hsl()" para compor com hsl() / alpha */
+:root {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --card: 240 10% 6.5%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 10% 5.5%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 217 91% 60%;
+  --primary-foreground: 222 47% 11%;
+  --secondary: 240 4% 16%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 4% 16%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 240 4% 16%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 4% 18%;
+  --input: 240 4% 18%;
+  --ring: 217 91% 60%;
+  --radius: 0.625rem;
+  --radius-lg: 0.75rem;
+  --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.25);
+  --shadow-md: 0 4px 6px -1 hsl(0 0% 0% / 0.35), 0 2px 4px -2 hsl(0 0% 0% / 0.3);
+  --shadow-lg: 0 10px 15px -3 hsl(0 0% 0% / 0.4), 0 4px 6px -4 hsl(0 0% 0% / 0.35);
+
+  /* Compat legado (referências antigas no CSS) */
+  --vd-border: hsl(var(--border));
+  --vd-surface-solid: hsl(var(--card));
+  --vd-accent: hsl(var(--primary));
+  --vd-accent-mid: hsl(217 91% 52%);
+  --vd-accent-soft: hsl(199 89% 58%);
+  --vd-accent-glow: hsl(var(--primary) / 0.35);
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <title>Creative Network</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+    <div id="loading-screen" class="loading-overlay">
+        
+        <img src="loadscreen.png" class="loading-media" alt="Loading">
+
+    </div>
+
+    <audio id="loadscreen-audio" src="./audio.mp3" loop preload="auto" playsinline></audio>
+
+    <div id="app">
+    </div>
+
+    <script src="./script.js"></script>
+    <script>
+        (function () {
+            var audio = document.getElementById("audio");
+            if (!audio) return;
+            function tryPlay() {
+                var p = audio.play();
+                if (p && typeof p.catch === "function") p.catch(function () {});
+            }
+            tryPlay();
+            document.body.addEventListener("click", tryPlay, { once: true });
+        })();
+    </script>
+</body>
+</html>

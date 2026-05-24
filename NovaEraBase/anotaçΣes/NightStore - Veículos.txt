@@ -1,0 +1,190 @@
+-----------------------------------------------------------------------------------
+-- VEÍCULOS -----------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+Hospital:
+	20ramambo
+	motosamu
+	trailsamu
+	supervolito
+-----------------------------------------------------------------------------------
+Bombeiro:
+	xt660cb2
+	firetruk
+	l20021
+	s10p
+	sprinter
+-----------------------------------------------------------------------------------
+Mecânica East Custom:
+	flatbed3
+	cdaraptor
+	towtruck
+-----------------------------------------------------------------------------------
+Mecânica Red Line:
+	energy450
+	energyr1200
+	energyraptor
+	energyrepair
+	heliredline
+	WRafricat
+	WRflatbed
+	WRflatbed2
+	WRnissantitan17
+-----------------------------------------------------------------------------------
+Policia Militar:
+	corollapmerj1
+        dusterpmerjb
+        nissanversa
+        pmerjtrail
+        xt660pmerj
+        hiluxgat
+        fordkapmerj
+	blindadoupp
+	blindado
+	maverick
+-----------------------------------------------------------------------------------
+Policia Civil / CORE:
+        amarokcore
+        frontiercore
+        corollapcerj
+        versapcerj
+        dusterpcerj1
+        s10pcerj
+        corollap2
+        pajerod
+	bellpc
+	as350
+-----------------------------------------------------------------------------------
+PRF: 
+        africaprf
+        corprf
+        cruzeprf2
+        l200prf
+        trailprf
+	as350prf
+-----------------------------------------------------------------------------------
+BOPE:
+	maverickbp
+	frontierbope
+	hiluxbope
+	blindadobope
+	l200bopeg
+	as350bope
+-----------------------------------------------------------------------------------
+RECOM:
+        ranger21recom
+        rangerrecom
+-----------------------------------------------------------------------------------
+CHOQUE:
+	rangerchoque
+        rangerchoquel
+        tigerpolicia
+-----------------------------------------------------------------------------------
+EX:
+        sato
+        hiluxpe
+        VRraptor
+        sprintereb
+        barracks
+        trail20e
+        annihilator
+        nokota
+-----------------------------------------------------------------------------------
+Brasileiros:
+	fox
+	amarok
+	vwbeetlenaj
+	defender21
+	gcmcerato18
+        gcmcity14
+        gcmcorolla20cn
+        gcmhighlanderxse
+        gcmoutlanderls
+        gcmsentra20
+        hilux2019
+        jettagli
+        nf17
+        pajero4
+        polo2018
+        savaoriginal
+        taigun21
+        uptsi
+        veloster
+        cox2013
+-----------------------------------------------------------------------------------
+Motos:
+        biz25
+        bros60
+        v4sf
+        mt03
+        fz07
+        R1200GS
+        cg160
+        xre300
+        500x
+        hcbr17
+        z1000
+        r1
+        f800
+        gs310
+        gsxr
+        hayabusa
+        hornet
+        r6
+        s1000docandidato 
+-----------------------------------------------------------------------------------
+Importados:
+        amggtr
+        2019chiron
+        21camaro
+        911turbos
+        audirs6
+        audirs7
+        b63s
+        bmci
+        bmwm3f80
+        bmwm4gts
+        dodgechargersrt
+        ferrariitalia
+        focusrs
+        fordmustang
+        fpacehm
+        lamborghinihuracan
+        lancerevolution9
+        lancerevolutionx
+        macan
+        mazdarx7
+        a45amg
+	rr14
+        mers63c
+        nissan370z
+        nissangtr
+        nissanskyliner34
+        p1
+        panamera17turbo
+        raptor2017
+        rs6c8
+        toyotasupra
+        velociraptor
+        rrst
+        cayenneturbo
+        22g63
+        velar
+        teslax
+        ttrs
+-----------------------------------------------------------------------------------
+Blindados:
+	armoredamarok
+	armoredjettagli
+	armoredm3g80c
+	armoredporschemacan
+	armoredrs5
+	armoredvelar
+	armoredx7m60i
+	nka45
+	R50
+	urusrs2
+	WRmansoryDBX
+	Paulo
+	mastersx6fb
+	rvmercedesgt63
+	PauloR35

@@ -1,0 +1,84 @@
+{
+    "token": "",
+    "client": {
+        "bankType": "fleeca",
+        "uploadServer": "WEBHOOK AQUI",
+        "allowUnsafeURL": false,
+        "videoServer": "ws://127.0.0.1:8080",
+        "case": "iphone14pro",
+        "isAndroid": true,
+        "useGameClock": true,
+        "phone_template": "XXX-XXX",
+        "backgroundURL": "images/wallpaper.png",
+        "db_driver": "oxmysql",
+        "disabledApps": [],
+        "ringSound": "images/ring.ogg",
+        "notificationSound": "images/notification.ogg",
+        
+        "instagramLogo": "images/instagram_hand.png",
+        "bankLogo": "images/fleeca_hand.png",
+        "tinderLogo": "images/tinder_hand.png",
+        "tinderFlame": "images/flame.png",
+        "casinoLogo": "images/casinoLogo.png",
+        "apps": {
+            "whatsapp": { "name": "NovaApp", "icon": "images/whatsapp.jpg" },
+            "tor": { "name": "Deep Web", "icon": "images/tor.jpg" },
+            "instagram": { "name": "instapic", "icon": "images/instagram.jpg" },
+            "bank": { "name": "Fleeca", "icon": "images/fleeca.webp" },
+            "tinder": { "name": "Tinder", "icon": "images/tinder.webp" },
+            "yellowpages": { "name": "Yellow P.", "icon": "images/yellowpages.webp" },
+            "calculator": { "name": "Calculadora", "icon": "images/calculator.webp" },
+            "notes": { "name": "Notas", "icon": "images/notes.webp" },
+            "minesweeper": { "name": "Minadin", "icon": "images/minesweeper.webp" },
+            "truco": { "name": "Truco", "icon": "images/truco.webp" },
+            "casino": { "name": "Blaze", "icon": "images/blaze.webp" },
+            "paypal": { "name": "MoneyPay", "icon": "images/paypal.webp" },
+            "twitter": { "name": "birdy", "icon": "images/twitter.png" },
+            "olx": { "name": "xlo", "icon": "images/olx.png" },
+            "weazel": { "name": "Weazel News", "icon": "images/weazel.webp" },
+            "settings": "images/settings.webp",
+            "contacts": "images/phone.png",
+            "sms": "images/sms.webp",
+            "gallery": "images/gallery.webp"
+        }
+    },
+      
+    "call_mode": "pma-voice",
+    "webhookURL": "WEBHOOK AQUI",
+    "instagram_verify": "Verify",
+    "instagram_accounts": {
+        "*": 1,
+        "Premium": 2
+    },
+
+    "tor_blocked": ["PMERJ", "PCERJ" , "PRF", "BOPE", "RECOM", "BPCHQ", "EX"],
+    "exclusive": {
+        "casino": {
+            "maxBet": 5000
+        },
+        "weazel": {
+            "permission": "Admin",
+            "tags": ["Autos","Economia","Educação","Política","Saúde","Segurança","Trabalho e empregos","Turismo","Cotidiano"]
+        }
+    },
+
+    "moderator": "Admin",
+    "item": "cellphone",
+    "services": [
+        { "name": "Polícia Militar", "number": "190", "permission": "PMERJ", "dev": true },
+        { "name": "Polícia Civil", "number": "190", "permission": "PCERJ", "dev": true },
+        { "name": "PRF", "number": "190", "permission": "PRF", "dev": true },
+        { "name": "BOPE", "number": "190", "permission": "BOPE", "dev": true },
+        { "name": "RECOM", "number": "190", "permission": "RECOM", "dev": true },
+        { "name": "BPCHQ", "number": "190", "permission": "BPCHQ", "dev": true },
+        { "name": "EX", "number": "190", "permission": "EX", "dev": true },
+        { "name": "Paramédico", "number": "112", "permission": "Paramedic", "dev": true },
+        { "name": "Bombeiros", "number": "193", "permission": "Bombeiro", "dev": true },
+        { "name": "Mecânica East Custom", "number": "0800 042", "permission": "Mechanic", "dev": true },
+        { "name": "Mecânica Red Line", "number": "0800 042", "permission": "Mechanic2", "dev": true },
+        { "name": "Prefeitura", "number": "0800 666", "permission": "Admin", "dev": true }
+    ],
+
+    "base": "creative_network",
+    "channel": "stable"
+}

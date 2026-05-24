@@ -1,0 +1,1 @@
+AddTextEntry("WEAPON_GLOCK21", "GLOCK21")

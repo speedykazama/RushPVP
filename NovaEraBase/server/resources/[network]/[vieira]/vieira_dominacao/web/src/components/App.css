@@ -1,0 +1,1002 @@
+.vd-admin-root {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: hsl(var(--foreground));
+}
+
+.vd-admin-backdrop {
+  position: absolute;
+  inset: 0;
+  background: hsl(var(--background) / 0.72);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+}
+
+.vd-admin-shell {
+  position: relative;
+  width: min(36rem, 94vw);
+  max-height: min(44rem, 90vh);
+  overflow: auto;
+  padding: 1.75rem 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card));
+  box-shadow: var(--shadow-lg);
+}
+
+.vd-admin-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.vd-admin-kicker {
+  color: hsl(var(--muted-foreground));
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 0.35rem;
+}
+
+.vd-admin-title {
+  margin: 0;
+  color: hsl(var(--foreground));
+  font-size: 1.875rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.vd-admin-icon-btn {
+  flex: none;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+  border: 1px solid hsl(var(--input));
+}
+
+.vd-admin-icon-btn:hover {
+  background: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+
+.vd-admin-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+  font-size: 0.8125rem;
+}
+
+.vd-admin-linkish {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  color: hsl(var(--primary));
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.vd-admin-crumb-sep {
+  color: hsl(var(--muted-foreground));
+}
+
+.vd-admin-crumb-current {
+  color: hsl(var(--foreground));
+  font-weight: 500;
+}
+
+.vd-admin-body {
+  min-height: 8rem;
+}
+
+.vd-admin-lead {
+  margin: 0 0 1.1rem;
+  color: hsl(var(--muted-foreground));
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+
+.vd-admin-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.vd-admin-card {
+  text-align: left;
+  width: 100%;
+  padding: 1.1rem 1.2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card));
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.vd-admin-card:hover {
+  border-color: hsl(var(--ring) / 0.4);
+  background: hsl(var(--accent));
+  box-shadow: var(--shadow-md);
+}
+
+.vd-admin-card:hover .vd-admin-card-kicker,
+.vd-admin-card:hover .vd-admin-card-title,
+.vd-admin-card:hover .vd-admin-card-desc {
+  color: hsl(var(--accent-foreground));
+}
+
+.vd-admin-card-kicker {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+}
+
+.vd-admin-card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+.vd-admin-card-desc {
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: hsl(var(--muted-foreground));
+}
+
+.vd-admin-card-muted .vd-admin-card-desc {
+  opacity: 0.9;
+}
+
+.vd-admin-panel-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: hsl(var(--foreground));
+}
+
+.vd-admin-panel-text {
+  margin: 0 0 1.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: hsl(var(--muted-foreground));
+}
+
+.vd-admin-checklist {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: hsl(var(--foreground));
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.vd-admin-empty-state {
+  padding: 1.25rem 1.35rem;
+  border-radius: var(--radius);
+  border: 1px dashed hsl(var(--border));
+  background: hsl(var(--muted) / 0.25);
+  color: hsl(var(--muted-foreground));
+  font-size: 0.9375rem;
+}
+
+/* —— Shell com sidebar —— */
+.vd-admin-shell-wide {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: min(72rem, 95vw);
+  max-height: min(52rem, 90vh);
+  padding: 0;
+  overflow: hidden;
+}
+
+.vd-admin-sidebar {
+  width: 15rem;
+  flex: none;
+  padding: 1.35rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-right: 1px solid hsl(var(--border));
+  background: hsl(var(--muted) / 0.35);
+}
+
+.vd-admin-side-brand {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.4rem 0.75rem;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.vd-admin-side-k {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: hsl(var(--muted-foreground));
+}
+
+.vd-admin-side-t {
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: hsl(var(--foreground));
+}
+
+.vd-admin-side-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.vd-admin-side-link {
+  text-align: left;
+  padding: 0.65rem 0.85rem;
+  border-radius: calc(var(--radius) - 2px);
+  border: 1px solid transparent;
+  background: transparent;
+  color: hsl(var(--foreground));
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.vd-admin-side-link:hover {
+  background: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+
+.vd-admin-side-link-active {
+  border-color: hsl(var(--border));
+  background: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+  box-shadow: var(--shadow-sm);
+}
+
+.vd-admin-side-link:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.vd-admin-side-close {
+  margin-top: auto;
+  padding: 0.55rem 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.vd-admin-side-close:hover {
+  background: hsl(var(--destructive) / 0.12);
+  color: hsl(var(--destructive-foreground));
+  border-color: hsl(var(--destructive) / 0.35);
+}
+
+.vd-admin-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem 2rem 2rem;
+}
+
+.vd-admin-top-inline {
+  margin-bottom: 0.65rem;
+}
+
+.vd-admin-body-scroll {
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+/* —— Home —— */
+.vd-admin-home-lead {
+  margin: 0 0 1.35rem;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: hsl(var(--muted-foreground));
+}
+
+.vd-admin-home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 0.85rem;
+}
+
+.vd-admin-tile {
+  text-align: left;
+  padding: 1.15rem 1.25rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card));
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.vd-admin-tile:hover {
+  border-color: hsl(var(--ring) / 0.45);
+  box-shadow: var(--shadow-md);
+  background: hsl(var(--accent));
+}
+
+.vd-admin-tile-dim {
+  opacity: 0.88;
+}
+
+.vd-admin-tile-k {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+}
+
+.vd-admin-tile-t {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+.vd-admin-tile-d {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.45;
+}
+
+/* —— Dominações —— */
+.vd-dom-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.35rem;
+}
+
+.vd-dom-page .vd-admin-panel-title {
+  margin: 0;
+}
+
+.vd-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.75rem;
+  padding: 0 1.25rem;
+  border-radius: var(--radius);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.vd-btn:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.vd-btn-primary {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border-color: hsl(var(--primary));
+}
+
+.vd-btn-primary:hover {
+  background: hsl(var(--primary) / 0.92);
+}
+
+.vd-btn-outline {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  border-color: hsl(var(--input));
+}
+
+.vd-btn-outline:hover {
+  background: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+
+.vd-btn-ghost {
+  background: transparent;
+  color: hsl(var(--foreground));
+  border-color: hsl(var(--border));
+}
+
+.vd-btn-ghost:hover {
+  background: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+
+.vd-territory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18.5rem, 1fr));
+  gap: 0.85rem;
+}
+
+.vd-territory-card {
+  padding: 1.15rem 1.25rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card));
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.vd-territory-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: hsl(var(--ring) / 0.35);
+}
+
+.vd-territory-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.vd-territory-thumb {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: calc(var(--radius) - 2px);
+  object-fit: cover;
+  flex: none;
+  border: 1px solid hsl(var(--border));
+}
+
+.vd-territory-thumb-ph {
+  background: hsl(var(--muted));
+}
+
+.vd-territory-name {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+.vd-territory-meta {
+  margin: 0.15rem 0 0;
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.vd-territory-dl {
+  margin: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.vd-territory-dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.65rem;
+  font-size: 0.875rem;
+}
+
+.vd-territory-dl dt {
+  color: hsl(var(--muted-foreground));
+  font-weight: 500;
+}
+
+.vd-territory-dl dd {
+  margin: 0;
+  color: hsl(var(--foreground));
+  text-align: right;
+  font-weight: 500;
+}
+
+/* —— Poly editor overlay —— */
+.vd-poly-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  font-family: Inter, sans-serif;
+}
+
+.vd-poly-overlay-inner {
+  margin: 1.25rem 1.25rem 2rem;
+  max-width: 44rem;
+  width: calc(100% - 2.5rem);
+  padding: 1.15rem 1.35rem;
+}
+
+.vd-poly-overlay-kicker {
+  margin: 0 0 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+}
+
+.vd-poly-overlay-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: hsl(var(--foreground));
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+/* —— Prompt de dominação (mundo) —— */
+.vd-dom-prompt {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  font-family: Inter, sans-serif;
+}
+
+.vd-dom-prompt-inner {
+  margin: 1rem 1.25rem 2rem;
+  max-width: 28rem;
+  width: calc(100% - 2.5rem);
+  padding: 1rem 1.2rem 1.1rem;
+  border: 1px solid hsl(var(--border));
+}
+
+.vd-dom-prompt-head {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.65rem;
+}
+
+.vd-dom-prompt-thumb {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius);
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid hsl(var(--border));
+}
+
+.vd-dom-prompt-kicker {
+  margin: 0 0 0.2rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+}
+
+.vd-dom-prompt-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: hsl(var(--foreground));
+  line-height: 1.25;
+}
+
+.vd-dom-prompt-dl {
+  margin: 0 0 0.55rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.vd-dom-prompt-dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.8125rem;
+}
+
+.vd-dom-prompt-dl dt {
+  color: hsl(var(--muted-foreground));
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.vd-dom-prompt-dl dd {
+  margin: 0;
+  text-align: right;
+  color: hsl(var(--foreground));
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.vd-dom-prompt-hint {
+  margin: 0;
+  padding-top: 0.5rem;
+  border-top: 1px solid hsl(var(--border));
+  font-size: 0.8125rem;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.45;
+}
+
+.vd-dom-prompt-kbd {
+  display: inline-block;
+  padding: 0.08rem 0.38rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: hsl(var(--foreground));
+  background: hsl(var(--muted));
+  border: 1px solid hsl(var(--border));
+}
+
+/* —— HUD disputa (centro-esquerda) —— */
+.vd-dom-hud {
+  position: fixed;
+  left: 1.15rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10000;
+  width: min(15.5rem, 42vw);
+  pointer-events: none;
+  font-family: Inter, sans-serif;
+  opacity: 0.92;
+}
+
+.vd-dom-hud-territory {
+  margin: 0 0 0.45rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+}
+
+.vd-dom-hud-stale {
+  margin: 0 0 0.5rem;
+  font-size: 0.7rem;
+  color: hsl(38 92% 50%);
+  line-height: 1.3;
+}
+
+.vd-dom-hud-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.vd-dom-hud-row {
+  padding: 0.45rem 0.55rem;
+  border-radius: var(--radius);
+  background: hsl(var(--card) / 0.55);
+  border: 1px solid hsl(var(--border) / 0.65);
+  backdrop-filter: blur(4px);
+}
+
+.vd-dom-hud-row--mine {
+  border-color: hsl(var(--primary) / 0.55);
+  box-shadow: 0 0 0 1px hsl(var(--primary) / 0.12);
+}
+
+.vd-dom-hud-row-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.vd-dom-hud-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  line-height: 1.25;
+  flex: 1;
+  min-width: 0;
+}
+
+.vd-dom-hud-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: hsl(var(--muted-foreground));
+  flex-shrink: 0;
+}
+
+.vd-dom-hud-users-ico {
+  opacity: 0.85;
+}
+
+.vd-dom-hud-bar {
+  height: 0.28rem;
+  border-radius: 999px;
+  background: hsl(var(--muted));
+  overflow: hidden;
+}
+
+.vd-dom-hud-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    hsl(var(--primary) / 0.85),
+    hsl(var(--primary))
+  );
+  transition: width 0.35s ease-out;
+}
+
+/* —— Wizard —— */
+.vd-wizard-root {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Inter, sans-serif;
+}
+
+.vd-wizard-backdrop {
+  position: absolute;
+  inset: 0;
+  background: hsl(var(--background) / 0.75);
+  backdrop-filter: blur(4px);
+}
+
+.vd-wizard-card {
+  position: relative;
+  width: min(34rem, 92vw);
+  padding: 1.75rem 2rem;
+  border-radius: var(--radius-lg);
+}
+
+.vd-wizard-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: hsl(var(--foreground));
+}
+
+.vd-wizard-sub {
+  margin: 0 0 1.35rem;
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.vd-wizard-label {
+  display: block;
+  margin-top: 0.85rem;
+  margin-bottom: 0.4rem;
+  color: hsl(var(--foreground));
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.vd-wizard-input {
+  width: 100%;
+  height: 2.75rem;
+  padding: 0 0.85rem;
+  border-radius: var(--radius);
+  border: 1px solid hsl(var(--input));
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-size: 0.9375rem;
+}
+
+.vd-wizard-err {
+  margin: 0.85rem 0 0;
+  font-size: 0.875rem;
+  color: hsl(var(--destructive));
+}
+
+.vd-wizard-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  margin-top: 1.5rem;
+}
+
+/* utilitários estilo shadcn (cards / foco) */
+.shadcn-card-elevated {
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card));
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius-lg);
+}
+
+.shadcn-input:focus-visible,
+.vd-wizard-input:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+.vd-btn-destructive {
+  background: hsl(var(--destructive));
+  color: hsl(var(--destructive-foreground));
+  border-color: hsl(var(--destructive));
+}
+
+.vd-btn-destructive:hover {
+  background: hsl(var(--destructive) / 0.9);
+}
+
+.vd-territory-card-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  appearance: none;
+}
+
+.vd-territory-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.vd-territory-detail-empty {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.vd-territory-detail-hero {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 1.35rem;
+}
+
+.vd-territory-detail-hero-img {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: var(--radius);
+  object-fit: cover;
+  border: 1px solid hsl(var(--border));
+}
+
+.vd-territory-detail-hero-ph {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: var(--radius);
+  background: hsl(var(--muted));
+  border: 1px solid hsl(var(--border));
+}
+
+.vd-territory-detail-name {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: hsl(var(--foreground));
+}
+
+.vd-territory-detail-id {
+  margin: 0.35rem 0 0;
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.vd-territory-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.vd-territory-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 1rem;
+}
+
+.vd-detail-card {
+  padding: 1.25rem 1.35rem;
+}
+
+.vd-detail-card-title {
+  margin: 0 0 0.85rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+.vd-detail-muted {
+  margin: 0 0 0.75rem;
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.45;
+}
+
+.vd-detail-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
+.vd-detail-dl {
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.vd-detail-dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.vd-detail-dl dt {
+  color: hsl(var(--muted-foreground));
+  font-weight: 500;
+}
+
+.vd-detail-dl dd {
+  margin: 0;
+  color: hsl(var(--foreground));
+  font-weight: 500;
+  text-align: right;
+}
+
+.vd-detail-card-danger {
+  border-color: hsl(var(--destructive) / 0.35);
+}
