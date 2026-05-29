@@ -528,9 +528,9 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- KEYMAPPING
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterKeyMapping("globalFunctions","Abrir menu principal.","keyboard","F9")
-RegisterKeyMapping("tencodeFunctions","Abrir menu de chamados policiais.","keyboard","F3")
-RegisterKeyMapping("emergencyFunctions","Abrir menu de emergencial.","keyboard","F10")
+-- RegisterKeyMapping("globalFunctions","Abrir menu principal.","keyboard","F9")
+-- RegisterKeyMapping("tencodeFunctions","Abrir menu de chamados policiais.","keyboard","F3")
+-- RegisterKeyMapping("emergencyFunctions","Abrir menu de emergencial.","keyboard","F10")
 RegisterKeyMapping("adminFunctions", "Abrir menu de administração.", "keyboard", "INSERT")
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- DYNAMIC:ANIMALSPAWN
