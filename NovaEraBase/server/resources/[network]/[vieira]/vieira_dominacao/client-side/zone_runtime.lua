@@ -12,19 +12,13 @@ local function drawRedWall(p1, p2, minZ, maxZ, a)
   DrawPoly(bottomRight, topLeft, bottomLeft, r, g, b, a)
 end
 
-local function drawTerritoryRedOutline(zone)
+local function drawTerritoryRedOutline(zone, visMinZ, visMaxZ)
   if not zone or zone.destroyed or not zone.points or #zone.points < 2 then
     return
   end
-  local minZ = zone.minZ
-  local maxZ = zone.maxZ
-  if not minZ or not maxZ then
+  if not visMinZ or not visMaxZ then
     return
   end
-  local down = tonumber(Config.TerritoryVisualExtendDown) or 80.0
-  local up = tonumber(Config.TerritoryVisualExtendUp) or 520.0
-  local visMinZ = minZ - down
-  local visMaxZ = maxZ + up
   local pts = zone.points
   local a = 48
   for i = 1, #pts - 1 do
@@ -39,10 +33,63 @@ local RES = GetCurrentResourceName()
 local ZONE_RELOAD_EVENT = RES .. ":reloadDominationZones"
 
 local zoneRegistry = {}
+local mapBlipHandles = {}
 local activeTerritoryId = nil
+local zoneOutsideStreak = 0
 
 --- Territórios com sessão ativa no servidor (sincronizado por eventos).
 VD_DominationServerSessions = {}
+
+local function isPlayerInInterior(ped)
+  if Config.DisableDominationInInteriors == false then
+    return false
+  end
+  return GetInteriorFromEntity(ped) ~= 0
+end
+
+local function removeDominationMapBlips()
+  for _, handle in ipairs(mapBlipHandles) do
+    if DoesBlipExist(handle) then
+      RemoveBlip(handle)
+    end
+  end
+  mapBlipHandles = {}
+end
+
+local function createDominationMapBlips()
+  removeDominationMapBlips()
+
+  local radius = tonumber(Config.MapBlipRadius) or 80.0
+  local colour = tonumber(Config.MapBlipColour) or 1
+  local alpha = tonumber(Config.MapBlipAlpha) or 110
+  local sprite = tonumber(Config.MapBlipSprite) or 487
+  local scale = tonumber(Config.MapBlipScale) or 0.85
+
+  for _, entry in ipairs(zoneRegistry) do
+    local zone = entry.zone
+    if zone and not zone.destroyed and zone.center then
+      local c = zone.center
+      local z = 0.0
+      local radiusBlip = AddBlipForRadius(c.x, c.y, z, radius)
+      SetBlipColour(radiusBlip, colour)
+      SetBlipAlpha(radiusBlip, alpha)
+      SetBlipAsShortRange(radiusBlip, false)
+      SetBlipDisplay(radiusBlip, 4)
+      mapBlipHandles[#mapBlipHandles + 1] = radiusBlip
+
+      local iconBlip = AddBlipForCoord(c.x, c.y, z)
+      SetBlipSprite(iconBlip, sprite)
+      SetBlipColour(iconBlip, colour)
+      SetBlipScale(iconBlip, scale)
+      SetBlipAsShortRange(iconBlip, false)
+      SetBlipDisplay(iconBlip, 4)
+      BeginTextCommandSetBlipName("STRING")
+      AddTextComponentString(entry.name or ("Dominação #" .. tostring(entry.id)))
+      EndTextCommandSetBlipName(iconBlip)
+      mapBlipHandles[#mapBlipHandles + 1] = iconBlip
+    end
+  end
+end
 
 local function hidePrompt()
   activeTerritoryId = nil
@@ -70,18 +117,19 @@ local function sendPrompt(play)
 end
 
 local function refreshPlayState(id)
-  if not id then
+  if not id or activeTerritoryId ~= id then
     return
   end
   local row = vSERVER.DominacaoGetTerritoryPlayState(id)
   if row and row.id then
     sendPrompt(row)
-  else
-    hidePrompt()
   end
 end
 
-local function findTerritoryIdAtPosition(pos)
+local function findTerritoryIdAtPosition(pos, ped)
+  if ped and isPlayerInInterior(ped) then
+    return nil
+  end
   for _, entry in ipairs(zoneRegistry) do
     local z = entry.zone
     if z and not z.destroyed and z:isPointInside(pos) then
@@ -92,6 +140,7 @@ local function findTerritoryIdAtPosition(pos)
 end
 
 local function destroyZones()
+  removeDominationMapBlips()
   for _, entry in ipairs(zoneRegistry) do
     local z = entry.zone
     if z and z.destroy then
@@ -121,43 +170,34 @@ local function buildZonesFromSync(list)
       if #vec >= 3 then
         local minZ = tonumber(t.min_z) or -90.0
         local maxZ = tonumber(t.max_z) or 900.0
+        -- Sem minZ/maxZ no PolyZone: presença usa só XY (altura ignorada).
         local zone = PolyZone:Create(vec, {
           name = ("vd_dom_territory_%s"):format(id),
           useGrid = false,
-          minZ = minZ,
-          maxZ = maxZ,
-          -- debugPoly do PolyZone desenha em branco; o contorno vermelho é desenhado abaixo.
           debugPoly = false,
         })
-        zone:onPlayerInOut(function(isInside)
-          if isInside then
-            activeTerritoryId = id
-            refreshPlayState(id)
-          else
-            if activeTerritoryId == id then
-              local pos = PolyZone.getPlayerPosition()
-              local still = findTerritoryIdAtPosition(pos)
-              activeTerritoryId = still
-              if still then
-                refreshPlayState(still)
-              else
-                SendReactMessage("setDominationHud", { visible = false, territory_id = id })
-                hidePrompt()
-              end
-            end
-          end
-        end, 400)
-        zoneRegistry[#zoneRegistry + 1] = { id = id, zone = zone }
+        zoneRegistry[#zoneRegistry + 1] = {
+          id = id,
+          zone = zone,
+          name = tostring(t.name or ("Dominação #" .. id)),
+          min_z = minZ,
+          max_z = maxZ,
+        }
       end
     end
   end
 
-  local pos = PolyZone.getPlayerPosition()
-  local inside = findTerritoryIdAtPosition(pos)
+  createDominationMapBlips()
+
+  local ped = PlayerPedId()
+  local pos = GetEntityCoords(ped)
+  local inside = findTerritoryIdAtPosition(pos, ped)
+  zoneOutsideStreak = 0
   if inside then
     activeTerritoryId = inside
     refreshPlayState(inside)
   else
+    activeTerritoryId = nil
     hidePrompt()
   end
 end
@@ -197,9 +237,16 @@ RegisterNetEvent(RES .. ":dominationEnded", function(data)
 end)
 
 RegisterNetEvent(RES .. ":dominationHud", function(payload)
-  if type(payload) == "table" then
-    SendReactMessage("setDominationHud", payload)
+  if type(payload) ~= "table" then
+    return
   end
+  if payload.visible == false then
+    local tid = tonumber(payload.territory_id)
+    if tid and activeTerritoryId == tid and VD_DominationServerSessions[tid] then
+      return
+    end
+  end
+  SendReactMessage("setDominationHud", payload)
 end)
 
 RegisterNetEvent(RES .. ":dominationToast", function(kind, msg, durationMs)
@@ -210,6 +257,45 @@ end)
 CreateThread(function()
   Wait(1500)
   loadZones()
+end)
+
+AddEventHandler("onResourceStop", function(resource)
+  if resource == RES then
+    removeDominationMapBlips()
+  end
+end)
+
+--- Presença na zona (XY + sem interior); debounce na saída evita UI sumir ao pular.
+CreateThread(function()
+  local pollMs = tonumber(Config.ZonePollMs) or 200
+  local debounce = math.max(1, tonumber(Config.ZoneExitDebounceTicks) or 3)
+
+  while true do
+    local ped = PlayerPedId()
+    local pos = GetEntityCoords(ped)
+    local insideId = findTerritoryIdAtPosition(pos, ped)
+
+    if insideId then
+      zoneOutsideStreak = 0
+      if activeTerritoryId ~= insideId then
+        activeTerritoryId = insideId
+        refreshPlayState(insideId)
+      end
+    elseif activeTerritoryId then
+      zoneOutsideStreak = zoneOutsideStreak + 1
+      if zoneOutsideStreak >= debounce then
+        local oldId = activeTerritoryId
+        activeTerritoryId = nil
+        zoneOutsideStreak = 0
+        SendReactMessage("setDominationHud", { visible = false, territory_id = oldId })
+        hidePrompt()
+      end
+    else
+      zoneOutsideStreak = 0
+    end
+
+    Wait(pollMs)
+  end
 end)
 
 CreateThread(function()
@@ -227,10 +313,15 @@ CreateThread(function()
   while true do
     local tid = activeTerritoryId
     if tid and VD_DominationServerSessions[tid] and not VD_PolyEditorFlowActive then
-      local st = LocalPlayer.state
-      local alive = not (st and st.Death)
-      vSERVER.DominacaoPresencePulse({ territory_id = tid, alive = alive })
-      Wait(750)
+      local ped = PlayerPedId()
+      if isPlayerInInterior(ped) then
+        Wait(750)
+      else
+        local st = LocalPlayer.state
+        local alive = not (st and st.Death)
+        vSERVER.DominacaoPresencePulse({ territory_id = tid, alive = alive })
+        Wait(750)
+      end
     else
       Wait(400)
     end
@@ -272,14 +363,20 @@ CreateThread(function()
       local pos = GetEntityCoords(ped)
       for _, entry in ipairs(zoneRegistry) do
         local z = entry.zone
-        if z and not z.destroyed and z.center then
-          local dx = pos.x - z.center.x
-          local dy = pos.y - z.center.y
-          if (dx * dx + dy * dy) < (200.0 * 200.0) then
-            drawTerritoryRedOutline(z)
+        if z and not z.destroyed then
+          local draw = true
+          if z.center then
+            local dx = pos.x - z.center.x
+            local dy = pos.y - z.center.y
+            draw = (dx * dx + dy * dy) < (200.0 * 200.0)
           end
-        elseif z and not z.destroyed then
-          drawTerritoryRedOutline(z)
+          if draw then
+            local minZ = tonumber(entry.min_z) or -90.0
+            local maxZ = tonumber(entry.max_z) or 900.0
+            local down = tonumber(Config.TerritoryVisualExtendDown) or 80.0
+            local up = tonumber(Config.TerritoryVisualExtendUp) or 520.0
+            drawTerritoryRedOutline(z, minZ - down, maxZ + up)
+          end
         end
       end
       Wait(0)

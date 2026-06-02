@@ -270,6 +270,10 @@ function VD_DominationPresencePulse(src, data)
     return
   end
 
+  if data.in_interior == true then
+    return
+  end
+
   local alive = data.alive ~= false
   local pmap = Presence[territoryId]
   if not pmap then
