@@ -77,362 +77,362 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- GLOBALFUNCTIONS
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("globalFunctions",function()
-	if not LocalPlayer["state"]["Commands"] and not LocalPlayer["state"]["Handcuff"] and not LocalPlayer["state"]["Prison"] and not Dynamic and not IsPauseMenuActive() then
-		local Ped = PlayerPedId()
-		local Coords = GetEntityCoords(Ped)
+-- RegisterCommand("globalFunctions",function()
+-- 	if not LocalPlayer["state"]["Commands"] and not LocalPlayer["state"]["Handcuff"] and not LocalPlayer["state"]["Prison"] and not Dynamic and not IsPauseMenuActive() then
+-- 		local Ped = PlayerPedId()
+-- 		local Coords = GetEntityCoords(Ped)
 
-		if GetEntityHealth(Ped) > 100 then
-			if LocalPlayer["state"]["Premium"] or LocalPlayer["state"]["PremiumOuro"] or LocalPlayer["state"]["PremiumPrata"]then
-			exports["dynamic"]:AddButton("Vestir Platinum","Vestir-se com as vestimentas guardadas.","player:Outfit","aplicarplatina","wardrobepremium",true)
-			exports["dynamic"]:AddButton("Salvar Platinum","Salvar suas vestimentas do corpo.","player:Outfit","salvarplatina","wardrobepremium",true)
-			exports["dynamic"]:AddButton("Vestir Ouro","Vestir-se com as vestimentas guardadas.","player:Outfit","aplicarouro","wardrobepremium",true)
-			exports["dynamic"]:AddButton("Salvar Ouro","Salvar suas vestimentas do corpo.","player:Outfit","salvarouro","wardrobepremium",true)
-			exports["dynamic"]:AddButton("Vestir Prata","Vestir-se com as vestimentas guardadas.","player:Outfit","aplicarprata","wardrobepremium",true)
-			exports["dynamic"]:AddButton("Salvar Prata","Salvar suas vestimentas do corpo.","player:Outfit","salvarprata","wardrobepremium",true)
-			exports["dynamic"]:AddButton("Remover Roupas","Remover suas vestimentas do corpo.","player:Outfit","remover","wardrobepremium",true)
-			exports["dynamic"]:SubMenu("Roupas Premium","Colocar/Retirar roupas.","wardrobepremium")
-			--exports["dynamic"]:SubMenu("Roupas Premium Ouro","Colocar/Retirar roupas.","wardrobepremium2")
-			--exports["dynamic"]:SubMenu("Roupas Premium Prata","Colocar/Retirar roupas.","wardrobepremium3")
-		end
+-- 		if GetEntityHealth(Ped) > 100 then
+-- 			if LocalPlayer["state"]["Premium"] or LocalPlayer["state"]["PremiumOuro"] or LocalPlayer["state"]["PremiumPrata"]then
+-- 			exports["dynamic"]:AddButton("Vestir Platinum","Vestir-se com as vestimentas guardadas.","player:Outfit","aplicarplatina","wardrobepremium",true)
+-- 			exports["dynamic"]:AddButton("Salvar Platinum","Salvar suas vestimentas do corpo.","player:Outfit","salvarplatina","wardrobepremium",true)
+-- 			exports["dynamic"]:AddButton("Vestir Ouro","Vestir-se com as vestimentas guardadas.","player:Outfit","aplicarouro","wardrobepremium",true)
+-- 			exports["dynamic"]:AddButton("Salvar Ouro","Salvar suas vestimentas do corpo.","player:Outfit","salvarouro","wardrobepremium",true)
+-- 			exports["dynamic"]:AddButton("Vestir Prata","Vestir-se com as vestimentas guardadas.","player:Outfit","aplicarprata","wardrobepremium",true)
+-- 			exports["dynamic"]:AddButton("Salvar Prata","Salvar suas vestimentas do corpo.","player:Outfit","salvarprata","wardrobepremium",true)
+-- 			exports["dynamic"]:AddButton("Remover Roupas","Remover suas vestimentas do corpo.","player:Outfit","remover","wardrobepremium",true)
+-- 			exports["dynamic"]:SubMenu("Roupas Premium","Colocar/Retirar roupas.","wardrobepremium")
+-- 			--exports["dynamic"]:SubMenu("Roupas Premium Ouro","Colocar/Retirar roupas.","wardrobepremium2")
+-- 			--exports["dynamic"]:SubMenu("Roupas Premium Prata","Colocar/Retirar roupas.","wardrobepremium3")
+-- 		end
 
-			exports["dynamic"]:AddButton("Vestir","Vestir-se com as vestimentas guardadas.","player:Outfit","aplicar","wardrobe",true)
-			exports["dynamic"]:AddButton("Guardar","Salvar suas vestimentas do corpo.","player:Outfit","salvar","wardrobe",true)
-			exports["dynamic"]:AddButton("Remover","Remover suas vestimentas do corpo.","player:Outfit","remover","wardrobe",true)
-			exports["dynamic"]:SubMenu("Armário","Colocar/Retirar roupas.","wardrobe")
+-- 			exports["dynamic"]:AddButton("Vestir","Vestir-se com as vestimentas guardadas.","player:Outfit","aplicar","wardrobe",true)
+-- 			exports["dynamic"]:AddButton("Guardar","Salvar suas vestimentas do corpo.","player:Outfit","salvar","wardrobe",true)
+-- 			exports["dynamic"]:AddButton("Remover","Remover suas vestimentas do corpo.","player:Outfit","remover","wardrobe",true)
+-- 			exports["dynamic"]:SubMenu("Armário","Colocar/Retirar roupas.","wardrobe")
 
-			if HashAnimal ~= nil then
-				exports["dynamic"]:AddButton("Seguir", "Seguir o proprietário.", "dynamic:animalFunctions", "follow", "animals", false)
-				exports["dynamic"]:AddButton("Colocar no Veículo", "Colocar o animal no veículo.", "dynamic:animalFunctions", "putvehicle", "animals", false)
-				exports["dynamic"]:AddButton("Remover do Veículo", "Remover o animal no veículo.", "dynamic:animalFunctions", "removevehicle", "animals", false)
-				exports["dynamic"]:SubMenu("Domésticos", "Tudo sobre animais domésticos.", "animals")
-			end
+-- 			if HashAnimal ~= nil then
+-- 				exports["dynamic"]:AddButton("Seguir", "Seguir o proprietário.", "dynamic:animalFunctions", "follow", "animals", false)
+-- 				exports["dynamic"]:AddButton("Colocar no Veículo", "Colocar o animal no veículo.", "dynamic:animalFunctions", "putvehicle", "animals", false)
+-- 				exports["dynamic"]:AddButton("Remover do Veículo", "Remover o animal no veículo.", "dynamic:animalFunctions", "removevehicle", "animals", false)
+-- 				exports["dynamic"]:SubMenu("Domésticos", "Tudo sobre animais domésticos.", "animals")
+-- 			end
 
-			exports["dynamic"]:AddButton("Chapéu","Colocar/Retirar o chapéu.","player:Outfit","Hat","clothes",true)
-			exports["dynamic"]:AddButton("Máscara","Colocar/Retirar a máscara.","player:Outfit","Mask","clothes",true)
-			exports["dynamic"]:AddButton("Óculos","Colocar/Retirar o óculos.","player:Outfit","Glasses","clothes",true)
-			exports["dynamic"]:AddButton("Camisa","Colocar/Retirar a camisa.","player:Outfit","Shirt","clothes",true)
-			exports["dynamic"]:AddButton("Jaqueta","Colocar/Retirar a jaqueta.","player:Outfit","Torso","clothes",true)
-			exports["dynamic"]:AddButton("Mãos","Ajustas as mãos.","player:Outfit","Arms","clothes",true)
-			exports["dynamic"]:AddButton("Colete","Colocar/Retirar o colete.","player:Outfit","Vest","clothes",true)
-			exports["dynamic"]:AddButton("Calça","Colocar/Retirar a calça.","player:Outfit","Pants","clothes",true)
-			exports["dynamic"]:AddButton("Sapatos","Colocar/Retirar o sapato.","player:Outfit","Shoes","clothes",true)
-			exports["dynamic"]:AddButton("Acessórios","Colocar/Retirar os acessórios.","player:Outfit","Accessory","clothes",true)
-			exports["dynamic"]:SubMenu("Roupas","Colocar/Retirar roupas.","clothes")
+-- 			exports["dynamic"]:AddButton("Chapéu","Colocar/Retirar o chapéu.","player:Outfit","Hat","clothes",true)
+-- 			exports["dynamic"]:AddButton("Máscara","Colocar/Retirar a máscara.","player:Outfit","Mask","clothes",true)
+-- 			exports["dynamic"]:AddButton("Óculos","Colocar/Retirar o óculos.","player:Outfit","Glasses","clothes",true)
+-- 			exports["dynamic"]:AddButton("Camisa","Colocar/Retirar a camisa.","player:Outfit","Shirt","clothes",true)
+-- 			exports["dynamic"]:AddButton("Jaqueta","Colocar/Retirar a jaqueta.","player:Outfit","Torso","clothes",true)
+-- 			exports["dynamic"]:AddButton("Mãos","Ajustas as mãos.","player:Outfit","Arms","clothes",true)
+-- 			exports["dynamic"]:AddButton("Colete","Colocar/Retirar o colete.","player:Outfit","Vest","clothes",true)
+-- 			exports["dynamic"]:AddButton("Calça","Colocar/Retirar a calça.","player:Outfit","Pants","clothes",true)
+-- 			exports["dynamic"]:AddButton("Sapatos","Colocar/Retirar o sapato.","player:Outfit","Shoes","clothes",true)
+-- 			exports["dynamic"]:AddButton("Acessórios","Colocar/Retirar os acessórios.","player:Outfit","Accessory","clothes",true)
+-- 			exports["dynamic"]:SubMenu("Roupas","Colocar/Retirar roupas.","clothes")
 
-			local Vehicle = vRP.ClosestVehicle(7)
-			local LastVehicle = GetLastDrivenVehicle()
-			if IsEntityAVehicle(Vehicle) then
-				if not IsPedInAnyVehicle(Ped) then				
-					if GetEntityModel(LastVehicle) == GetHashKey("flatbed") or GetEntityModel(LastVehicle) == GetHashKey("flatbed3") or GetEntityModel(LastVehicle) == GetHashKey("energyrepair") or GetEntityModel(LastVehicle) == GetHashKey("WRflatbed") or GetEntityModel(LastVehicle) == GetHashKey("WRflatbed2") and not IsPedInAnyVehicle(Ped) then
-						exports["dynamic"]:AddButton("Rebocar","Colocar o veículo na prancha.","towdriver:invokeTow","","others",false)
-					end
+-- 			local Vehicle = vRP.ClosestVehicle(7)
+-- 			local LastVehicle = GetLastDrivenVehicle()
+-- 			if IsEntityAVehicle(Vehicle) then
+-- 				if not IsPedInAnyVehicle(Ped) then				
+-- 					if GetEntityModel(LastVehicle) == GetHashKey("flatbed") or GetEntityModel(LastVehicle) == GetHashKey("flatbed3") or GetEntityModel(LastVehicle) == GetHashKey("energyrepair") or GetEntityModel(LastVehicle) == GetHashKey("WRflatbed") or GetEntityModel(LastVehicle) == GetHashKey("WRflatbed2") and not IsPedInAnyVehicle(Ped) then
+-- 						exports["dynamic"]:AddButton("Rebocar","Colocar o veículo na prancha.","towdriver:invokeTow","","others",false)
+-- 					end
 
-					if vRP.ClosestPed(3) then
-						exports["dynamic"]:AddButton("Colocar no Veículo","Colocar no veículo mais próximo.","player:cvFunctions","cv","closestpeds",true)
-						exports["dynamic"]:AddButton("Remover do Veículo","Remover do veículo mais próximo.","player:cvFunctions","rv","closestpeds",true)
+-- 					if vRP.ClosestPed(3) then
+-- 						exports["dynamic"]:AddButton("Colocar no Veículo","Colocar no veículo mais próximo.","player:cvFunctions","cv","closestpeds",true)
+-- 						exports["dynamic"]:AddButton("Remover do Veículo","Remover do veículo mais próximo.","player:cvFunctions","rv","closestpeds",true)
 
-						exports["dynamic"]:SubMenu("Jogador","Pessoa mais próxima de você.","closestpeds")
-					end
-				else
-					exports["dynamic"]:AddButton("Sentar no Motorista","Sentar no banco do motorista.","player:seatPlayer","0","vehicle",false)
-					exports["dynamic"]:AddButton("Sentar no Passageiro","Sentar no banco do passageiro.","player:seatPlayer","1","vehicle",false)
-					exports["dynamic"]:AddButton("Sentar em Outros","Sentar no banco do passageiro.","player:seatPlayer","2","vehicle",false)
-					exports["dynamic"]:AddButton("Mexer nos Vidros","Levantar/Abaixar os vidros.","player:Windows","","vehicle",false)
-					exports["dynamic"]:AddButton("Estatísticas","Informações do veículo.","engine:vehTuning","","vehicle",false)
+-- 						exports["dynamic"]:SubMenu("Jogador","Pessoa mais próxima de você.","closestpeds")
+-- 					end
+-- 				else
+-- 					exports["dynamic"]:AddButton("Sentar no Motorista","Sentar no banco do motorista.","player:seatPlayer","0","vehicle",false)
+-- 					exports["dynamic"]:AddButton("Sentar no Passageiro","Sentar no banco do passageiro.","player:seatPlayer","1","vehicle",false)
+-- 					exports["dynamic"]:AddButton("Sentar em Outros","Sentar no banco do passageiro.","player:seatPlayer","2","vehicle",false)
+-- 					exports["dynamic"]:AddButton("Mexer nos Vidros","Levantar/Abaixar os vidros.","player:Windows","","vehicle",false)
+-- 					exports["dynamic"]:AddButton("Estatísticas","Informações do veículo.","engine:vehTuning","","vehicle",false)
 
-					exports["dynamic"]:SubMenu("Veículo","Funções do veículo.","vehicle")
-				end
+-- 					exports["dynamic"]:SubMenu("Veículo","Funções do veículo.","vehicle")
+-- 				end
 
-				exports["dynamic"]:AddButton("Porta do Motorista","Abrir porta do motorista.","player:Doors","1","doors",true)
-				exports["dynamic"]:AddButton("Porta do Passageiro","Abrir porta do passageiro.","player:Doors","2","doors",true)
-				exports["dynamic"]:AddButton("Porta Traseira Esquerda","Abrir porta traseira esquerda.","player:Doors","3","doors",true)
-				exports["dynamic"]:AddButton("Porta Traseira Direita","Abrir porta traseira direita.","player:Doors","4","doors",true)
-				exports["dynamic"]:AddButton("Porta-Malas","Abrir porta-malas.","player:Doors","5","doors",true)
-				exports["dynamic"]:AddButton("Capô","Abrir capô.","player:Doors","6","doors",true)
+-- 				exports["dynamic"]:AddButton("Porta do Motorista","Abrir porta do motorista.","player:Doors","1","doors",true)
+-- 				exports["dynamic"]:AddButton("Porta do Passageiro","Abrir porta do passageiro.","player:Doors","2","doors",true)
+-- 				exports["dynamic"]:AddButton("Porta Traseira Esquerda","Abrir porta traseira esquerda.","player:Doors","3","doors",true)
+-- 				exports["dynamic"]:AddButton("Porta Traseira Direita","Abrir porta traseira direita.","player:Doors","4","doors",true)
+-- 				exports["dynamic"]:AddButton("Porta-Malas","Abrir porta-malas.","player:Doors","5","doors",true)
+-- 				exports["dynamic"]:AddButton("Capô","Abrir capô.","player:Doors","6","doors",true)
 
-				exports["dynamic"]:SubMenu("Portas","Portas do veículo.","doors")
-			end
+-- 				exports["dynamic"]:SubMenu("Portas","Portas do veículo.","doors")
+-- 			end
 
-			exports["dynamic"]:AddButton("Propriedades","Marcar/Desmarcar propriedades no mapa.","propertys:Blips","","others",false)    ---player:status
-			exports["dynamic"]:AddButton("Armazéns", "Marcar/Desmarcar armazéns no mapa.", "warehouse:Blips", "", "others", false)
-			exports["dynamic"]:AddButton("Ferimentos","Verificar ferimentos no corpo.","paramedic:Injuries","","others",false)
-			exports["dynamic"]:AddButton("Desbugar","Recarregar o personagem.","player:Debug","","others",true)
-			exports["dynamic"]:AddButton("Status da Cidade", "Tudo sobre nossa cidade.", "admin:Dynamic", "stats","others", true)
-			exports["dynamic"]:AddButton("Identidade", "informações do seu Personagem.", "Creative:identity", "","others", true)
+-- 			exports["dynamic"]:AddButton("Propriedades","Marcar/Desmarcar propriedades no mapa.","propertys:Blips","","others",false)    ---player:status
+-- 			exports["dynamic"]:AddButton("Armazéns", "Marcar/Desmarcar armazéns no mapa.", "warehouse:Blips", "", "others", false)
+-- 			exports["dynamic"]:AddButton("Ferimentos","Verificar ferimentos no corpo.","paramedic:Injuries","","others",false)
+-- 			exports["dynamic"]:AddButton("Desbugar","Recarregar o personagem.","player:Debug","","others",true)
+-- 			exports["dynamic"]:AddButton("Status da Cidade", "Tudo sobre nossa cidade.", "admin:Dynamic", "stats","others", true)
+-- 			exports["dynamic"]:AddButton("Identidade", "informações do seu Personagem.", "Creative:identity", "","others", true)
 
-			exports["dynamic"]:SubMenu("Outros","Todas as funções do personagem.","others")
+-- 			exports["dynamic"]:SubMenu("Outros","Todas as funções do personagem.","others")
 
-			exports["dynamic"]:openMenu()
-		end
-	end
-end)
+-- 			exports["dynamic"]:openMenu()
+-- 		end
+-- 	end
+-- end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- TENCODEFUNCTIONS
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("tencodeFunctions", function()
-	if LocalPlayer["state"]["PMERJ"] or LocalPlayer["state"]["PCERJ"] or LocalPlayer["state"]["PRF"] or LocalPlayer["state"]["BOPE"] or LocalPlayer["state"]["RECOM"] or LocalPlayer["state"]["BPCHQ"] or LocalPlayer["state"]["EX"] and not IsPauseMenuActive() then
-		if not LocalPlayer["state"]["Commands"] and not LocalPlayer["state"]["Handcuff"] and not menuOpen and LocalPlayer["state"]["Route"] < 900000 then
-			exports["dynamic"]:AddButton("QTI", "Deslocamento.", "dynamic:Tencode", "1", false, true)
-			exports["dynamic"]:AddButton("QTH", "Localização.", "dynamic:Tencode", "2", false, true)
-			exports["dynamic"]:AddButton("QRR", "Apoio com prioridade.", "dynamic:Tencode", "3", false, true)
-			exports["dynamic"]:AddButton("QRT", "Oficial desmaiado/ferido.", "dynamic:Tencode", "4", false, true)
-			exports["dynamic"]:openMenu()
-		end
-	end
-end)
+-- RegisterCommand("tencodeFunctions", function()
+-- 	if LocalPlayer["state"]["PMERJ"] or LocalPlayer["state"]["PCERJ"] or LocalPlayer["state"]["PRF"] or LocalPlayer["state"]["BOPE"] or LocalPlayer["state"]["RECOM"] or LocalPlayer["state"]["BPCHQ"] or LocalPlayer["state"]["EX"] and not IsPauseMenuActive() then
+-- 		if not LocalPlayer["state"]["Commands"] and not LocalPlayer["state"]["Handcuff"] and not menuOpen and LocalPlayer["state"]["Route"] < 900000 then
+-- 			exports["dynamic"]:AddButton("QTI", "Deslocamento.", "dynamic:Tencode", "1", false, true)
+-- 			exports["dynamic"]:AddButton("QTH", "Localização.", "dynamic:Tencode", "2", false, true)
+-- 			exports["dynamic"]:AddButton("QRR", "Apoio com prioridade.", "dynamic:Tencode", "3", false, true)
+-- 			exports["dynamic"]:AddButton("QRT", "Oficial desmaiado/ferido.", "dynamic:Tencode", "4", false, true)
+-- 			exports["dynamic"]:openMenu()
+-- 		end
+-- 	end
+-- end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- EMERGENCYFUNCTIONS
 -----------------------------------------------------------------------------------------------------------------------------------------
-RegisterCommand("emergencyFunctions", function()
-	if (LocalPlayer["state"]["PMERJ"] or LocalPlayer["state"]["PCERJ"] or LocalPlayer["state"]["PRF"] or LocalPlayer["state"]["BOPE"] or LocalPlayer["state"]["RECOM"] or LocalPlayer["state"]["BPCHQ"] or LocalPlayer["state"]["EX"] or LocalPlayer["state"]["Paramedic"] or LocalPlayer["state"]["Bombeiro"] or LocalPlayer["state"]["Mechanic"] or LocalPlayer["state"]["Mechanic2"]) and not IsPauseMenuActive() and not LocalPlayer["state"]["Commands"] and not LocalPlayer["state"]["Handcuff"] and not LocalPlayer["state"]["Prison"] and not Dynamic then
-		local Ped = PlayerPedId()
-		if LocalPlayer["state"]["PMERJ"] then
-			if GetEntityHealth(Ped) > 100 and not IsPedInAnyVehicle(Ped) then
-				exports["dynamic"]:AddButton("Anuncio para Ação", "Fazer um anúncio para todos os moradores.", "dynamic:PoliceAnuncio", "", false, true)
-				exports["dynamic"]:AddButton("Anunciar Police", "Fazer um anúncio para todos os moradores.", "dynamic:EmergencyAnnounce", "", false, true)
-				exports["dynamic"]:AddButton("Companheiros", "Verifique seus companheiros em serviço.", "admin:Dynamic","statsPMERJ", false, true)
+-- RegisterCommand("emergencyFunctions", function()
+-- 	if (LocalPlayer["state"]["PMERJ"] or LocalPlayer["state"]["PCERJ"] or LocalPlayer["state"]["PRF"] or LocalPlayer["state"]["BOPE"] or LocalPlayer["state"]["RECOM"] or LocalPlayer["state"]["BPCHQ"] or LocalPlayer["state"]["EX"] or LocalPlayer["state"]["Paramedic"] or LocalPlayer["state"]["Bombeiro"] or LocalPlayer["state"]["Mechanic"] or LocalPlayer["state"]["Mechanic2"]) and not IsPauseMenuActive() and not LocalPlayer["state"]["Commands"] and not LocalPlayer["state"]["Handcuff"] and not LocalPlayer["state"]["Prison"] and not Dynamic then
+-- 		local Ped = PlayerPedId()
+-- 		if LocalPlayer["state"]["PMERJ"] then
+-- 			if GetEntityHealth(Ped) > 100 and not IsPedInAnyVehicle(Ped) then
+-- 				exports["dynamic"]:AddButton("Anuncio para Ação", "Fazer um anúncio para todos os moradores.", "dynamic:PoliceAnuncio", "", false, true)
+-- 				exports["dynamic"]:AddButton("Anunciar Police", "Fazer um anúncio para todos os moradores.", "dynamic:EmergencyAnnounce", "", false, true)
+-- 				exports["dynamic"]:AddButton("Companheiros", "Verifique seus companheiros em serviço.", "admin:Dynamic","statsPMERJ", false, true)
 
-				exports["dynamic"]:AddButton("Carregar", "Carregar a pessoa mais próxima.", "player:carryPlayer", "", "player", true)
-				exports["dynamic"]:AddButton("Colocar no Veículo", "Colocar no veículo mais próximo.", "player:cvFunctions", "cv", "player", true)
-				exports["dynamic"]:AddButton("Remover do Veículo", "Remover do veículo mais próximo.", "player:cvFunctions", "rv", "player", true)
-				exports["dynamic"]:AddButton("Remover Chapéu", "Remover da pessoa mais próxima.", "skinshop:Remove", "Hat", "player", true)
-				exports["dynamic"]:AddButton("Remover Máscara", "Remover da pessoa mais próxima.", "skinshop:Remove", "Mask", "player", true)
-				exports["dynamic"]:AddButton("Remover Óculos", "Remover da pessoa mais próxima.", "skinshop:Remove", "Glasses", "player", true)
-				exports["dynamic"]:SubMenu("Jogador", "Pessoa mais próxima de você.", "player")
+-- 				exports["dynamic"]:AddButton("Carregar", "Carregar a pessoa mais próxima.", "player:carryPlayer", "", "player", true)
+-- 				exports["dynamic"]:AddButton("Colocar no Veículo", "Colocar no veículo mais próximo.", "player:cvFunctions", "cv", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover do Veículo", "Remover do veículo mais próximo.", "player:cvFunctions", "rv", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Chapéu", "Remover da pessoa mais próxima.", "skinshop:Remove", "Hat", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Máscara", "Remover da pessoa mais próxima.", "skinshop:Remove", "Mask", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Óculos", "Remover da pessoa mais próxima.", "skinshop:Remove", "Glasses", "player", true)
+-- 				exports["dynamic"]:SubMenu("Jogador", "Pessoa mais próxima de você.", "player")
 
-				exports["dynamic"]:AddButton("Recruta", "Fardamento de Recruta.", "player:Preset", "14", "prePMERJ", true)
-				exports["dynamic"]:AddButton("Soldado", "Fardamento de Soldado.", "player:Preset", "15", "prePMERJ", true)
-				exports["dynamic"]:AddButton("Cabo", "Fardamento de Cabo.", "player:Preset", "16", "prePMERJ", true)
-				exports["dynamic"]:AddButton("Sargento", "Fardamento de Sargento.", "player:Preset", "17", "prePMERJ", true)
-				exports["dynamic"]:AddButton("Sub-Tenente", "Fardamento de Sub-Tenente.", "player:Preset", "18", "prePMERJ", true)
-				exports["dynamic"]:AddButton("Sub-Tenente 2", "Fardamento de Sub-Tenente 2.", "player:Preset", "19", "prePMERJ", true)
-				exports["dynamic"]:AddButton("Tenente", "Fardamento de Tenente.", "player:Preset", "20", "prePMERJ", true)
-				exports["dynamic"]:AddButton("Tenente 2", "Fardamento de Tenente 2.", "player:Preset", "21", "prePMERJ", true)
-				exports["dynamic"]:AddButton("Capitão", "Fardamento de Capitão.", "player:Preset", "22", "prePMERJ", true)
-				exports["dynamic"]:AddButton("Capitão 2", "Fardamento de Capitão 2.", "player:Preset", "23", "prePMERJ", true)
-				exports["dynamic"]:AddButton("Major", "Fardamento de Major.", "player:Preset", "24", "prePMERJ", true)
-				exports["dynamic"]:AddButton("Major 2", "Fardamento de Major 2.", "player:Preset", "25", "prePMERJ", true)
-				exports["dynamic"]:AddButton("Coronel", "Fardamento de Coronel.", "player:Preset", "26", "prePMERJ", true)
-				exports["dynamic"]:AddButton("Coronel 2", "Fardamento de Coronel 2.", "player:Preset", "27", "prePMERJ", true)
-				exports["dynamic"]:AddButton("Motorizado", "Fardamento de Motorizado.", "player:Preset", "28", "prePMERJ", true)
-				exports["dynamic"]:AddButton("Treinamento", "Fardamento de Treinamento.", "player:Preset", "29", "prePMERJ", true)
-				exports["dynamic"]:SubMenu("Fardamentos", "Todos os fardamentos policiais.", "prePMERJ")
-			end
+-- 				exports["dynamic"]:AddButton("Recruta", "Fardamento de Recruta.", "player:Preset", "14", "prePMERJ", true)
+-- 				exports["dynamic"]:AddButton("Soldado", "Fardamento de Soldado.", "player:Preset", "15", "prePMERJ", true)
+-- 				exports["dynamic"]:AddButton("Cabo", "Fardamento de Cabo.", "player:Preset", "16", "prePMERJ", true)
+-- 				exports["dynamic"]:AddButton("Sargento", "Fardamento de Sargento.", "player:Preset", "17", "prePMERJ", true)
+-- 				exports["dynamic"]:AddButton("Sub-Tenente", "Fardamento de Sub-Tenente.", "player:Preset", "18", "prePMERJ", true)
+-- 				exports["dynamic"]:AddButton("Sub-Tenente 2", "Fardamento de Sub-Tenente 2.", "player:Preset", "19", "prePMERJ", true)
+-- 				exports["dynamic"]:AddButton("Tenente", "Fardamento de Tenente.", "player:Preset", "20", "prePMERJ", true)
+-- 				exports["dynamic"]:AddButton("Tenente 2", "Fardamento de Tenente 2.", "player:Preset", "21", "prePMERJ", true)
+-- 				exports["dynamic"]:AddButton("Capitão", "Fardamento de Capitão.", "player:Preset", "22", "prePMERJ", true)
+-- 				exports["dynamic"]:AddButton("Capitão 2", "Fardamento de Capitão 2.", "player:Preset", "23", "prePMERJ", true)
+-- 				exports["dynamic"]:AddButton("Major", "Fardamento de Major.", "player:Preset", "24", "prePMERJ", true)
+-- 				exports["dynamic"]:AddButton("Major 2", "Fardamento de Major 2.", "player:Preset", "25", "prePMERJ", true)
+-- 				exports["dynamic"]:AddButton("Coronel", "Fardamento de Coronel.", "player:Preset", "26", "prePMERJ", true)
+-- 				exports["dynamic"]:AddButton("Coronel 2", "Fardamento de Coronel 2.", "player:Preset", "27", "prePMERJ", true)
+-- 				exports["dynamic"]:AddButton("Motorizado", "Fardamento de Motorizado.", "player:Preset", "28", "prePMERJ", true)
+-- 				exports["dynamic"]:AddButton("Treinamento", "Fardamento de Treinamento.", "player:Preset", "29", "prePMERJ", true)
+-- 				exports["dynamic"]:SubMenu("Fardamentos", "Todos os fardamentos policiais.", "prePMERJ")
+-- 			end
 
-			exports["dynamic"]:AddButton("Propriedade", "Invadir Propriedade.", "propertys:invadePoliceEvent", "", false, false)
-			exports["dynamic"]:AddButton("Computador", "Computador de bordo policial.", "police:Open", "", false, false)
-			exports["dynamic"]:openMenu()
+-- 			exports["dynamic"]:AddButton("Propriedade", "Invadir Propriedade.", "propertys:invadePoliceEvent", "", false, false)
+-- 			exports["dynamic"]:AddButton("Computador", "Computador de bordo policial.", "police:Open", "", false, false)
+-- 			exports["dynamic"]:openMenu()
 		
-		elseif LocalPlayer["state"]["PCERJ"] then
-			if GetEntityHealth(Ped) > 100 and not IsPedInAnyVehicle(Ped) then
-				exports["dynamic"]:AddButton("Anunciar Police", "Fazer um anúncio para todos os moradores.", "dynamic:EmergencyAnnounce", "", false, true)
-				exports["dynamic"]:AddButton("Companheiros", "Verifique seus companheiros em serviço.", "admin:Dynamic","statsPCERJ", false, true)
+-- 		elseif LocalPlayer["state"]["PCERJ"] then
+-- 			if GetEntityHealth(Ped) > 100 and not IsPedInAnyVehicle(Ped) then
+-- 				exports["dynamic"]:AddButton("Anunciar Police", "Fazer um anúncio para todos os moradores.", "dynamic:EmergencyAnnounce", "", false, true)
+-- 				exports["dynamic"]:AddButton("Companheiros", "Verifique seus companheiros em serviço.", "admin:Dynamic","statsPCERJ", false, true)
 
-				exports["dynamic"]:AddButton("Carregar", "Carregar a pessoa mais próxima.", "player:carryPlayer", "", "player", true)
-				exports["dynamic"]:AddButton("Colocar no Veículo", "Colocar no veículo mais próximo.", "player:cvFunctions", "cv", "player", true)
-				exports["dynamic"]:AddButton("Remover do Veículo", "Remover do veículo mais próximo.", "player:cvFunctions", "rv", "player", true)
-				exports["dynamic"]:AddButton("Remover Chapéu", "Remover da pessoa mais próxima.", "skinshop:Remove", "Hat", "player", true)
-				exports["dynamic"]:AddButton("Remover Máscara", "Remover da pessoa mais próxima.", "skinshop:Remove", "Mask", "player", true)
-				exports["dynamic"]:AddButton("Remover Óculos", "Remover da pessoa mais próxima.", "skinshop:Remove", "Glasses", "player", true)
-				exports["dynamic"]:SubMenu("Jogador", "Pessoa mais próxima de você.", "player")
+-- 				exports["dynamic"]:AddButton("Carregar", "Carregar a pessoa mais próxima.", "player:carryPlayer", "", "player", true)
+-- 				exports["dynamic"]:AddButton("Colocar no Veículo", "Colocar no veículo mais próximo.", "player:cvFunctions", "cv", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover do Veículo", "Remover do veículo mais próximo.", "player:cvFunctions", "rv", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Chapéu", "Remover da pessoa mais próxima.", "skinshop:Remove", "Hat", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Máscara", "Remover da pessoa mais próxima.", "skinshop:Remove", "Mask", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Óculos", "Remover da pessoa mais próxima.", "skinshop:Remove", "Glasses", "player", true)
+-- 				exports["dynamic"]:SubMenu("Jogador", "Pessoa mais próxima de você.", "player")
 
-				exports["dynamic"]:AddButton("Delegado", "Fardamento de Delegado.", "player:Preset", "30", "prePCERJ", true)
-				exports["dynamic"]:AddButton("Perito", "Fardamento de Perito.", "player:Preset", "31", "prePCERJ", true)
-				exports["dynamic"]:AddButton("Investigador", "Fardamento de Investigador.", "player:Preset", "32", "prePCERJ", true)
-				exports["dynamic"]:AddButton("Escrivão", "Fardamento de Escrivão.", "player:Preset", "33", "prePCERJ", true)
-				exports["dynamic"]:AddButton("Operacional", "Fardamento de Operacional.", "player:Preset", "34", "prePCERJ", true)
-				exports["dynamic"]:AddButton("CORE 1", "Fardamento da CORE 1.", "player:Preset", "35", "prePCERJ", true)
-				exports["dynamic"]:AddButton("CORE 2", "Fardamento da CORE 2.", "player:Preset", "36", "prePCERJ", true)
-				exports["dynamic"]:SubMenu("Fardamentos", "Todos os fardamentos policiais.", "prePCERJ")
-			end
+-- 				exports["dynamic"]:AddButton("Delegado", "Fardamento de Delegado.", "player:Preset", "30", "prePCERJ", true)
+-- 				exports["dynamic"]:AddButton("Perito", "Fardamento de Perito.", "player:Preset", "31", "prePCERJ", true)
+-- 				exports["dynamic"]:AddButton("Investigador", "Fardamento de Investigador.", "player:Preset", "32", "prePCERJ", true)
+-- 				exports["dynamic"]:AddButton("Escrivão", "Fardamento de Escrivão.", "player:Preset", "33", "prePCERJ", true)
+-- 				exports["dynamic"]:AddButton("Operacional", "Fardamento de Operacional.", "player:Preset", "34", "prePCERJ", true)
+-- 				exports["dynamic"]:AddButton("CORE 1", "Fardamento da CORE 1.", "player:Preset", "35", "prePCERJ", true)
+-- 				exports["dynamic"]:AddButton("CORE 2", "Fardamento da CORE 2.", "player:Preset", "36", "prePCERJ", true)
+-- 				exports["dynamic"]:SubMenu("Fardamentos", "Todos os fardamentos policiais.", "prePCERJ")
+-- 			end
 
-			exports["dynamic"]:AddButton("Propriedade", "Invadir Propriedade.", "propertys:invadePoliceEvent", "", false, false)
-			exports["dynamic"]:AddButton("Computador", "Computador de bordo policial.", "police:Open", "", false, false)
-			exports["dynamic"]:openMenu()
+-- 			exports["dynamic"]:AddButton("Propriedade", "Invadir Propriedade.", "propertys:invadePoliceEvent", "", false, false)
+-- 			exports["dynamic"]:AddButton("Computador", "Computador de bordo policial.", "police:Open", "", false, false)
+-- 			exports["dynamic"]:openMenu()
 
-		elseif LocalPlayer["state"]["PRF"] then
-			if GetEntityHealth(Ped) > 100 and not IsPedInAnyVehicle(Ped) then
-				exports["dynamic"]:AddButton("Anunciar Police", "Fazer um anúncio para todos os moradores.", "dynamic:EmergencyAnnounce", "", false, true)
-				exports["dynamic"]:AddButton("Companheiros", "Verifique seus companheiros em serviço.", "admin:Dynamic","statsPRF", false, true)
+-- 		elseif LocalPlayer["state"]["PRF"] then
+-- 			if GetEntityHealth(Ped) > 100 and not IsPedInAnyVehicle(Ped) then
+-- 				exports["dynamic"]:AddButton("Anunciar Police", "Fazer um anúncio para todos os moradores.", "dynamic:EmergencyAnnounce", "", false, true)
+-- 				exports["dynamic"]:AddButton("Companheiros", "Verifique seus companheiros em serviço.", "admin:Dynamic","statsPRF", false, true)
 
-				exports["dynamic"]:AddButton("Carregar", "Carregar a pessoa mais próxima.", "player:carryPlayer", "", "player", true)
-				exports["dynamic"]:AddButton("Colocar no Veículo", "Colocar no veículo mais próximo.", "player:cvFunctions", "cv", "player", true)
-				exports["dynamic"]:AddButton("Remover do Veículo", "Remover do veículo mais próximo.", "player:cvFunctions", "rv", "player", true)
-				exports["dynamic"]:AddButton("Remover Chapéu", "Remover da pessoa mais próxima.", "skinshop:Remove", "Hat", "player", true)
-				exports["dynamic"]:AddButton("Remover Máscara", "Remover da pessoa mais próxima.", "skinshop:Remove", "Mask", "player", true)
-				exports["dynamic"]:AddButton("Remover Óculos", "Remover da pessoa mais próxima.", "skinshop:Remove", "Glasses", "player", true)
-				exports["dynamic"]:SubMenu("Jogador", "Pessoa mais próxima de você.", "player")
+-- 				exports["dynamic"]:AddButton("Carregar", "Carregar a pessoa mais próxima.", "player:carryPlayer", "", "player", true)
+-- 				exports["dynamic"]:AddButton("Colocar no Veículo", "Colocar no veículo mais próximo.", "player:cvFunctions", "cv", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover do Veículo", "Remover do veículo mais próximo.", "player:cvFunctions", "rv", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Chapéu", "Remover da pessoa mais próxima.", "skinshop:Remove", "Hat", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Máscara", "Remover da pessoa mais próxima.", "skinshop:Remove", "Mask", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Óculos", "Remover da pessoa mais próxima.", "skinshop:Remove", "Glasses", "player", true)
+-- 				exports["dynamic"]:SubMenu("Jogador", "Pessoa mais próxima de você.", "player")
 
-				exports["dynamic"]:AddButton("Uniforme", "Uniforme da PRF.", "player:Preset", "37", "prePRF", true)
-				exports["dynamic"]:AddButton("Camuflado", "Camuflado da PRF.", "player:Preset", "38", "prePRF", true)
-				exports["dynamic"]:AddButton("Moto", "Fardamento de Moto da PRF.", "player:Preset", "39", "prePRF", true)
-				exports["dynamic"]:SubMenu("Fardamentos", "Todos os fardamentos policiais.", "prePRF")
-			end
+-- 				exports["dynamic"]:AddButton("Uniforme", "Uniforme da PRF.", "player:Preset", "37", "prePRF", true)
+-- 				exports["dynamic"]:AddButton("Camuflado", "Camuflado da PRF.", "player:Preset", "38", "prePRF", true)
+-- 				exports["dynamic"]:AddButton("Moto", "Fardamento de Moto da PRF.", "player:Preset", "39", "prePRF", true)
+-- 				exports["dynamic"]:SubMenu("Fardamentos", "Todos os fardamentos policiais.", "prePRF")
+-- 			end
 
-			exports["dynamic"]:AddButton("Propriedade", "Invadir Propriedade.", "propertys:invadePoliceEvent", "", false, false)
-			exports["dynamic"]:AddButton("Computador", "Computador de bordo policial.", "police:Open", "", false, false)
-			exports["dynamic"]:openMenu()
+-- 			exports["dynamic"]:AddButton("Propriedade", "Invadir Propriedade.", "propertys:invadePoliceEvent", "", false, false)
+-- 			exports["dynamic"]:AddButton("Computador", "Computador de bordo policial.", "police:Open", "", false, false)
+-- 			exports["dynamic"]:openMenu()
 
-		elseif LocalPlayer["state"]["BOPE"] then
-			if GetEntityHealth(Ped) > 100 and not IsPedInAnyVehicle(Ped) then
-				exports["dynamic"]:AddButton("Anunciar Police", "Fazer um anúncio para todos os moradores.", "dynamic:EmergencyAnnounce", "", false, true)
-				exports["dynamic"]:AddButton("Companheiros", "Verifique seus companheiros em serviço.", "admin:Dynamic","statsBOPE", false, true)
+-- 		elseif LocalPlayer["state"]["BOPE"] then
+-- 			if GetEntityHealth(Ped) > 100 and not IsPedInAnyVehicle(Ped) then
+-- 				exports["dynamic"]:AddButton("Anunciar Police", "Fazer um anúncio para todos os moradores.", "dynamic:EmergencyAnnounce", "", false, true)
+-- 				exports["dynamic"]:AddButton("Companheiros", "Verifique seus companheiros em serviço.", "admin:Dynamic","statsBOPE", false, true)
 
-				exports["dynamic"]:AddButton("Carregar", "Carregar a pessoa mais próxima.", "player:carryPlayer", "", "player", true)
-				exports["dynamic"]:AddButton("Colocar no Veículo", "Colocar no veículo mais próximo.", "player:cvFunctions", "cv", "player", true)
-				exports["dynamic"]:AddButton("Remover do Veículo", "Remover do veículo mais próximo.", "player:cvFunctions", "rv", "player", true)
-				exports["dynamic"]:AddButton("Remover Chapéu", "Remover da pessoa mais próxima.", "skinshop:Remove", "Hat", "player", true)
-				exports["dynamic"]:AddButton("Remover Máscara", "Remover da pessoa mais próxima.", "skinshop:Remove", "Mask", "player", true)
-				exports["dynamic"]:AddButton("Remover Óculos", "Remover da pessoa mais próxima.", "skinshop:Remove", "Glasses", "player", true)
-				exports["dynamic"]:SubMenu("Jogador", "Pessoa mais próxima de você.", "player")
+-- 				exports["dynamic"]:AddButton("Carregar", "Carregar a pessoa mais próxima.", "player:carryPlayer", "", "player", true)
+-- 				exports["dynamic"]:AddButton("Colocar no Veículo", "Colocar no veículo mais próximo.", "player:cvFunctions", "cv", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover do Veículo", "Remover do veículo mais próximo.", "player:cvFunctions", "rv", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Chapéu", "Remover da pessoa mais próxima.", "skinshop:Remove", "Hat", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Máscara", "Remover da pessoa mais próxima.", "skinshop:Remove", "Mask", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Óculos", "Remover da pessoa mais próxima.", "skinshop:Remove", "Glasses", "player", true)
+-- 				exports["dynamic"]:SubMenu("Jogador", "Pessoa mais próxima de você.", "player")
 
-				exports["dynamic"]:AddButton("BOPE 1", "Fardamento da BOPE 1.", "player:Preset", "40", "preBOPE", true)
-				exports["dynamic"]:AddButton("BOPE 2", "Fardamento da BOPE 2.", "player:Preset", "41", "preBOPE", true)
-				exports["dynamic"]:AddButton("BOPE 3", "Fardamento da BOPE 3.", "player:Preset", "42", "preBOPE", true)
-				exports["dynamic"]:AddButton("BOPE 4", "Fardamento da BOPE 4.", "player:Preset", "43", "preBOPE", true)
-				exports["dynamic"]:AddButton("Treinamento", "Fardamento de Treinamento da BOPE.", "player:Preset", "44", "preBOPE", true)
-				exports["dynamic"]:SubMenu("Fardamentos", "Todos os fardamentos policiais.", "preBOPE")
-			end
+-- 				exports["dynamic"]:AddButton("BOPE 1", "Fardamento da BOPE 1.", "player:Preset", "40", "preBOPE", true)
+-- 				exports["dynamic"]:AddButton("BOPE 2", "Fardamento da BOPE 2.", "player:Preset", "41", "preBOPE", true)
+-- 				exports["dynamic"]:AddButton("BOPE 3", "Fardamento da BOPE 3.", "player:Preset", "42", "preBOPE", true)
+-- 				exports["dynamic"]:AddButton("BOPE 4", "Fardamento da BOPE 4.", "player:Preset", "43", "preBOPE", true)
+-- 				exports["dynamic"]:AddButton("Treinamento", "Fardamento de Treinamento da BOPE.", "player:Preset", "44", "preBOPE", true)
+-- 				exports["dynamic"]:SubMenu("Fardamentos", "Todos os fardamentos policiais.", "preBOPE")
+-- 			end
 
-			exports["dynamic"]:AddButton("Propriedade", "Invadir Propriedade.", "propertys:invadePoliceEvent", "", false, false)
-			exports["dynamic"]:AddButton("Computador", "Computador de bordo policial.", "police:Open", "", false, false)
-			exports["dynamic"]:openMenu()
+-- 			exports["dynamic"]:AddButton("Propriedade", "Invadir Propriedade.", "propertys:invadePoliceEvent", "", false, false)
+-- 			exports["dynamic"]:AddButton("Computador", "Computador de bordo policial.", "police:Open", "", false, false)
+-- 			exports["dynamic"]:openMenu()
 
-		elseif LocalPlayer["state"]["RECOM"] then
-			if GetEntityHealth(Ped) > 100 and not IsPedInAnyVehicle(Ped) then
-				exports["dynamic"]:AddButton("Anunciar Police", "Fazer um anúncio para todos os moradores.", "dynamic:EmergencyAnnounce", "", false, true)
-				exports["dynamic"]:AddButton("Companheiros", "Verifique seus companheiros em serviço.", "admin:Dynamic","statsRECOM", false, true)
+-- 		elseif LocalPlayer["state"]["RECOM"] then
+-- 			if GetEntityHealth(Ped) > 100 and not IsPedInAnyVehicle(Ped) then
+-- 				exports["dynamic"]:AddButton("Anunciar Police", "Fazer um anúncio para todos os moradores.", "dynamic:EmergencyAnnounce", "", false, true)
+-- 				exports["dynamic"]:AddButton("Companheiros", "Verifique seus companheiros em serviço.", "admin:Dynamic","statsRECOM", false, true)
 
-				exports["dynamic"]:AddButton("Carregar", "Carregar a pessoa mais próxima.", "player:carryPlayer", "", "player", true)
-				exports["dynamic"]:AddButton("Colocar no Veículo", "Colocar no veículo mais próximo.", "player:cvFunctions", "cv", "player", true)
-				exports["dynamic"]:AddButton("Remover do Veículo", "Remover do veículo mais próximo.", "player:cvFunctions", "rv", "player", true)
-				exports["dynamic"]:AddButton("Remover Chapéu", "Remover da pessoa mais próxima.", "skinshop:Remove", "Hat", "player", true)
-				exports["dynamic"]:AddButton("Remover Máscara", "Remover da pessoa mais próxima.", "skinshop:Remove", "Mask", "player", true)
-				exports["dynamic"]:AddButton("Remover Óculos", "Remover da pessoa mais próxima.", "skinshop:Remove", "Glasses", "player", true)
-				exports["dynamic"]:SubMenu("Jogador", "Pessoa mais próxima de você.", "player")
+-- 				exports["dynamic"]:AddButton("Carregar", "Carregar a pessoa mais próxima.", "player:carryPlayer", "", "player", true)
+-- 				exports["dynamic"]:AddButton("Colocar no Veículo", "Colocar no veículo mais próximo.", "player:cvFunctions", "cv", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover do Veículo", "Remover do veículo mais próximo.", "player:cvFunctions", "rv", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Chapéu", "Remover da pessoa mais próxima.", "skinshop:Remove", "Hat", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Máscara", "Remover da pessoa mais próxima.", "skinshop:Remove", "Mask", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Óculos", "Remover da pessoa mais próxima.", "skinshop:Remove", "Glasses", "player", true)
+-- 				exports["dynamic"]:SubMenu("Jogador", "Pessoa mais próxima de você.", "player")
 
-				exports["dynamic"]:AddButton("RECOM 1", "Fardamento da RECOM 1.", "player:Preset", "45", "preRECOM", true)
-				exports["dynamic"]:AddButton("RECOM 2", "Fardamento da RECOM 2.", "player:Preset", "46", "preRECOM", true)
-				exports["dynamic"]:SubMenu("Fardamentos", "Todos os fardamentos policiais.", "preRECOM")
-			end
+-- 				exports["dynamic"]:AddButton("RECOM 1", "Fardamento da RECOM 1.", "player:Preset", "45", "preRECOM", true)
+-- 				exports["dynamic"]:AddButton("RECOM 2", "Fardamento da RECOM 2.", "player:Preset", "46", "preRECOM", true)
+-- 				exports["dynamic"]:SubMenu("Fardamentos", "Todos os fardamentos policiais.", "preRECOM")
+-- 			end
 
-			exports["dynamic"]:AddButton("Propriedade", "Invadir Propriedade.", "propertys:invadePoliceEvent", "", false, false)
-			exports["dynamic"]:AddButton("Computador", "Computador de bordo policial.", "police:Open", "", false, false)
-			exports["dynamic"]:openMenu()
+-- 			exports["dynamic"]:AddButton("Propriedade", "Invadir Propriedade.", "propertys:invadePoliceEvent", "", false, false)
+-- 			exports["dynamic"]:AddButton("Computador", "Computador de bordo policial.", "police:Open", "", false, false)
+-- 			exports["dynamic"]:openMenu()
 
-		elseif LocalPlayer["state"]["BPCHQ"] then
-			if GetEntityHealth(Ped) > 100 and not IsPedInAnyVehicle(Ped) then
-				exports["dynamic"]:AddButton("Anunciar Police", "Fazer um anúncio para todos os moradores.", "dynamic:EmergencyAnnounce", "", false, true)
-				exports["dynamic"]:AddButton("Companheiros", "Verifique seus companheiros em serviço.", "admin:Dynamic","statsBPCHQ", false, true)
+-- 		elseif LocalPlayer["state"]["BPCHQ"] then
+-- 			if GetEntityHealth(Ped) > 100 and not IsPedInAnyVehicle(Ped) then
+-- 				exports["dynamic"]:AddButton("Anunciar Police", "Fazer um anúncio para todos os moradores.", "dynamic:EmergencyAnnounce", "", false, true)
+-- 				exports["dynamic"]:AddButton("Companheiros", "Verifique seus companheiros em serviço.", "admin:Dynamic","statsBPCHQ", false, true)
 
-				exports["dynamic"]:AddButton("Carregar", "Carregar a pessoa mais próxima.", "player:carryPlayer", "", "player", true)
-				exports["dynamic"]:AddButton("Colocar no Veículo", "Colocar no veículo mais próximo.", "player:cvFunctions", "cv", "player", true)
-				exports["dynamic"]:AddButton("Remover do Veículo", "Remover do veículo mais próximo.", "player:cvFunctions", "rv", "player", true)
-				exports["dynamic"]:AddButton("Remover Chapéu", "Remover da pessoa mais próxima.", "skinshop:Remove", "Hat", "player", true)
-				exports["dynamic"]:AddButton("Remover Máscara", "Remover da pessoa mais próxima.", "skinshop:Remove", "Mask", "player", true)
-				exports["dynamic"]:AddButton("Remover Óculos", "Remover da pessoa mais próxima.", "skinshop:Remove", "Glasses", "player", true)
-				exports["dynamic"]:SubMenu("Jogador", "Pessoa mais próxima de você.", "player")
+-- 				exports["dynamic"]:AddButton("Carregar", "Carregar a pessoa mais próxima.", "player:carryPlayer", "", "player", true)
+-- 				exports["dynamic"]:AddButton("Colocar no Veículo", "Colocar no veículo mais próximo.", "player:cvFunctions", "cv", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover do Veículo", "Remover do veículo mais próximo.", "player:cvFunctions", "rv", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Chapéu", "Remover da pessoa mais próxima.", "skinshop:Remove", "Hat", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Máscara", "Remover da pessoa mais próxima.", "skinshop:Remove", "Mask", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Óculos", "Remover da pessoa mais próxima.", "skinshop:Remove", "Glasses", "player", true)
+-- 				exports["dynamic"]:SubMenu("Jogador", "Pessoa mais próxima de você.", "player")
 
-				exports["dynamic"]:AddButton("CHOQUE", "Fardamento do CHOQUE.", "player:Preset", "47", "preBPCHQ", true)
-				exports["dynamic"]:AddButton("PATAMO", "Fardamento do Patamo.", "player:Preset", "48", "preBPCHQ", true)
-				exports["dynamic"]:AddButton("GETEM", "Fardamento da GETEM.", "player:Preset", "49", "preBPCHQ", true)
-				exports["dynamic"]:AddButton("BATEDOR", "Fardamento do BATEDOR.", "player:Preset", "50", "preBPCHQ", true)
-				exports["dynamic"]:SubMenu("Fardamentos", "Todos os fardamentos policiais.", "preBPCHQ")
-			end
+-- 				exports["dynamic"]:AddButton("CHOQUE", "Fardamento do CHOQUE.", "player:Preset", "47", "preBPCHQ", true)
+-- 				exports["dynamic"]:AddButton("PATAMO", "Fardamento do Patamo.", "player:Preset", "48", "preBPCHQ", true)
+-- 				exports["dynamic"]:AddButton("GETEM", "Fardamento da GETEM.", "player:Preset", "49", "preBPCHQ", true)
+-- 				exports["dynamic"]:AddButton("BATEDOR", "Fardamento do BATEDOR.", "player:Preset", "50", "preBPCHQ", true)
+-- 				exports["dynamic"]:SubMenu("Fardamentos", "Todos os fardamentos policiais.", "preBPCHQ")
+-- 			end
 
-			exports["dynamic"]:AddButton("Propriedade", "Invadir Propriedade.", "propertys:invadePoliceEvent", "", false, false)
-			exports["dynamic"]:AddButton("Computador", "Computador de bordo policial.", "police:Open", "", false, false)
-			exports["dynamic"]:openMenu()
+-- 			exports["dynamic"]:AddButton("Propriedade", "Invadir Propriedade.", "propertys:invadePoliceEvent", "", false, false)
+-- 			exports["dynamic"]:AddButton("Computador", "Computador de bordo policial.", "police:Open", "", false, false)
+-- 			exports["dynamic"]:openMenu()
 
-		elseif LocalPlayer["state"]["EX"] then
-			if GetEntityHealth(Ped) > 100 and not IsPedInAnyVehicle(Ped) then
-				exports["dynamic"]:AddButton("Anunciar Police", "Fazer um anúncio para todos os moradores.", "dynamic:EmergencyAnnounce", "", false, true)
-				exports["dynamic"]:AddButton("Companheiros", "Verifique seus companheiros em serviço.", "admin:Dynamic","statsEX", false, true)
+-- 		elseif LocalPlayer["state"]["EX"] then
+-- 			if GetEntityHealth(Ped) > 100 and not IsPedInAnyVehicle(Ped) then
+-- 				exports["dynamic"]:AddButton("Anunciar Police", "Fazer um anúncio para todos os moradores.", "dynamic:EmergencyAnnounce", "", false, true)
+-- 				exports["dynamic"]:AddButton("Companheiros", "Verifique seus companheiros em serviço.", "admin:Dynamic","statsEX", false, true)
 
-				exports["dynamic"]:AddButton("Carregar", "Carregar a pessoa mais próxima.", "player:carryPlayer", "", "player", true)
-				exports["dynamic"]:AddButton("Colocar no Veículo", "Colocar no veículo mais próximo.", "player:cvFunctions", "cv", "player", true)
-				exports["dynamic"]:AddButton("Remover do Veículo", "Remover do veículo mais próximo.", "player:cvFunctions", "rv", "player", true)
-				exports["dynamic"]:AddButton("Remover Chapéu", "Remover da pessoa mais próxima.", "skinshop:Remove", "Hat", "player", true)
-				exports["dynamic"]:AddButton("Remover Máscara", "Remover da pessoa mais próxima.", "skinshop:Remove", "Mask", "player", true)
-				exports["dynamic"]:AddButton("Remover Óculos", "Remover da pessoa mais próxima.", "skinshop:Remove", "Glasses", "player", true)
-				exports["dynamic"]:SubMenu("Jogador", "Pessoa mais próxima de você.", "player")
+-- 				exports["dynamic"]:AddButton("Carregar", "Carregar a pessoa mais próxima.", "player:carryPlayer", "", "player", true)
+-- 				exports["dynamic"]:AddButton("Colocar no Veículo", "Colocar no veículo mais próximo.", "player:cvFunctions", "cv", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover do Veículo", "Remover do veículo mais próximo.", "player:cvFunctions", "rv", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Chapéu", "Remover da pessoa mais próxima.", "skinshop:Remove", "Hat", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Máscara", "Remover da pessoa mais próxima.", "skinshop:Remove", "Mask", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Óculos", "Remover da pessoa mais próxima.", "skinshop:Remove", "Glasses", "player", true)
+-- 				exports["dynamic"]:SubMenu("Jogador", "Pessoa mais próxima de você.", "player")
 
-				exports["dynamic"]:AddButton("EX Polícia", "Uniforme da Polícia do EX.", "player:Preset", "51", "preEX", true)
-				exports["dynamic"]:AddButton("EX Força Especial", "Fardamento da Força Especial do EX.", "player:Preset", "52", "preEX", true)
-				exports["dynamic"]:AddButton("EX Comando", "Fardamento do Comando do EX.", "player:Preset", "53", "preEX", true)
-				exports["dynamic"]:AddButton("EX Selva", "Fardamento Selva do EX.", "player:Preset", "54", "preEX", true)
-				exports["dynamic"]:SubMenu("Fardamentos", "Todos os fardamentos policiais.", "preEX")
-			end
+-- 				exports["dynamic"]:AddButton("EX Polícia", "Uniforme da Polícia do EX.", "player:Preset", "51", "preEX", true)
+-- 				exports["dynamic"]:AddButton("EX Força Especial", "Fardamento da Força Especial do EX.", "player:Preset", "52", "preEX", true)
+-- 				exports["dynamic"]:AddButton("EX Comando", "Fardamento do Comando do EX.", "player:Preset", "53", "preEX", true)
+-- 				exports["dynamic"]:AddButton("EX Selva", "Fardamento Selva do EX.", "player:Preset", "54", "preEX", true)
+-- 				exports["dynamic"]:SubMenu("Fardamentos", "Todos os fardamentos policiais.", "preEX")
+-- 			end
 
-			exports["dynamic"]:AddButton("Propriedade", "Invadir Propriedade.", "propertys:invadePoliceEvent", "", false, false)
-			exports["dynamic"]:AddButton("Computador", "Computador de bordo policial.", "police:Open", "", false, false)
-			exports["dynamic"]:openMenu()
+-- 			exports["dynamic"]:AddButton("Propriedade", "Invadir Propriedade.", "propertys:invadePoliceEvent", "", false, false)
+-- 			exports["dynamic"]:AddButton("Computador", "Computador de bordo policial.", "police:Open", "", false, false)
+-- 			exports["dynamic"]:openMenu()
 			
-		elseif LocalPlayer["state"]["Mechanic"] then
-			if GetEntityHealth(Ped) > 100 and not IsPedInAnyVehicle(Ped) then
-				exports["dynamic"]:AddButton("Anunciar Mecânico", "Fazer um anúncio para todos os moradores.", "dynamic:EmergencyAnnounceMechanic", "", false, true)
-				exports["dynamic"]:AddButton("Companheiros", "Verifique seus companheiros em serviço.", "admin:Dynamic","statsMecanico", false, true)
-				exports["dynamic"]:AddButton("Mecânico 1", "Fardamento de Mecânico 1", "player:Preset", "10", "preMechanic", true)
-				exports["dynamic"]:AddButton("Mecânico 2", "Fardamento de Mecânico 2", "player:Preset", "11", "preMechanic", true)
-				exports["dynamic"]:SubMenu("Fardamentos", "Todos os fardamentos de Mecânicos", "preMechanic")
-				exports["dynamic"]:openMenu()
-			end
+-- 		elseif LocalPlayer["state"]["Mechanic"] then
+-- 			if GetEntityHealth(Ped) > 100 and not IsPedInAnyVehicle(Ped) then
+-- 				exports["dynamic"]:AddButton("Anunciar Mecânico", "Fazer um anúncio para todos os moradores.", "dynamic:EmergencyAnnounceMechanic", "", false, true)
+-- 				exports["dynamic"]:AddButton("Companheiros", "Verifique seus companheiros em serviço.", "admin:Dynamic","statsMecanico", false, true)
+-- 				exports["dynamic"]:AddButton("Mecânico 1", "Fardamento de Mecânico 1", "player:Preset", "10", "preMechanic", true)
+-- 				exports["dynamic"]:AddButton("Mecânico 2", "Fardamento de Mecânico 2", "player:Preset", "11", "preMechanic", true)
+-- 				exports["dynamic"]:SubMenu("Fardamentos", "Todos os fardamentos de Mecânicos", "preMechanic")
+-- 				exports["dynamic"]:openMenu()
+-- 			end
 		
-		elseif LocalPlayer["state"]["Mechanic2"] then
-			if GetEntityHealth(Ped) > 100 and not IsPedInAnyVehicle(Ped) then
-				exports["dynamic"]:AddButton("Anunciar Mecânico", "Fazer um anúncio para todos os moradores.", "dynamic:EmergencyAnnounceMechanic", "", false, true)
-				exports["dynamic"]:AddButton("Companheiros", "Verifique seus companheiros em serviço.", "admin:Dynamic","statsMecanico2", false, true)
-				exports["dynamic"]:AddButton("Mecânico 1", "Fardamento de Mecânico 1", "player:Preset", "12", "preMechanic2", true)
-				exports["dynamic"]:AddButton("Mecânico 2", "Fardamento de Mecânico 2", "player:Preset", "13", "preMechanic2", true)
-				exports["dynamic"]:SubMenu("Fardamentos", "Todos os fardamentos de Mecânicos", "preMechanic2")
-				exports["dynamic"]:openMenu()
-			end
+-- 		elseif LocalPlayer["state"]["Mechanic2"] then
+-- 			if GetEntityHealth(Ped) > 100 and not IsPedInAnyVehicle(Ped) then
+-- 				exports["dynamic"]:AddButton("Anunciar Mecânico", "Fazer um anúncio para todos os moradores.", "dynamic:EmergencyAnnounceMechanic", "", false, true)
+-- 				exports["dynamic"]:AddButton("Companheiros", "Verifique seus companheiros em serviço.", "admin:Dynamic","statsMecanico2", false, true)
+-- 				exports["dynamic"]:AddButton("Mecânico 1", "Fardamento de Mecânico 1", "player:Preset", "12", "preMechanic2", true)
+-- 				exports["dynamic"]:AddButton("Mecânico 2", "Fardamento de Mecânico 2", "player:Preset", "13", "preMechanic2", true)
+-- 				exports["dynamic"]:SubMenu("Fardamentos", "Todos os fardamentos de Mecânicos", "preMechanic2")
+-- 				exports["dynamic"]:openMenu()
+-- 			end
 
-		elseif LocalPlayer["state"]["Paramedic"] then
-			if GetEntityHealth(Ped) > 100 and not IsPedInAnyVehicle(Ped) then
-				exports["dynamic"]:AddButton("Anuncio Paramedico", "Fazer um anúncio para todos os moradores.", "dynamic:EmergencyAnnounceMedic", "", false, true)
-				exports["dynamic"]:AddButton("Companheiros", "Verifique seus companheiros em serviço.", "admin:Dynamic","statsParamedico", false, true)
-				exports["dynamic"]:AddButton("Carregar", "Carregar a pessoa mais próxima.", "player:carryPlayer", "", "player", true)
-				exports["dynamic"]:AddButton("Colocar no Veículo", "Colocar no veículo mais próximo.", "player:cvFunctions", "cv", "player", true)
-				exports["dynamic"]:AddButton("Remover do Veículo", "Remover do veículo mais próximo.", "player:cvFunctions", "rv", "player", true)
-				exports["dynamic"]:AddButton("Remover Chapéu", "Remover da pessoa mais próxima.", "skinshop:Remove", "Hat", "player", true)
-				exports["dynamic"]:AddButton("Remover Máscara", "Remover da pessoa mais próxima.", "skinshop:Remove", "Mask", "player", true)
-				exports["dynamic"]:AddButton("Remover Óculos", "Remover da pessoa mais próxima.", "skinshop:Remove", "Glasses", "player", true)
-				exports["dynamic"]:SubMenu("Jogador", "Pessoa mais próxima de você.", "player")
+-- 		elseif LocalPlayer["state"]["Paramedic"] then
+-- 			if GetEntityHealth(Ped) > 100 and not IsPedInAnyVehicle(Ped) then
+-- 				exports["dynamic"]:AddButton("Anuncio Paramedico", "Fazer um anúncio para todos os moradores.", "dynamic:EmergencyAnnounceMedic", "", false, true)
+-- 				exports["dynamic"]:AddButton("Companheiros", "Verifique seus companheiros em serviço.", "admin:Dynamic","statsParamedico", false, true)
+-- 				exports["dynamic"]:AddButton("Carregar", "Carregar a pessoa mais próxima.", "player:carryPlayer", "", "player", true)
+-- 				exports["dynamic"]:AddButton("Colocar no Veículo", "Colocar no veículo mais próximo.", "player:cvFunctions", "cv", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover do Veículo", "Remover do veículo mais próximo.", "player:cvFunctions", "rv", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Chapéu", "Remover da pessoa mais próxima.", "skinshop:Remove", "Hat", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Máscara", "Remover da pessoa mais próxima.", "skinshop:Remove", "Mask", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Óculos", "Remover da pessoa mais próxima.", "skinshop:Remove", "Glasses", "player", true)
+-- 				exports["dynamic"]:SubMenu("Jogador", "Pessoa mais próxima de você.", "player")
 
-				exports["dynamic"]:AddButton("Cirurgião","Fardamento de Cirurgião.","player:Preset","1","preMedic",true)
-				exports["dynamic"]:AddButton("Doutor","Fardamento de Doutor.","player:Preset","2","preMedic",true)
-				exports["dynamic"]:AddButton("Enfermaria","Fardamento da Enfermaria.","player:Preset","3","preMedic",true)
-				exports["dynamic"]:AddButton("SAMU","Fardamento de Socorrista SAMU.","player:Preset","4","preMedic",true)
-				exports["dynamic"]:AddButton("SAMU 2","Fardamento de Socorrista SAMU 2.","player:Preset","5","preMedic",true)
-				exports["dynamic"]:SubMenu("Fardamentos", "Todos os fardamentos médicos.", "preMedic")
+-- 				exports["dynamic"]:AddButton("Cirurgião","Fardamento de Cirurgião.","player:Preset","1","preMedic",true)
+-- 				exports["dynamic"]:AddButton("Doutor","Fardamento de Doutor.","player:Preset","2","preMedic",true)
+-- 				exports["dynamic"]:AddButton("Enfermaria","Fardamento da Enfermaria.","player:Preset","3","preMedic",true)
+-- 				exports["dynamic"]:AddButton("SAMU","Fardamento de Socorrista SAMU.","player:Preset","4","preMedic",true)
+-- 				exports["dynamic"]:AddButton("SAMU 2","Fardamento de Socorrista SAMU 2.","player:Preset","5","preMedic",true)
+-- 				exports["dynamic"]:SubMenu("Fardamentos", "Todos os fardamentos médicos.", "preMedic")
 
-				exports["dynamic"]:openMenu()
-			end
-		elseif LocalPlayer["state"]["Bombeiro"] then
-			if GetEntityHealth(Ped) > 100 and not IsPedInAnyVehicle(Ped) then
-				exports["dynamic"]:AddButton("Anuncio Bombeiro", "Fazer um anúncio para todos os moradores.", "dynamic:EmergencyAnnounceBombeiro", "", false, true)
-				exports["dynamic"]:AddButton("Companheiros", "Verifique seus companheiros em serviço.", "admin:Dynamic","statsBombeiro", false, true)
-				exports["dynamic"]:AddButton("Carregar", "Carregar a pessoa mais próxima.", "player:carryPlayer", "", "player", true)
-				exports["dynamic"]:AddButton("Colocar no Veículo", "Colocar no veículo mais próximo.", "player:cvFunctions", "cv", "player", true)
-				exports["dynamic"]:AddButton("Remover do Veículo", "Remover do veículo mais próximo.", "player:cvFunctions", "rv", "player", true)
-				exports["dynamic"]:AddButton("Remover Chapéu", "Remover da pessoa mais próxima.", "skinshop:Remove", "Hat", "player", true)
-				exports["dynamic"]:AddButton("Remover Máscara", "Remover da pessoa mais próxima.", "skinshop:Remove", "Mask", "player", true)
-				exports["dynamic"]:AddButton("Remover Óculos", "Remover da pessoa mais próxima.", "skinshop:Remove", "Glasses", "player", true)
-				exports["dynamic"]:SubMenu("Jogador", "Pessoa mais próxima de você.", "player")
+-- 				exports["dynamic"]:openMenu()
+-- 			end
+-- 		elseif LocalPlayer["state"]["Bombeiro"] then
+-- 			if GetEntityHealth(Ped) > 100 and not IsPedInAnyVehicle(Ped) then
+-- 				exports["dynamic"]:AddButton("Anuncio Bombeiro", "Fazer um anúncio para todos os moradores.", "dynamic:EmergencyAnnounceBombeiro", "", false, true)
+-- 				exports["dynamic"]:AddButton("Companheiros", "Verifique seus companheiros em serviço.", "admin:Dynamic","statsBombeiro", false, true)
+-- 				exports["dynamic"]:AddButton("Carregar", "Carregar a pessoa mais próxima.", "player:carryPlayer", "", "player", true)
+-- 				exports["dynamic"]:AddButton("Colocar no Veículo", "Colocar no veículo mais próximo.", "player:cvFunctions", "cv", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover do Veículo", "Remover do veículo mais próximo.", "player:cvFunctions", "rv", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Chapéu", "Remover da pessoa mais próxima.", "skinshop:Remove", "Hat", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Máscara", "Remover da pessoa mais próxima.", "skinshop:Remove", "Mask", "player", true)
+-- 				exports["dynamic"]:AddButton("Remover Óculos", "Remover da pessoa mais próxima.", "skinshop:Remove", "Glasses", "player", true)
+-- 				exports["dynamic"]:SubMenu("Jogador", "Pessoa mais próxima de você.", "player")
 
-				exports["dynamic"]:AddButton("Incêndio","Fardamento de Incêndio.","player:Preset","6","preBombeiro",true)
-				exports["dynamic"]:AddButton("Socorrista 1","Fardamento de Socorrista 1.","player:Preset","7","preBombeiro",true)
-				exports["dynamic"]:AddButton("Socorrista 2","Fardamento de Socorrista 2.","player:Preset","8","preBombeiro",true)
-				exports["dynamic"]:AddButton("Treino","Fardamento de Treino.","player:Preset","9","preBombeiro",true)
-				exports["dynamic"]:SubMenu("Fardamentos","Todos os fardamentos dos Bombeiros.","preBombeiro")
+-- 				exports["dynamic"]:AddButton("Incêndio","Fardamento de Incêndio.","player:Preset","6","preBombeiro",true)
+-- 				exports["dynamic"]:AddButton("Socorrista 1","Fardamento de Socorrista 1.","player:Preset","7","preBombeiro",true)
+-- 				exports["dynamic"]:AddButton("Socorrista 2","Fardamento de Socorrista 2.","player:Preset","8","preBombeiro",true)
+-- 				exports["dynamic"]:AddButton("Treino","Fardamento de Treino.","player:Preset","9","preBombeiro",true)
+-- 				exports["dynamic"]:SubMenu("Fardamentos","Todos os fardamentos dos Bombeiros.","preBombeiro")
 
-				exports["dynamic"]:openMenu()
-			end
-		end
-	end
-end)
+-- 				exports["dynamic"]:openMenu()
+-- 			end
+-- 		end
+-- 	end
+-- end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- ADMINFUNCTIONS
 -----------------------------------------------------------------------------------------------------------------------------------------
