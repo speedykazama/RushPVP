@@ -1,7 +1,16 @@
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- SHUTDOWN LOADING SCREEN
 -----------------------------------------------------------------------------------------------------------------------------------------
+local LoadingClosed = false
+local SpawnFlowStarted = false
+local SpawnUiOpen = false
+local SpawnOpening = false
+
 local function CloseLoadingScreen()
+	if LoadingClosed then
+		return
+	end
+
 	if ShutdownLoadingScreenNui then
 		ShutdownLoadingScreenNui()
 	end
@@ -9,6 +18,22 @@ local function CloseLoadingScreen()
 	if ShutdownLoadingScreen then
 		ShutdownLoadingScreen()
 	end
+
+	LoadingClosed = true
+end
+
+local function WaitForLoadingScreenEnd()
+	CloseLoadingScreen()
+
+	for _ = 1, 200 do
+		if GetIsLoadingScreenActive and not GetIsLoadingScreenActive() then
+			break
+		end
+
+		Wait(50)
+	end
+
+	Wait(1000)
 end
 
 CreateThread(function()
@@ -16,9 +41,13 @@ CreateThread(function()
 		Wait(100)
 	end
 
-	Wait(1500)
-	CloseLoadingScreen()
-	Wait(500)
+	WaitForLoadingScreenEnd()
+
+	if SpawnFlowStarted then
+		return
+	end
+
+	SpawnFlowStarted = true
 	TriggerEvent("spawn:Opened")
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -38,7 +67,19 @@ local Camera = nil
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNetEvent("spawn:Opened")
 AddEventHandler("spawn:Opened",function()
-	CloseLoadingScreen()
+	if SpawnUiOpen or SpawnOpening then
+		return
+	end
+
+	SpawnOpening = true
+	WaitForLoadingScreenEnd()
+
+	if not IsScreenFadedOut() then
+		DoScreenFadeOut(500)
+		while not IsScreenFadedOut() do
+			Wait(10)
+		end
+	end
 
 	local Ped = PlayerPedId()
 	SetEntityCoords(Ped, SpawnCreatorCoords.x, SpawnCreatorCoords.y, SpawnCreatorCoords.z, false, false, false, false)
@@ -62,14 +103,15 @@ AddEventHandler("spawn:Opened",function()
 		Customization(Characters[1])
 	end
 
-	Wait(5000)
+	DoScreenFadeIn(1000)
+	while not IsScreenFadedIn() do
+		Wait(10)
+	end
 
 	SendNUIMessage({ Action = "Spawn", Table = Characters })
-	SetNuiFocus(true,true)
-
-	if IsScreenFadedOut() then
-		DoScreenFadeIn(2500)
-	end
+	SetNuiFocus(true, true)
+	SpawnUiOpen = true
+	SpawnOpening = false
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CHARACTERCHOSEN
@@ -77,6 +119,7 @@ end)
 RegisterNUICallback("CharacterChosen",function(Data,Callback)
 	if vSERVER.CharacterChosen(Data["Passport"]) then
 		SendNUIMessage({ Action = "Close" })
+		SpawnUiOpen = false
 	end
 
 	Callback("Ok")
@@ -127,6 +170,7 @@ AddEventHandler("spawn:justSpawn",function(Open,Barbershop)
 		SendNUIMessage({ Action = "Close" })
 		TriggerEvent("hud:Active",true)
 		SetNuiFocus(false,false)
+		SpawnUiOpen = false
 
 		if DoesCamExist(Camera) then
 			RenderScriptCams(false,false,0,false,false)
@@ -180,6 +224,7 @@ RegisterNUICallback("Spawn",function(Data,Callback)
 	SendNUIMessage({ Action = "Close" })
 	TriggerEvent("hud:Active",true)
 	SetNuiFocus(false,false)
+	SpawnUiOpen = false
 
 	Callback("Ok")
 end)

@@ -9,10 +9,6 @@ server_script {
 	"server-side/*"
 }
 
-client_script {
-	"client-side/*"
-}
-
 files {
 	"web-side/*",
 	"web-side/**/*"
