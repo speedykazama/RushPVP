@@ -196,6 +196,7 @@ NewBankMinTaxs = 15000                                              -- true se q
 -----------------------------------------------------------------------------------------------------------------------------------------
 BurstTyresBySpeed = false                                            -- Estourar pneus quando atingir grandes velocidades forçando o veículo
 ShakeVehicleCamera = false                                           -- Balançar a câmera do personagem quando bater o veículo
+VehicleNeverBreak = true                                             -- Veículos não quebram (colisão, capotamento, motor, etc.)
 EnableManeuvers = false                                              -- Se é permitido manobras em cima de motos pressionando as setas do teclado
 CanPushCars = true													-- Empurrar veículos pressionando a letra Q
 -----------------------------------------------------------------------------------------------------------------------------------------

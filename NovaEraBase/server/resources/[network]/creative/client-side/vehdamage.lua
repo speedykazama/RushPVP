@@ -1,9 +1,23 @@
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VARIABLES
 -----------------------------------------------------------------------------------------------------------------------------------------
-local DamageVehicleEngineHealth = true
+local DamageVehicleEngineHealth = not VehicleNeverBreak
 local LastDamage = 0.0
 local Vehicle = nil
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- REPAIRVEHICLE
+-----------------------------------------------------------------------------------------------------------------------------------------
+local function RepairVehicle(Vehicle)
+	SetVehicleCanBreak(Vehicle, false)
+	SetVehicleTyresCanBurst(Vehicle, false)
+	SetVehicleEngineCanDegrade(Vehicle, false)
+	SetVehicleUndriveable(Vehicle, false)
+	SetVehicleEngineHealth(Vehicle, 1000.0)
+	SetVehicleBodyHealth(Vehicle, 1000.0)
+	SetEntityHealth(Vehicle, 1000)
+	SetVehiclePetrolTankHealth(Vehicle, 1000.0)
+	SetVehicleEngineOn(Vehicle, true, true, true)
+end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- ENGINE
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -81,6 +95,9 @@ CreateThread(function()
             if Classes ~= 13 and Classes ~= 14 then
                 TimeDistance = 1
 
+                if VehicleNeverBreak then
+                    RepairVehicle(Vehicle)
+                else
                 if Same == nil then
                     Same = false
                 end
@@ -234,6 +251,7 @@ CreateThread(function()
                             LastDamage = VehicleHealth
                         end
                     end
+                end
                 end
             end
         else
