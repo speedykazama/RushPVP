@@ -39,6 +39,7 @@ vRP.Prepare("characters/UpgradeSpending","UPDATE characters SET spending = spend
 vRP.Prepare("characters/DowngradeSpending","UPDATE characters SET spending = spending - @spending WHERE id = @Passport")
 vRP.Prepare("characters/UpgradeCardlimit","UPDATE characters SET cardlimit = @cardlimit WHERE id = @Passport")
 vRP.Prepare("characters/DowngradeCardlimit","UPDATE characters SET cardlimit = cardlimit - @cardlimit WHERE id = @Passport")
+vRP.Prepare("characters/updateAvatar","UPDATE characters SET avatar = @avatar WHERE id = @Passport")
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- ACCOUNTS
 -----------------------------------------------------------------------------------------------------------------------------------------

@@ -48,6 +48,13 @@ AddEventHandler("CharacterChosen", function(Passport, source)
         TriggerClientEvent("tattooshop:Apply",source,vRP.UserData(Passport,"Tatuagens"))
 
         TriggerClientEvent("vRP:Active",source,Passport,Identity["name"].." "..Identity["name2"])
+
+        local Avatar = Identity["avatar"]
+        if not Avatar or Avatar == "" then
+            Avatar = "https://i.postimg.cc/x1Vj7kgK/user.png"
+        end
+
+        TriggerClientEvent("hud:Avatar",source,Avatar)
         
         Player(source)["state"]["Passport"] = Passport
 

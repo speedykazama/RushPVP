@@ -460,12 +460,6 @@ CreateThread(function()
 			NetworkOverrideClockTime(12, 00, 00)
 		end
 
-		if IsPedOnFoot(GetPlayerPed(-1)) then
-			SetRadarZoom(1100)
-		elseif IsPedInAnyVehicle(GetPlayerPed(-1), true) then
-			SetRadarZoom(1100)
-		end
-
 		Wait(0)
 	end
 end)

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<title>Rush PvP HUD</title>
+</head>
+<body>
+	<div id="hud" class="hidden">
+		<div class="profile">
+			<div class="avatar-wrap">
+				<img id="avatar" src="https://i.postimg.cc/x1Vj7kgK/user.png" alt="Avatar">
+			</div>
+			<div class="info">
+				<span id="passport">#0</span>
+				<strong id="name">Jogador</strong>
+			</div>
+		</div>
+
+		<div class="status">
+			<div class="bar health">
+				<div id="health" class="fill"></div>
+			</div>
+			<div class="bar armour">
+				<div id="armour" class="fill"></div>
+			</div>
+		</div>
+
+		<div class="voice">
+			<span id="voip">Normal</span>
+			<span id="radio">Offline</span>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>

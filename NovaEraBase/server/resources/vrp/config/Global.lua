@@ -19,7 +19,7 @@ RunSpeedMultiplier = 1.12											-- Velocidade ao correr/sprint (1.0 = padrã
 -----------------------------------------------------------------------------------------------------------------------------------------
 QueryFields = {                                                     -- Query da tabela characters
     "id", "license", "phone", "serial", "name", "name2", "sex", "bank", "blood", "prison", "gun", "fines", "medicplan", "taxs", "likes", "unlikes", "age", "login",
-    "cardlimit", "spending", "cardpassword"
+    "cardlimit", "spending", "cardpassword", "avatar"
 }
 
 AccountFields = {													-- Query da tabela accounts

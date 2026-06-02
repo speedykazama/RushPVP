@@ -75,6 +75,7 @@ CREATE TABLE IF NOT EXISTS `characters` (
   `work` varchar(50) NOT NULL DEFAULT 'Nenhum',
   `gun` int(1) NOT NULL DEFAULT 0,
   `login` int(20) NOT NULL DEFAULT 0,
+  `avatar` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `license` (`license`),
   KEY `id` (`id`)
