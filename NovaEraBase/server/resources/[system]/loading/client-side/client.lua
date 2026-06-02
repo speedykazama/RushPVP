@@ -16,7 +16,7 @@ CreateThread(function()
 		Wait(100)
 	end
 
-	Wait(500)
+	Wait(1500)
 	CloseLoadingScreen()
 end)
 

@@ -1,4 +1,27 @@
 -----------------------------------------------------------------------------------------------------------------------------------------
+-- SHUTDOWN LOADING SCREEN
+-----------------------------------------------------------------------------------------------------------------------------------------
+local function CloseLoadingScreen()
+	if ShutdownLoadingScreenNui then
+		ShutdownLoadingScreenNui()
+	end
+
+	if ShutdownLoadingScreen then
+		ShutdownLoadingScreen()
+	end
+end
+
+CreateThread(function()
+	while not NetworkIsSessionStarted() do
+		Wait(100)
+	end
+
+	Wait(1500)
+	CloseLoadingScreen()
+	Wait(500)
+	TriggerEvent("spawn:Opened")
+end)
+-----------------------------------------------------------------------------------------------------------------------------------------
 -- VRP
 -----------------------------------------------------------------------------------------------------------------------------------------
 local Tunnel = module("vrp","lib/Tunnel")
@@ -15,6 +38,8 @@ local Camera = nil
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNetEvent("spawn:Opened")
 AddEventHandler("spawn:Opened",function()
+	CloseLoadingScreen()
+
 	local Ped = PlayerPedId()
 	SetEntityCoords(Ped, SpawnCreatorCoords.x, SpawnCreatorCoords.y, SpawnCreatorCoords.z, false, false, false, false)
 	LocalPlayer["state"]:set("Invincible", true, true)

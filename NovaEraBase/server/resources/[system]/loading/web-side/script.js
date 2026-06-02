@@ -21,7 +21,12 @@ const LoadingApp = {
 		this.cacheElements();
 		this.applyHandover(window.nuiHandoverData);
 		this.bindEvents();
-		this.renderAll();
+
+		try {
+			this.renderAll();
+		} catch (_) {
+			// Evita travar a loadscreen se algum asset falhar
+		}
 	},
 
 	cacheElements() {
@@ -154,12 +159,15 @@ const LoadingApp = {
 	},
 
 	setupPlaylist() {
-		if (!this.data.playlist || !this.data.playlist.length) {
+		if (!this.data.playlist || !this.data.playlist.length || !this.els.audio) {
 			return;
 		}
 
 		this.loadTrack(0);
-		this.els.audio.volume = this.els.volume.value / 100;
+
+		if (this.els.volume) {
+			this.els.audio.volume = this.els.volume.value / 100;
+		}
 
 		if (this.data.autoplay !== false) {
 			this.playMusic();
@@ -240,11 +248,21 @@ const LoadingApp = {
 
 	updateProgress(value) {
 		const progress = Math.max(0, Math.min(100, Math.round(value)));
-		this.els.bar.style.width = `${progress}%`;
-		this.els.percentage.textContent = `${progress}%`;
+
+		if (this.els.bar) {
+			this.els.bar.style.width = `${progress}%`;
+		}
+
+		if (this.els.percentage) {
+			this.els.percentage.textContent = `${progress}%`;
+		}
 	},
 
-	updateVolumeUI(value = this.els.volume.value) {
+	updateVolumeUI(value = this.els.volume?.value ?? 45) {
+		if (!this.els.volume || !this.els.volumeIcon) {
+			return;
+		}
+
 		this.els.volume.style.backgroundSize = `${value}% 100%`;
 
 		if (value == 0) {
@@ -257,30 +275,40 @@ const LoadingApp = {
 	},
 
 	bindEvents() {
-		this.els.play.addEventListener("click", () => this.toggleMusic());
-		this.els.prev.addEventListener("click", () => this.prevTrack());
-		this.els.next.addEventListener("click", () => this.nextTrack());
-		this.els.audio.addEventListener("ended", () => this.nextTrack());
+		if (this.els.play && this.els.prev && this.els.next && this.els.audio) {
+			this.els.play.addEventListener("click", () => this.toggleMusic());
+			this.els.prev.addEventListener("click", () => this.prevTrack());
+			this.els.next.addEventListener("click", () => this.nextTrack());
+			this.els.audio.addEventListener("ended", () => this.nextTrack());
 
-		this.els.audio.addEventListener("timeupdate", () => {
-			if (!Number.isFinite(this.els.audio.duration)) {
+			this.els.audio.addEventListener("timeupdate", () => {
+				if (!Number.isFinite(this.els.audio.duration)) {
+					return;
+				}
+
+				this.els.currentTime.textContent = this.formatTime(this.els.audio.currentTime);
+				this.els.totalTime.textContent = this.formatTime(this.els.audio.duration);
+
+				const progress = (this.els.audio.currentTime / this.els.audio.duration) * 100;
+				if (this.els.progressFill) {
+					this.els.progressFill.style.width = `${progress}%`;
+				}
+			});
+		}
+
+		if (this.els.volume && this.els.audio) {
+			this.els.volume.addEventListener("input", (event) => {
+				const value = event.target.value;
+				this.els.audio.volume = value / 100;
+				this.updateVolumeUI(value);
+			});
+		}
+
+		window.addEventListener("keydown", (event) => {
+			if (!this.els.audio || !this.els.volume) {
 				return;
 			}
 
-			this.els.currentTime.textContent = this.formatTime(this.els.audio.currentTime);
-			this.els.totalTime.textContent = this.formatTime(this.els.audio.duration);
-
-			const progress = (this.els.audio.currentTime / this.els.audio.duration) * 100;
-			this.els.progressFill.style.width = `${progress}%`;
-		});
-
-		this.els.volume.addEventListener("input", (event) => {
-			const value = event.target.value;
-			this.els.audio.volume = value / 100;
-			this.updateVolumeUI(value);
-		});
-
-		window.addEventListener("keydown", (event) => {
 			if (event.code === "Space") {
 				event.preventDefault();
 				this.toggleMusic();
@@ -320,25 +348,33 @@ const LoadingApp = {
 					break;
 				case "startInitFunctionOrder":
 					this.state.totalSteps = payload.count || 0;
-					this.els.message.textContent = "A inicializar";
+					if (this.els.message) {
+						this.els.message.textContent = "A inicializar";
+					}
 					break;
 				case "initFunctionInvoking":
 					if (this.state.totalSteps > 0) {
 						this.updateProgress((payload.idx / this.state.totalSteps) * 100);
 					}
-					this.els.message.textContent = "A preparar recursos";
+					if (this.els.message) {
+						this.els.message.textContent = "A preparar recursos";
+					}
 					break;
 				case "startDataFileEntries":
 					this.state.totalSteps = payload.count || 0;
 					this.state.currentStep = 0;
-					this.els.message.textContent = "A carregar dados";
+					if (this.els.message) {
+						this.els.message.textContent = "A carregar dados";
+					}
 					break;
 				case "performMapLoadFunction":
 					this.state.currentStep++;
 					if (this.state.totalSteps > 0) {
 						this.updateProgress((this.state.currentStep / this.state.totalSteps) * 100);
 					}
-					this.els.message.textContent = "A entrar na cidade";
+					if (this.els.message) {
+						this.els.message.textContent = "A entrar na cidade";
+					}
 					break;
 			}
 		});
