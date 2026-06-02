@@ -8,7 +8,7 @@ Config.AllowedGroups = {
   -- Grupos permitidos para dominar alguma área
   -- @group é o grupo (vRP.HasGroup e etc.)
   -- @label é o nome do grupo que aparecerá na interface
-  { group = "Administrador", label = "Administradores" },
+  { group = "Admin", label = "Administradores" },
   { group = "Faccao02", label = "Imperium" },
 }
 
