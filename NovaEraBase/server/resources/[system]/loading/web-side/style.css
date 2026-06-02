@@ -1,0 +1,421 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 0.85vw;
+    --primary: #dc2626;
+    --primary-light: #ef4444;
+    --primary-dark: #991b1b;
+    --primary-glow: rgba(220, 38, 38, 0.45);
+    --panel-bg: rgba(12, 8, 10, 0.82);
+    --panel-border: rgba(220, 38, 38, 0.22);
+    --text-main: #ffffff;
+    --text-muted: #b8b8b8;
+    --font-family: "Manrope", sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: var(--font-family);
+    color: var(--text-main);
+    user-select: none;
+    background: #000;
+}
+
+#app {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.video-container {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(220, 38, 38, 0.18), transparent 45%),
+        linear-gradient(to top, rgba(8, 0, 0, 0.92) 0%, rgba(8, 0, 0, 0.35) 40%, rgba(8, 0, 0, 0.55) 100%);
+    pointer-events: none;
+}
+
+.brand {
+    position: absolute;
+    top: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 20;
+}
+
+.brand-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(220, 38, 38, 0.18);
+    border: 1px solid var(--panel-border);
+    color: #fecaca;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.brand h1 {
+    margin-top: 0.75rem;
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-shadow: 0 0 24px var(--primary-glow);
+}
+
+.brand p {
+    margin-top: 0.35rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.top-left-socials {
+    position: absolute;
+    top: 2.5rem;
+    left: 2.5rem;
+    display: flex;
+    gap: 0.75rem;
+    z-index: 20;
+}
+
+.social-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.125rem;
+    color: var(--text-main);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.social-btn:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 0 16px var(--primary-glow);
+}
+
+.shortcuts-panel {
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    width: 16rem;
+    padding: 1rem 1.1rem;
+    border-radius: 0.75rem;
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    backdrop-filter: blur(18px);
+    z-index: 20;
+}
+
+.shortcuts-panel.hidden {
+    display: none;
+}
+
+.shortcuts-panel h2 {
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fecaca;
+    margin-bottom: 0.75rem;
+}
+
+.shortcuts-panel ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.shortcuts-panel li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.shortcuts-panel kbd {
+    min-width: 2rem;
+    padding: 0.2rem 0.45rem;
+    border-radius: 0.35rem;
+    background: rgba(220, 38, 38, 0.16);
+    border: 1px solid var(--panel-border);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.bottom-left-panel {
+    position: absolute;
+    bottom: 3.125rem;
+    left: 2.5rem;
+    z-index: 20;
+}
+
+.music-widget {
+    width: 26rem;
+    padding: 1rem 1.25rem;
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    border-radius: 0.75rem;
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.45);
+}
+
+#music-cover {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    background: #1a1a1a;
+    border: 1px solid var(--panel-border);
+}
+
+.music-widget-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 0;
+}
+
+.music-artist {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #fecaca;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.music-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.music-progress-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.time-str {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+}
+
+.time-curr {
+    width: 1.5rem;
+    text-align: left;
+}
+
+.time-tot {
+    width: 1.5rem;
+    text-align: right;
+}
+
+.progress-bar-container {
+    flex: 1;
+    height: 0.25rem;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 0;
+    background: linear-gradient(90deg, var(--primary-dark), var(--primary-light));
+    border-radius: 999px;
+}
+
+.progress-bar-thumb {
+    position: absolute;
+    right: -0.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.625rem;
+    height: 0.625rem;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--primary-glow);
+}
+
+.music-controls-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.music-btn {
+    background: transparent;
+    border: none;
+    color: #888;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.1s;
+}
+
+.music-btn:hover {
+    color: #fff;
+    transform: scale(1.08);
+}
+
+.music-btn.play {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    font-size: 0.75rem;
+    box-shadow: 0 0 14px var(--primary-glow);
+}
+
+.volume-container {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    margin-left: auto;
+}
+
+.volume-container i {
+    color: #888;
+    font-size: 0.625rem;
+}
+
+.custom-slider.volume-slider {
+    width: 3.5rem;
+    height: 0.1875rem;
+    border-radius: 999px;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.12);
+    background-image: linear-gradient(var(--primary-light), var(--primary-light));
+    background-size: 45% 100%;
+    background-repeat: no-repeat;
+}
+
+.custom-slider.volume-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 0.45rem;
+    height: 0.45rem;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.loading-info-container {
+    position: absolute;
+    right: 2.5rem;
+    bottom: 3.125rem;
+    width: 18rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 20;
+}
+
+.loading-text-row {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.dots::after {
+    content: "";
+    animation: dots 1.4s steps(4, end) infinite;
+}
+
+@keyframes dots {
+    0% { content: ""; }
+    25% { content: "."; }
+    50% { content: ".."; }
+    75% { content: "..."; }
+}
+
+.loading-bar-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.loading-track {
+    flex: 1;
+    height: 0.3rem;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.loading-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--primary-dark), var(--primary-light));
+    border-radius: 999px;
+    transition: width 0.2s ease-out;
+    box-shadow: 0 0 12px var(--primary-glow);
+}
+
+.loading-perc {
+    min-width: 2.5rem;
+    margin-left: 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #fecaca;
+}
+
+@media (max-width: 1100px) {
+    :root {
+        font-size: 1.1vw;
+    }
+
+    .shortcuts-panel {
+        display: none;
+    }
+}

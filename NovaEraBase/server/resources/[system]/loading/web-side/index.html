@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rush PvP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="video-container">
+        <video id="bg-video" autoplay loop muted playsinline disablepictureinpicture></video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <div id="app">
+        <header class="brand">
+            <span class="brand-tag">PvP</span>
+            <h1 id="loading-title">Rush PvP</h1>
+            <p id="loading-subtitle">Servidor de PvP</p>
+        </header>
+
+        <div class="top-left-socials" id="socials-container"></div>
+
+        <aside class="shortcuts-panel" id="shortcuts-panel">
+            <h2>Atalhos</h2>
+            <ul id="shortcuts-list"></ul>
+        </aside>
+
+        <div class="bottom-left-panel">
+            <div class="music-widget">
+                <div class="music-widget-left">
+                    <img id="music-cover" src="./logo.PNG" alt="Capa">
+                </div>
+                <div class="music-widget-right">
+                    <div class="music-info">
+                        <div class="music-artist" id="music-artist"></div>
+                        <div class="music-title" id="music-title"></div>
+                    </div>
+
+                    <div class="music-progress-row">
+                        <span class="time-str time-curr" id="music-current-time">0:00</span>
+                        <div class="progress-bar-container" id="progress-container">
+                            <div class="progress-bar-fill" id="progress-fill">
+                                <div class="progress-bar-thumb"></div>
+                            </div>
+                        </div>
+                        <span class="time-str time-tot" id="music-total-time">0:00</span>
+                    </div>
+
+                    <div class="music-controls-row">
+                        <button class="music-btn" id="prev-btn" type="button"><i class="fa-solid fa-backward-step"></i></button>
+                        <button class="music-btn play" id="play-pause-btn" type="button"><i class="fa-solid fa-play"></i></button>
+                        <button class="music-btn" id="next-btn" type="button"><i class="fa-solid fa-forward-step"></i></button>
+
+                        <div class="volume-container">
+                            <i class="fa-solid fa-volume-low" id="volume-icon"></i>
+                            <input type="range" class="custom-slider volume-slider" id="volume-slider" min="0" max="100" value="45">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="loading-info-container">
+            <div class="loading-text-row">
+                <span id="loading-message">A conectar</span>
+                <span class="dots"></span>
+            </div>
+            <div class="loading-bar-wrapper">
+                <div class="loading-track">
+                    <div class="loading-fill" id="loading-bar"></div>
+                </div>
+                <div class="loading-perc" id="loading-percentage">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="bg-audio"></audio>
+    <script src="./script.js"></script>
+</body>
+</html>
