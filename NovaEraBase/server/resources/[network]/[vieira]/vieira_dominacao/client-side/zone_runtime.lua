@@ -56,6 +56,17 @@ local function removeDominationMapBlips()
   mapBlipHandles = {}
 end
 
+local function dominationMapBlipLabel(name, id)
+  local prefix = Config.MapBlipLabelPrefix or "Dominação - "
+  local base = tostring(name or ("#" .. tostring(id)))
+
+  if prefix ~= "" and base:sub(1, #prefix) == prefix then
+    return base
+  end
+
+  return prefix .. base
+end
+
 local function createDominationMapBlips()
   removeDominationMapBlips()
 
@@ -84,7 +95,7 @@ local function createDominationMapBlips()
       SetBlipAsShortRange(iconBlip, false)
       SetBlipDisplay(iconBlip, 4)
       BeginTextCommandSetBlipName("STRING")
-      AddTextComponentString(entry.name or ("Dominação #" .. tostring(entry.id)))
+      AddTextComponentString(dominationMapBlipLabel(entry.name, entry.id))
       EndTextCommandSetBlipName(iconBlip)
       mapBlipHandles[#mapBlipHandles + 1] = iconBlip
     end

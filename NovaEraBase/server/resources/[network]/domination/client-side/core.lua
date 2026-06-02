@@ -57,7 +57,12 @@ local function RebuildBlips()
 			SetBlipAsShortRange(Icon, false)
 			SetBlipDisplay(Icon, 4)
 			BeginTextCommandSetBlipName("STRING")
-			local Text = Zone["Label"] or ("Dominação " .. Id)
+			local Prefix = DominationMapBlipLabelPrefix or "Dominação - "
+			local BaseLabel = Zone["Label"] or Id
+			local Text = BaseLabel
+			if Prefix ~= "" and BaseLabel:sub(1, #Prefix) ~= Prefix then
+				Text = Prefix .. BaseLabel
+			end
 			if Owner then
 				Text = Text .. " | " .. Owner
 			else

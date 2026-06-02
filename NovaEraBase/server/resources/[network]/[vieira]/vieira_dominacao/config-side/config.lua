@@ -8,7 +8,7 @@ Config.AllowedGroups = {
   -- Grupos permitidos para dominar alguma área
   -- @group é o grupo (vRP.HasGroup e etc.)
   -- @label é o nome do grupo que aparecerá na interface
-  { group = "Faccao01", label = "Testadores" },
+  { group = "Administrador", label = "Administradores" },
   { group = "Faccao02", label = "Imperium" },
 }
 
@@ -26,6 +26,7 @@ Config.MapBlipColour = 1 -- vermelho
 Config.MapBlipAlpha = 110
 Config.MapBlipSprite = 487
 Config.MapBlipScale = 0.85
+Config.MapBlipLabelPrefix = "Dominação - " -- Prefixo do nome no mapa (como Safezone - Pier)
 
 -- Zona: XY do polígono; interiores não contam
 Config.DisableDominationInInteriors = true

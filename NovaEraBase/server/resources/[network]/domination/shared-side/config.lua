@@ -10,6 +10,7 @@ DominationNeutralBlipColour = 6
 DominationNeutralBlipAlpha = 120
 DominationCapturedBlipAlpha = 140
 DominationRadiusBlipScale = 115.0
+DominationMapBlipLabelPrefix = "Dominação - "
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- ZONAS
 -- Altere pontos via PolyZone in-game ou copie vértices como em safezone.
