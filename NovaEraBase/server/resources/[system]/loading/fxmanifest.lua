@@ -3,7 +3,6 @@ game "gta5"
 lua54 "yes"
 
 loadscreen_cursor "yes"
-loadscreen_manual_shutdown "yes"
 loadscreen "web-side/index.html"
 
 server_script {
