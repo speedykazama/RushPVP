@@ -450,14 +450,24 @@ CreateThread(function()
 		SetArtificialLightsState(GlobalState["Blackout"])
 		SetArtificialLightsStateAffectsVehicles(false)
 
-		SetWeatherTypeNow(GlobalState["Weather"])
-		SetWeatherTypePersist(GlobalState["Weather"])
-		SetWeatherTypeNowPersist(GlobalState["Weather"])
+		local Weather = AlwaysDayClear and FixedWeather or GlobalState["Weather"]
+		local Hours = AlwaysDayClear and FixedHours or GlobalState["Hours"]
+		local Minutes = AlwaysDayClear and FixedMinutes or GlobalState["Minutes"]
 
-		if LocalPlayer["state"]["Active"] then
-			NetworkOverrideClockTime(GlobalState["Hours"], GlobalState["Minutes"], 00)
+		SetWeatherTypeNow(Weather)
+		SetWeatherTypePersist(Weather)
+		SetWeatherTypeNowPersist(Weather)
+
+		if LocalPlayer["state"]["Active"] or AlwaysDayClear then
+			NetworkOverrideClockTime(Hours, Minutes, 00)
 		else
 			NetworkOverrideClockTime(12, 00, 00)
+		end
+
+		if IsPedOnFoot(GetPlayerPed(-1)) then
+			SetRadarZoom(1100)
+		elseif IsPedInAnyVehicle(GetPlayerPed(-1), true) then
+			SetRadarZoom(1100)
 		end
 
 		Wait(0)
